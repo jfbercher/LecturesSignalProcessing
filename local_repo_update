@@ -4,6 +4,10 @@
 # source: http://stackoverflow.com/questions/1125968/force-git-to-overwrite-local-files-on-pull
 # author jfb september 23, 2015
 
+# 0 - restore deleted files
+
+git ls-files  -d -z | xargs -0 git checkout --
+
 
 #first do a commit of your changes
 
@@ -13,4 +17,4 @@
 #then fetch the changes and overwrite if there is a conflict
 
  git fetch origin master
- git merge -s recursive -X theirs origin/master
+ git merge -s recursive -X theirs origin/master -m "merge with local changes"
