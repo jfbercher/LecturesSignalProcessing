@@ -1,0 +1,12 @@
+*.tex
+*.log
+*.toc
+*tmp*
+exec/
+conversion/
+__pycache__/
+/.project
+plustard/
+__pycache__/
+.ipynb_checkpoints/
+
