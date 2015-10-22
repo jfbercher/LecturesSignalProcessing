@@ -1,0 +1,158 @@
+
+
+\input{header.tex}
+
+\usepackage{amsthm} % theorems
+\usepackage{lettrine}
+\usepackage{lastpage}
+\usepackage{url}
+\usepackage{mdframed}
+\usepackage[T1]{fontenc}
+
+\DeclareUnicodeCharacter{00A0}{~}  %get rid of "unicode char u8 not set up for use with latex"
+
+\makeatletter
+\renewcommand{\@evenfoot}%
+	{\hfil \upshape Page {\thepage}/\pageref{LastPage}}
+\renewcommand{\@oddfoot}{\@evenfoot}
+\makeatother
+
+%%% Further colors and hyperref configuration
+% Colors
+\definecolor{webgreen}{rgb}{0,.5,0}
+\definecolor{webbrown}{rgb}{.6,0,0}
+\definecolor{webyellow}{rgb}{0.98,0.92,0.73}
+\definecolor{webgray}{rgb}{.753,.753,.753}
+\definecolor{webblue}{rgb}{0,0,.8}
+
+
+\usepackage{hyperref}
+\hypersetup{bookmarks,bookmarksnumbered,%bookmarksopen,
+colorlinks,linkcolor=webbrown,filecolor=webgreen,citecolor=webgreen,
+breaklinks=true,
+hyperindex=true
+urlcolor=webbrown,pagebackref,pdfpagemode=None,pdfstartview=Fit}
+%%%----------------------------------------
+
+
+
+
+\title{\textbf{A Journey in Signal Processing with IPython}}
+\begin{document}
+\maketitle
+
+\def\E#1{\mathbb{E}\left[#1\right]}
+\def\ta#1{\left<#1\right>}
+\def\egalparerg{{\mathop{=}\limits_\mathrm{erg}}}
+\def\egalpardef{\mathop{=}\limits^\triangle}
+\def\E#1{\mathbb{E}\left[#1\right]}
+\def\flecheTF{\rightleftharpoons }
+\def\expo#1{\exp\left(#1\right)}
+\def\dr#1{\mathrm{d}#1}
+\def\d#1{\mathrm{d}#1}
+\def\wb{\mathbf{w}} \def\sb{\mathbf{s}} \def\xb{\mathbf{x}}
+\def\Rb{\mathbf{R}} \def\rb{\mathbf{r}} 
+\def\TFI#1#2#3{{\displaystyle{\int_{-\infty}^{+\infty} #1 ~e^{j2\pi #2 #3} 
+~\dr{#2}}}}
+\def\TF#1#2#3{{\displaystyle{\int_{-\infty}^{+\infty} #1 ~e^{-j2\pi #3 #2} 
+~\dr{#2}}}}
+\def\mystar{{*}}
+
+
+\def\R#1{\mathcal{R}\left\{#1\right\}}
+\def\I#1{\mathcal{I}\left\{#1\right\}}
+\def\tf#1{{\mathrm{FT}\left\{ #1 \right\}}}
+\def\sha{w}   %{ш}
+\def\sinc#1{{\mathrm{sinc}\left( #1 \right)}}
+\def\rect{\mathrm{rect}}
+\definecolor{lightred}{rgb}{1,0.1,0}
+\def\myeqbox#1#2{{\fcolorbox{#1}{light#1}{$\textcolor{#1}{ #2}$}}}
+\def\eqbox#1#2#3#4{{\fcolorbox{#1}{#2}{$\textcolor{#3}{ #4}$}}}
+% border|background|text
+\def\eqboxa#1{{\boxed{#1}}}
+\def\eqboxb#1{{\eqbox{green}{white}{green}{#1}}}
+\def\eqboxc#1{{\eqbox{blue}{white}{blue}{#1}}}
+\def\eqboxd#1{{\eqbox{blue}{lightblue}{blue}{#1}}}
+
+\def\ub{\mathbf{u}}
+\def\wbopt{\mathop{\mathbf{w}}\limits^\triangle}
+\def\deriv#1#2{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
+\def\Ub{\mathbf{U}}
+\def\db{\mathbf{d}}
+\def\eb{\mathbf{e}}
+\def\yb{\mathbf{y}}
+\def\ybp{\mathbf{y}}
+\def\est#1{\hat{#1}}
+
+\def\vb{\mathbf{v}}
+\def\Ib{\mathbf{I}}
+\def\Vb{\mathbf{V}}
+\def\Lambdab{\mathbf{\Lambda}}
+\def\Ab{\mathbf{A}}
+\def\Bb{\mathbf{B}}
+\def\Cb{\mathbf{C}}
+\def\Db{\mathbf{D}}
+\def\Kb{\mathbf{K}}
+
+\def\textem#1{\emph{#1}}
+\def\url#1{\href{#1}{}}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{exercise}{Exercise}
+\newtheorem{example}{Example}
+\newtheorem{prop}{Property}
+\newtheorem{remark}{Remark}
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+
+\newenvironment{textboxa}
+{ \begin{mdframed}[backgroundcolor=yellow]}
+{ \end{mdframed} }
+
+
+
+
+
+\tableofcontents
+\newpage
+
+\input{DelaysAndScales.tex}
+\input{Intro_Filtering.tex}
+\input{Intro_Fourier.tex}
+\input{Fourier_transform.tex} %
+\input{Discrete_Time_Fourier_properties.tex} %
+\input{Convolution.tex}
+\input{TransferFunctions.tex}
+\input{Exercises_BasicSystemsRepr.tex} %
+\input{BasicSystemsRepr.tex} %
+\input{Continuous_time_case.tex} %
+\input{Periodization_discretization.tex} 
+\input{DFT.tex} 
+\input{Sampling.tex} %
+
+\input{LabImages_text.tex}
+\input{LabImages_correction.tex}
+
+\input{DigitalFilters.tex}
+\input{ZerosPoles.tex}
+\input{FIR_synthesis.tex}
+\input{Bilinear_synthesis.tex}
+
+
+\input{BasicFiltering_text.tex}
+\input{BasicFiltering_correction.tex}
+
+\chapter{Random Signals}
+\input{Lecture1_RandomSignals}
+\input{Lecture2_RandomSignals}
+\input{Lecture3_RandomSignals}
+
+%%Adaptive Filtering
+\input{Optimum_filtering}
+\input{Grad_algo}
+\input{Adaptive_versions.tex }
+\input{noisecancellationlab.tex}
+
+
+
+\end{document}
