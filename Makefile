@@ -80,7 +80,3 @@ sync: all
 	rsync -av --chmod=755  -e "ssh -p 52222" $(here)/*.zip  bercherj@ssh.esiee.fr:public_html/IT3007
     rsync -av --chmod=755  -e "ssh -p 52222" $(here)/install*  bercherj@ssh.esiee.fr:public_html/IT3007
 
-
-
-o
-oa
