@@ -1,0 +1,73 @@
+def bigwidget_cbk(value,val):
+    ll=dict()
+    clear_output(wait=True)
+    fig,ax=plt.subplots(2,1,figsize=(9,5))
+    plot_exists=False
+    for n in range(nb_lines):
+         for  k,wi in enumerate(windows[6*n:6*(n+1)]):
+             ll[wi]=lw[n][k].value 
+                
+             if lw[n][k].value: 
+                #plt.plot(sig.get_window(wi,200),label=wi)
+                wn=sig.get_window(wi,50) 
+                ax[0].plot(wn,label=wi)
+                wf=np.fft.fftshift(20*np.log10(abs(np.fft.fft(wn,1000))))
+                wf=wf-np.max(wf) #normalization
+                wf[np.where(wf==-inf)]=-500
+                f=np.linspace(-0.5,0.5,1000)*50
+                ax[1].plot(f,wf,label=wi)  
+                ax[1].set_xlim([-5, 5])
+                ax[1].set_xticks(np.arange(-5,6))
+                #ax[1].set_xticklabels(['$\\frac{%d}{N}$' %x for x in np.arange(-5,6)])
+                ax[1].set_xticklabels([str(x) for x in np.arange(-5,6)])
+                ax[1].set_xlabel('Frequency (normalized by 1/N)')
+                ax[1].set_ylabel('dB')
+                ax[1].set_ylim([-150, 5])
+                plot_exists=True
+    if plot_exists:
+        ax[0].legend()
+        ax[1].legend()
+    
+    #plt.legend()
+    
+   # plt_win(ll,windows)
+    return ll
+
+
+def plt_win(ll,windows):
+    fig,ax=plt.subplots(211)
+    for k,tst in enumerate(ll):
+        if tst:
+           wn=sig.get_window(windows[k],50) 
+           #ax[0].plot(wn,label=windows[k])
+           #ax[1].plot(np.linspace(-0.5,0.5,1024),np.fft.fftshift(abs(np.fft.fft(wn,1024))),label=windows[k])  
+        ax[0].legend()
+        ax[1].legend()
+
+nb_lines=len(windows)//6+1
+
+lw=[None]*nb_lines
+wm=[None]*nb_lines
+
+for m in range(nb_lines):
+    lw[m]=[widgets.Checkbox(description=w) for w in windows[6*m:6*(m+1)]]
+    for k,ww in enumerate(lw[m]): ww.on_trait_change(bigwidget_cbk,'value')
+    wm[m]=widgets.HBox(children=lw[m])
+
+    
+t = widgets.HTML(value="<center> Window functions </center>", color='blue', 
+                    font_size= 24, width='100%', margin=8, margin_bottom =8, align='center')
+#t.set_css({'color':'blue', 'font-size': 18, 'width':'80%', 
+#           'margin-top':8,'margin-bottom':8, 'text-align':'center'})
+
+tt=widgets.HBox(children=[t,], width='100%', align='end')
+xx=widgets.VBox(
+children=[tt]+[wm[k] for k in range(nb_lines)],
+width='100%')
+xx.align="start"
+xx.box_style="info"
+xx.border_radius=20
+xx.padding=10
+display(xx)
+#for k in range(nb_lines): hbox(wm[k])
+#frame(xx)    

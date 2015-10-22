@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# This is to update a git repo from master, overwriting local modifications
+# if merge is not possible automatically
+# source: http://stackoverflow.com/questions/1125968/force-git-to-overwrite-local-files-on-pull
+# author jfb september 23, 2015
+
+
+#first do a commit of your changes
+
+ git add *
+ git commit -a -m "local changes"
+
+#then fetch the changes and overwrite if there is a conflict
+
+ git fetch origin master
+ git merge -s recursive -X theirs origin/master

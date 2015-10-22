@@ -1,0 +1,9 @@
+#/usr/bin/env bash
+
+#export https_proxy=10.0.4.2:3128  #ensg
+rm Lectures_SignalProcessing.zip
+if [ -d "./Lectures_SignalProcessing" ]; then
+  rm -r Lectures_SignalProcessing/
+fi
+wget -N http://www.esiee.fr/~bercherj/Documents/Lectures_SignalProcessing.zip
+unzip -o Lectures_SignalProcessing.zip

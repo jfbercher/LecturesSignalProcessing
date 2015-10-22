@@ -1,1 +1,1 @@
-# LecturesSignalProcessing
+# LecturesRandomSignals

@@ -1,0 +1,21 @@
+#/usr/bin/env bash
+oldcwd=$(pwd)
+cd /home/bercherj/JFB/Python/
+#rm -r Lectures_SignalProcessing/*_tmp_files/
+mv Lectures_SignalProcessing.zip Lectures_SignalProcessing_previous.zip
+zip -9  Lectures_SignalProcessing.zip Lectures_SignalProcessing/* -x "*tmp_files/" Lectures_SignalProcessing/Lab*.*
+zip -9  LabImages.zip Lectures_SignalProcessing/LabImages*.* Lectures_SignalProcessing/*.png -x "*tmp_files/"
+zip -9  AdaptiveFiltering.zip Lectures_SignalProcessing/Grad*.* Lectures_SignalProcessing/Optimum_filtering.* Lectures_SignalProcessing/Adaptive_versions.* Lectures_SignalProcessing/*.png Lectures_SignalProcessing/*.css Lectures_SignalProcessing/*.ipy Lectures_SignalProcessing/*.py Lectures_SignalProcessing/*.js Lectures_SignalProcessing/*.jpg Lectures_SignalProcessing/*.npz Lectures_SignalProcessing/*.py -x "*tmp_files/"  
+
+rsync -av --chmod=755  -e "ssh -p 52222" /home/bercherj/JFB/Python/Lectures_SignalProcessing.zip bercherj@ssh.esiee.fr:public_html/Documents/
+rsync -av --chmod=755  -e "ssh -p 52222" /home/bercherj/JFB/Python/LabImages.zip bercherj@ssh.esiee.fr:public_html/Documents/
+rsync -av --chmod=755  -e "ssh -p 52222" /home/bercherj/JFB/Python/AdaptiveFiltering.zip bercherj@ssh.esiee.fr:public_html/Documents/
+
+cp toc.html index.html
+rsync -av --chmod=755  -e "ssh -p 52222" /home/bercherj/JFB/Python/Lectures_SignalProcessing/*.css  bercherj@ssh.esiee.fr:public_html/Lectures_SignalProcessing/
+rsync -av --chmod=755  -e "ssh -p 52222" /home/bercherj/JFB/Python/Lectures_SignalProcessing/*.html  bercherj@ssh.esiee.fr:public_html/Lectures_SignalProcessing/
+rsync -av --chmod=755  -e "ssh -p 52222" /home/bercherj/JFB/Python/Lectures_SignalProcessing/*.pdf  bercherj@ssh.esiee.fr:public_html/Lectures_SignalProcessing/
+
+cd $oldcwd
+
+

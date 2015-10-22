@@ -1,0 +1,117 @@
+
+print("... Configuring matplotlib formats")
+print("... Configuring matplotlib with inline figures")
+
+%config InlineBackend.figure_format = 'retina'
+#In new notebooks created for IPython 1.0+, I would recommend using %matplotlib inline, since it is more tidy 
+# and you have more control over which packages are imported and how. Commonly, scipy and numpy are imported separately with:
+# from: http://nbviewer.ipython.org/github/jrjohansson/scientific-python-lectures/blob/master/Lecture-4-Matplotlib.ipynb#Versions
+#%config InlineBackend.figure_format = 'svg' #this is depreceated in 2.x
+%config InlineBackend.figure_formats = {'retina','svg', 'jpeg'}
+
+print("... Importing numpy as np, scipy as sp, pyplot as plt, scipy.stats as stats")
+print("   ... scipy.signal as sig")
+import numpy as np
+import scipy as sp
+import matplotlib.pyplot as plt
+import scipy.stats as stats
+import scipy.signal as sig
+# Also import pylab for more easy interactive use (but less control)
+from pylab import *
+
+print("... Importing widgets, display, HTML, Image, Javascript")
+#For displaying widgets
+import ipywidgets as widgets
+from ipywidgets import interact, interactive, fixed
+from IPython.display import clear_output, display, HTML, Image, Javascript
+
+#Some specific imports for plotting
+
+%matplotlib inline
+
+### -------------
+print("... Some LaTeX definitions")
+
+LaTeXdefs="""
+$$\\require{color}
+\\require{cancel}
+\\def\\tf#1{{\\mathrm{FT}\\left\{ #1 \\right\\}}}
+\\def\\flecheTF{\\rightleftharpoons }
+\\def\\TFI#1#2#3{{\\displaystyle{\\int_{-\\infty}^{+\\infty} #1 ~e^{j2\\pi #2 #3} 
+~\\dr{#2}}}}
+\\def\\TF#1#2#3{{\\displaystyle{\\int_{-\\infty}^{+\\infty} #1 ~e^{-j2\\pi #3 #2} 
+~\\dr{#2}}}}
+\\def\\sha{ш}
+\\def\\dr#1{\\mathrm{d}#1}
+\\def\\egalpardef{\\mathop{=}\\limits^\\triangle}
+\\def\\sinc#1{{\\mathrm{sinc}\\left( #1 \\right)}}
+\\def\\rect{\\mathrm{rect}}
+\\definecolor{lightred}{rgb}{1,0.1,0}
+\\def\myblueeqbox#1{{\\fcolorbox{blue}{lightblue}{$\textcolor{blue}{ #1}$}}}
+\\def\\myeqbox#1#2{{\\fcolorbox{#1}{light#1}{$\textcolor{#1}{ #2}$}}}
+\\def\\eqbox#1#2#3#4{{\\fcolorbox{#1}{#2}{$\\textcolor{#3}{ #4}$}}}
+% border|background|text
+\\def\\eqboxa#1{{\\boxed{#1}}}
+\\def\\eqboxb#1{{\\eqbox{green}{white}{green}{#1}}}
+\\def\\eqboxc#1{{\\eqbox{blue}{white}{blue}{#1}}}
+\\def\\eqboxd#1{{\\eqbox{blue}{lightblue}{blue}{#1}}}
+\\def\\E#1{\\mathbb{E}\\left[#1\\right]}
+\\def\\ta#1{\\left<#1\\right>}
+\\def\\egalparerg{{\\mathop{=}\\limits_\\mathrm{erg}}}
+\\def\\expo#1{\\exp\\left(#1\\right)}
+\\def\\d#1{\\mathrm{d}#1}
+\\def\\wb{\\mathbf{w}} 
+\\def\\sb{\\mathbf{s}} 
+\\def\\xb{\\mathbf{x}}
+\\def\\Rb{\\mathbf{R}} 
+\\def\\rb{\mathbf{r}} 
+\\def\\mystar{{*}}
+\\def\\ub{\\mathbf{u}}
+\\def\\wbopt{\\mathop{\\mathbf{w}}\\limits^\\triangle}
+\\def\\deriv#1#2{\\frac{\\mathrm{d}#1}{\\mathrm{d}#2}}
+\\def\\Ub{\\mathbf{U}}
+\\def\\db{\\mathbf{d}}
+\\def\\eb{\\mathbf{e}}
+\\def\\vb{\\mathbf{v}}
+\\def\\Ib{\\mathbf{I}}
+\\def\\Vb{\\mathbf{V}}
+\\def\\Lambdab{\\mathbf{\\Lambda}}
+\\def\\Ab{\\mathbf{A}}
+\\def\\Bb{\\mathbf{B}}
+\\def\\Cb{\\mathbf{C}}
+\\def\\Db{\\mathbf{D}}
+\\def\\Kb{\\mathbf{K}}
+\\def\\sinc#1{\\mathrm{sinc\\left(#1\\right)}}
+$$
+"""
+
+display(HTML(LaTeXdefs))
+
+### ----------------------------------
+print("... Defining figures captions ")
+
+display(HTML(
+"""<style>
+.caption {
+font-weight: normal;
+text-align: left;
+width:60%; margin-left:10%; border:2px solid; padding-top:5px; padding-bottom:5px;
+background-color:white;border-color:#efd3d7;color:black;
+border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;border-radius:8px
+}
+</style>"""))
+
+def figcaption(text,label=""):
+    display(HTML("<div class=caption><b> Caption: </b> %s</div>"  % text.replace('\n','<br>')))
+
+### -------------------------------------------------
+# A stub function
+def js_addon():
+    pass	
+
+print("... Loading customized Javascript for interactive solutions (show/hide)")
+from interactive_sols import process_solution, unhide_next_cell, unhide_all_cells
+show_solution=process_solution
+#%run interactive_sols.ipy
+
+

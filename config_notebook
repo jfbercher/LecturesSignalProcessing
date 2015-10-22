@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# set proxies
+export http_proxy=cache.esiee.fr:3128
+export https_proxy=cache.esiee.fr:3128
+
+# clone the git repository
+cd ~
+git clone https://github.com/jfbercher/LecturesSignalProcessing.git
+cd ~/LecturesSignalProcessing
+
+# Install jupyter extensions
+jupyter nbextension install https://rawgit.com/jfbercher/latex_envs/master/latex_envs.zip  --user
+jupyter nbextension enable latex_envs/latex_envs  
+jupyter nbextension install https://rawgit.com/jfbercher/small_nbextensions/master/highlighter.zip  --user
+jupyter nbextension enable usability/highlighter/highlighter 
+jupyter nbextension install https://rawgit.com/jfbercher/small_nbextensions/master/interactive_sols.zip  --user
+jupyter nbextension enable usability/interactive_sols/interactive_sols 
+
+
+#chmod executable files
+cd ~/LecturesSignalProcessing
+chmod 755 local_repo_update
+ 
