@@ -1559,7 +1559,7 @@ $$
 <div class="output_subarea output_text output_error">
 <pre>
 <span class="ansired">---------------------------------------------------------------------------</span>
-<span class="ansired">KeyError</span>                                  Traceback (most recent call last)
+<span class="ansired">ImportError</span>                               Traceback (most recent call last)
 <span class="ansigreen">&lt;ipython-input-4-c72328a46101&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
 <span class="ansigreen">----&gt; 1</span><span class="ansiyellow"> </span>get_ipython<span class="ansiyellow">(</span><span class="ansiyellow">)</span><span class="ansiyellow">.</span>magic<span class="ansiyellow">(</span><span class="ansiblue">&apos;matplotlib tk&apos;</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
 <span class="ansigreen">      2</span> <span class="ansigreen">from</span> matplotlib<span class="ansiyellow">.</span>widgets <span class="ansigreen">import</span> Slider<span class="ansiyellow"></span>
@@ -1567,51 +1567,100 @@ $$
 <span class="ansigreen">      4</span> fig<span class="ansiyellow">,</span> ax <span class="ansiyellow">=</span> plt<span class="ansiyellow">.</span>subplots<span class="ansiyellow">(</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
 <span class="ansigreen">      5</span> fig<span class="ansiyellow">.</span>subplots_adjust<span class="ansiyellow">(</span>bottom<span class="ansiyellow">=</span><span class="ansicyan">0.2</span><span class="ansiyellow">,</span> left<span class="ansiyellow">=</span><span class="ansicyan">0.1</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
 
-<span class="ansigreen">/usr/local/lib/python3.4/dist-packages/IPython/core/interactiveshell.py</span> in <span class="ansicyan">magic</span><span class="ansiblue">(self, arg_s)</span>
+<span class="ansigreen">/usr/local/lib/python3.5/site-packages/IPython/core/interactiveshell.py</span> in <span class="ansicyan">magic</span><span class="ansiblue">(self, arg_s)</span>
 <span class="ansigreen">   2334</span>         magic_name<span class="ansiyellow">,</span> _<span class="ansiyellow">,</span> magic_arg_s <span class="ansiyellow">=</span> arg_s<span class="ansiyellow">.</span>partition<span class="ansiyellow">(</span><span class="ansiblue">&apos; &apos;</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
 <span class="ansigreen">   2335</span>         magic_name <span class="ansiyellow">=</span> magic_name<span class="ansiyellow">.</span>lstrip<span class="ansiyellow">(</span>prefilter<span class="ansiyellow">.</span>ESC_MAGIC<span class="ansiyellow">)</span><span class="ansiyellow"></span>
 <span class="ansigreen">-&gt; 2336</span><span class="ansiyellow">         </span><span class="ansigreen">return</span> self<span class="ansiyellow">.</span>run_line_magic<span class="ansiyellow">(</span>magic_name<span class="ansiyellow">,</span> magic_arg_s<span class="ansiyellow">)</span><span class="ansiyellow"></span>
 <span class="ansigreen">   2337</span> <span class="ansiyellow"></span>
 <span class="ansigreen">   2338</span>     <span class="ansired">#-------------------------------------------------------------------------</span><span class="ansiyellow"></span><span class="ansiyellow"></span>
 
-<span class="ansigreen">/usr/local/lib/python3.4/dist-packages/IPython/core/interactiveshell.py</span> in <span class="ansicyan">run_line_magic</span><span class="ansiblue">(self, magic_name, line)</span>
+<span class="ansigreen">/usr/local/lib/python3.5/site-packages/IPython/core/interactiveshell.py</span> in <span class="ansicyan">run_line_magic</span><span class="ansiblue">(self, magic_name, line)</span>
 <span class="ansigreen">   2255</span>                 kwargs<span class="ansiyellow">[</span><span class="ansiblue">&apos;local_ns&apos;</span><span class="ansiyellow">]</span> <span class="ansiyellow">=</span> sys<span class="ansiyellow">.</span>_getframe<span class="ansiyellow">(</span>stack_depth<span class="ansiyellow">)</span><span class="ansiyellow">.</span>f_locals<span class="ansiyellow"></span>
 <span class="ansigreen">   2256</span>             <span class="ansigreen">with</span> self<span class="ansiyellow">.</span>builtin_trap<span class="ansiyellow">:</span><span class="ansiyellow"></span>
 <span class="ansigreen">-&gt; 2257</span><span class="ansiyellow">                 </span>result <span class="ansiyellow">=</span> fn<span class="ansiyellow">(</span><span class="ansiyellow">*</span>args<span class="ansiyellow">,</span><span class="ansiyellow">**</span>kwargs<span class="ansiyellow">)</span><span class="ansiyellow"></span>
 <span class="ansigreen">   2258</span>             <span class="ansigreen">return</span> result<span class="ansiyellow"></span>
 <span class="ansigreen">   2259</span> <span class="ansiyellow"></span>
 
-<span class="ansigreen">/usr/local/lib/python3.4/dist-packages/IPython/core/magics/pylab.py</span> in <span class="ansicyan">matplotlib</span><span class="ansiblue">(self, line)</span>
+<span class="ansigreen">/usr/local/lib/python3.5/site-packages/IPython/core/magics/pylab.py</span> in <span class="ansicyan">matplotlib</span><span class="ansiblue">(self, line)</span>
 
-<span class="ansigreen">/usr/local/lib/python3.4/dist-packages/IPython/core/magic.py</span> in <span class="ansicyan">&lt;lambda&gt;</span><span class="ansiblue">(f, *a, **k)</span>
+<span class="ansigreen">/usr/local/lib/python3.5/site-packages/IPython/core/magic.py</span> in <span class="ansicyan">&lt;lambda&gt;</span><span class="ansiblue">(f, *a, **k)</span>
 <span class="ansigreen">    191</span>     <span class="ansired"># but it&apos;s overkill for just that one bit of state.</span><span class="ansiyellow"></span><span class="ansiyellow"></span>
 <span class="ansigreen">    192</span>     <span class="ansigreen">def</span> magic_deco<span class="ansiyellow">(</span>arg<span class="ansiyellow">)</span><span class="ansiyellow">:</span><span class="ansiyellow"></span>
 <span class="ansigreen">--&gt; 193</span><span class="ansiyellow">         </span>call <span class="ansiyellow">=</span> <span class="ansigreen">lambda</span> f<span class="ansiyellow">,</span> <span class="ansiyellow">*</span>a<span class="ansiyellow">,</span> <span class="ansiyellow">**</span>k<span class="ansiyellow">:</span> f<span class="ansiyellow">(</span><span class="ansiyellow">*</span>a<span class="ansiyellow">,</span> <span class="ansiyellow">**</span>k<span class="ansiyellow">)</span><span class="ansiyellow"></span>
 <span class="ansigreen">    194</span> <span class="ansiyellow"></span>
 <span class="ansigreen">    195</span>         <span class="ansigreen">if</span> callable<span class="ansiyellow">(</span>arg<span class="ansiyellow">)</span><span class="ansiyellow">:</span><span class="ansiyellow"></span>
 
-<span class="ansigreen">/usr/local/lib/python3.4/dist-packages/IPython/core/magics/pylab.py</span> in <span class="ansicyan">matplotlib</span><span class="ansiblue">(self, line)</span>
+<span class="ansigreen">/usr/local/lib/python3.5/site-packages/IPython/core/magics/pylab.py</span> in <span class="ansicyan">matplotlib</span><span class="ansiblue">(self, line)</span>
 <span class="ansigreen">     98</span>             print<span class="ansiyellow">(</span><span class="ansiblue">&quot;Available matplotlib backends: %s&quot;</span> <span class="ansiyellow">%</span> backends_list<span class="ansiyellow">)</span><span class="ansiyellow"></span>
 <span class="ansigreen">     99</span>         <span class="ansigreen">else</span><span class="ansiyellow">:</span><span class="ansiyellow"></span>
 <span class="ansigreen">--&gt; 100</span><span class="ansiyellow">             </span>gui<span class="ansiyellow">,</span> backend <span class="ansiyellow">=</span> self<span class="ansiyellow">.</span>shell<span class="ansiyellow">.</span>enable_matplotlib<span class="ansiyellow">(</span>args<span class="ansiyellow">.</span>gui<span class="ansiyellow">)</span><span class="ansiyellow"></span>
 <span class="ansigreen">    101</span>             self<span class="ansiyellow">.</span>_show_matplotlib_backend<span class="ansiyellow">(</span>args<span class="ansiyellow">.</span>gui<span class="ansiyellow">,</span> backend<span class="ansiyellow">)</span><span class="ansiyellow"></span>
 <span class="ansigreen">    102</span> <span class="ansiyellow"></span>
 
-<span class="ansigreen">/usr/local/lib/python3.4/dist-packages/IPython/core/interactiveshell.py</span> in <span class="ansicyan">enable_matplotlib</span><span class="ansiblue">(self, gui)</span>
-<span class="ansigreen">   3118</span>         &quot;&quot;&quot;
-<span class="ansigreen">   3119</span>         <span class="ansigreen">from</span> IPython<span class="ansiyellow">.</span>core <span class="ansigreen">import</span> pylabtools <span class="ansigreen">as</span> pt<span class="ansiyellow"></span>
-<span class="ansigreen">-&gt; 3120</span><span class="ansiyellow">         </span>gui<span class="ansiyellow">,</span> backend <span class="ansiyellow">=</span> pt<span class="ansiyellow">.</span>find_gui_and_backend<span class="ansiyellow">(</span>gui<span class="ansiyellow">,</span> self<span class="ansiyellow">.</span>pylab_gui_select<span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">   3121</span> <span class="ansiyellow"></span>
-<span class="ansigreen">   3122</span>         <span class="ansigreen">if</span> gui <span class="ansiyellow">!=</span> <span class="ansiblue">&apos;inline&apos;</span><span class="ansiyellow">:</span><span class="ansiyellow"></span>
+<span class="ansigreen">/usr/local/lib/python3.5/site-packages/IPython/core/interactiveshell.py</span> in <span class="ansicyan">enable_matplotlib</span><span class="ansiblue">(self, gui)</span>
+<span class="ansigreen">   3130</span>                 gui<span class="ansiyellow">,</span> backend <span class="ansiyellow">=</span> pt<span class="ansiyellow">.</span>find_gui_and_backend<span class="ansiyellow">(</span>self<span class="ansiyellow">.</span>pylab_gui_select<span class="ansiyellow">)</span><span class="ansiyellow"></span>
+<span class="ansigreen">   3131</span> <span class="ansiyellow"></span>
+<span class="ansigreen">-&gt; 3132</span><span class="ansiyellow">         </span>pt<span class="ansiyellow">.</span>activate_matplotlib<span class="ansiyellow">(</span>backend<span class="ansiyellow">)</span><span class="ansiyellow"></span>
+<span class="ansigreen">   3133</span>         pt<span class="ansiyellow">.</span>configure_inline_support<span class="ansiyellow">(</span>self<span class="ansiyellow">,</span> backend<span class="ansiyellow">)</span><span class="ansiyellow"></span>
+<span class="ansigreen">   3134</span> <span class="ansiyellow"></span>
 
-<span class="ansigreen">/usr/local/lib/python3.4/dist-packages/IPython/core/pylabtools.py</span> in <span class="ansicyan">find_gui_and_backend</span><span class="ansiblue">(gui, gui_select)</span>
-<span class="ansigreen">    241</span>     <span class="ansigreen">if</span> gui <span class="ansigreen">and</span> gui <span class="ansiyellow">!=</span> <span class="ansiblue">&apos;auto&apos;</span><span class="ansiyellow">:</span><span class="ansiyellow"></span>
-<span class="ansigreen">    242</span>         <span class="ansired"># select backend based on requested gui</span><span class="ansiyellow"></span><span class="ansiyellow"></span>
-<span class="ansigreen">--&gt; 243</span><span class="ansiyellow">         </span>backend <span class="ansiyellow">=</span> backends<span class="ansiyellow">[</span>gui<span class="ansiyellow">]</span><span class="ansiyellow"></span>
-<span class="ansigreen">    244</span>     <span class="ansigreen">else</span><span class="ansiyellow">:</span><span class="ansiyellow"></span>
-<span class="ansigreen">    245</span>         <span class="ansired"># We need to read the backend from the original data structure, *not*</span><span class="ansiyellow"></span><span class="ansiyellow"></span>
+<span class="ansigreen">/usr/local/lib/python3.5/site-packages/IPython/core/pylabtools.py</span> in <span class="ansicyan">activate_matplotlib</span><span class="ansiblue">(backend)</span>
+<span class="ansigreen">    273</span> <span class="ansiyellow"></span>
+<span class="ansigreen">    274</span>     <span class="ansigreen">import</span> matplotlib<span class="ansiyellow">.</span>pyplot<span class="ansiyellow"></span>
+<span class="ansigreen">--&gt; 275</span><span class="ansiyellow">     </span>matplotlib<span class="ansiyellow">.</span>pyplot<span class="ansiyellow">.</span>switch_backend<span class="ansiyellow">(</span>backend<span class="ansiyellow">)</span><span class="ansiyellow"></span>
+<span class="ansigreen">    276</span> <span class="ansiyellow"></span>
+<span class="ansigreen">    277</span>     <span class="ansired"># This must be imported last in the matplotlib series, after</span><span class="ansiyellow"></span><span class="ansiyellow"></span>
 
-<span class="ansired">KeyError</span>: &apos;t&apos;</pre>
+<span class="ansigreen">/usr/local/lib/python3.5/site-packages/matplotlib/pyplot.py</span> in <span class="ansicyan">switch_backend</span><span class="ansiblue">(newbackend)</span>
+<span class="ansigreen">    222</span>     matplotlib<span class="ansiyellow">.</span>use<span class="ansiyellow">(</span>newbackend<span class="ansiyellow">,</span> warn<span class="ansiyellow">=</span><span class="ansigreen">False</span><span class="ansiyellow">,</span> force<span class="ansiyellow">=</span><span class="ansigreen">True</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
+<span class="ansigreen">    223</span>     <span class="ansigreen">from</span> matplotlib<span class="ansiyellow">.</span>backends <span class="ansigreen">import</span> pylab_setup<span class="ansiyellow"></span>
+<span class="ansigreen">--&gt; 224</span><span class="ansiyellow">     </span>_backend_mod<span class="ansiyellow">,</span> new_figure_manager<span class="ansiyellow">,</span> draw_if_interactive<span class="ansiyellow">,</span> _show <span class="ansiyellow">=</span> pylab_setup<span class="ansiyellow">(</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
+<span class="ansigreen">    225</span> <span class="ansiyellow"></span>
+<span class="ansigreen">    226</span> <span class="ansiyellow"></span>
+
+<span class="ansigreen">/usr/local/lib/python3.5/site-packages/matplotlib/backends/__init__.py</span> in <span class="ansicyan">pylab_setup</span><span class="ansiblue">()</span>
+<span class="ansigreen">     30</span>     <span class="ansired"># imports. 0 means only perform absolute imports.</span><span class="ansiyellow"></span><span class="ansiyellow"></span>
+<span class="ansigreen">     31</span>     backend_mod = __import__(backend_name,
+<span class="ansigreen">---&gt; 32</span><span class="ansiyellow">                              globals(),locals(),[backend_name],0)
+</span><span class="ansigreen">     33</span> <span class="ansiyellow"></span>
+<span class="ansigreen">     34</span>     <span class="ansired"># Things we pull in from all backends</span><span class="ansiyellow"></span><span class="ansiyellow"></span>
+
+<span class="ansigreen">/usr/local/lib/python3.5/site-packages/matplotlib/backends/backend_tkagg.py</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">      4</span> <span class="ansiyellow"></span>
+<span class="ansigreen">      5</span> <span class="ansigreen">from</span> matplotlib<span class="ansiyellow">.</span>externals <span class="ansigreen">import</span> six<span class="ansiyellow"></span>
+<span class="ansigreen">----&gt; 6</span><span class="ansiyellow"> </span><span class="ansigreen">from</span> matplotlib<span class="ansiyellow">.</span>externals<span class="ansiyellow">.</span>six<span class="ansiyellow">.</span>moves <span class="ansigreen">import</span> tkinter <span class="ansigreen">as</span> Tk<span class="ansiyellow"></span>
+<span class="ansigreen">      7</span> <span class="ansigreen">from</span> matplotlib<span class="ansiyellow">.</span>externals<span class="ansiyellow">.</span>six<span class="ansiyellow">.</span>moves <span class="ansigreen">import</span> tkinter_filedialog <span class="ansigreen">as</span> FileDialog<span class="ansiyellow"></span>
+<span class="ansigreen">      8</span> <span class="ansiyellow"></span>
+
+<span class="ansigreen">/usr/local/lib/python3.5/site-packages/matplotlib/externals/six.py</span> in <span class="ansicyan">__get__</span><span class="ansiblue">(self, obj, tp)</span>
+<span class="ansigreen">     88</span> <span class="ansiyellow"></span>
+<span class="ansigreen">     89</span>     <span class="ansigreen">def</span> __get__<span class="ansiyellow">(</span>self<span class="ansiyellow">,</span> obj<span class="ansiyellow">,</span> tp<span class="ansiyellow">)</span><span class="ansiyellow">:</span><span class="ansiyellow"></span>
+<span class="ansigreen">---&gt; 90</span><span class="ansiyellow">         </span>result <span class="ansiyellow">=</span> self<span class="ansiyellow">.</span>_resolve<span class="ansiyellow">(</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
+<span class="ansigreen">     91</span>         setattr<span class="ansiyellow">(</span>obj<span class="ansiyellow">,</span> self<span class="ansiyellow">.</span>name<span class="ansiyellow">,</span> result<span class="ansiyellow">)</span> <span class="ansired"># Invokes __set__.</span><span class="ansiyellow"></span>
+<span class="ansigreen">     92</span>         <span class="ansigreen">try</span><span class="ansiyellow">:</span><span class="ansiyellow"></span>
+
+<span class="ansigreen">/usr/local/lib/python3.5/site-packages/matplotlib/externals/six.py</span> in <span class="ansicyan">_resolve</span><span class="ansiblue">(self)</span>
+<span class="ansigreen">    111</span> <span class="ansiyellow"></span>
+<span class="ansigreen">    112</span>     <span class="ansigreen">def</span> _resolve<span class="ansiyellow">(</span>self<span class="ansiyellow">)</span><span class="ansiyellow">:</span><span class="ansiyellow"></span>
+<span class="ansigreen">--&gt; 113</span><span class="ansiyellow">         </span><span class="ansigreen">return</span> _import_module<span class="ansiyellow">(</span>self<span class="ansiyellow">.</span>mod<span class="ansiyellow">)</span><span class="ansiyellow"></span>
+<span class="ansigreen">    114</span> <span class="ansiyellow"></span>
+<span class="ansigreen">    115</span>     <span class="ansigreen">def</span> __getattr__<span class="ansiyellow">(</span>self<span class="ansiyellow">,</span> attr<span class="ansiyellow">)</span><span class="ansiyellow">:</span><span class="ansiyellow"></span>
+
+<span class="ansigreen">/usr/local/lib/python3.5/site-packages/matplotlib/externals/six.py</span> in <span class="ansicyan">_import_module</span><span class="ansiblue">(name)</span>
+<span class="ansigreen">     78</span> <span class="ansigreen">def</span> _import_module<span class="ansiyellow">(</span>name<span class="ansiyellow">)</span><span class="ansiyellow">:</span><span class="ansiyellow"></span>
+<span class="ansigreen">     79</span>     <span class="ansiblue">&quot;&quot;&quot;Import module, returning the module after the last dot.&quot;&quot;&quot;</span><span class="ansiyellow"></span>
+<span class="ansigreen">---&gt; 80</span><span class="ansiyellow">     </span>__import__<span class="ansiyellow">(</span>name<span class="ansiyellow">)</span><span class="ansiyellow"></span>
+<span class="ansigreen">     81</span>     <span class="ansigreen">return</span> sys<span class="ansiyellow">.</span>modules<span class="ansiyellow">[</span>name<span class="ansiyellow">]</span><span class="ansiyellow"></span>
+<span class="ansigreen">     82</span> <span class="ansiyellow"></span>
+
+<span class="ansigreen">/usr/local/lib/python3.5/tkinter/__init__.py</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">     33</span> <span class="ansigreen">import</span> sys<span class="ansiyellow"></span>
+<span class="ansigreen">     34</span> <span class="ansiyellow"></span>
+<span class="ansigreen">---&gt; 35</span><span class="ansiyellow"> </span><span class="ansigreen">import</span> _tkinter <span class="ansired"># If this fails your Python may not be configured for Tk</span><span class="ansiyellow"></span>
+<span class="ansigreen">     36</span> TclError <span class="ansiyellow">=</span> _tkinter<span class="ansiyellow">.</span>TclError<span class="ansiyellow"></span>
+<span class="ansigreen">     37</span> <span class="ansigreen">from</span> tkinter<span class="ansiyellow">.</span>constants <span class="ansigreen">import</span> <span class="ansiyellow">*</span><span class="ansiyellow"></span>
+
+<span class="ansired">ImportError</span>: No module named &apos;_tkinter&apos;</pre>
 </div>
 </div>
 

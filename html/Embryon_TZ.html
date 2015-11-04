@@ -198,11 +198,18 @@ pre {
 
 
 <div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>3        3             3     
-─ + ─────────── - ───────────
-4   4⋅(4⋅z + 1)   2⋅(2⋅z + 1)
-</pre>
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansired">---------------------------------------------------------------------------</span>
+<span class="ansired">ImportError</span>                               Traceback (most recent call last)
+<span class="ansigreen">&lt;ipython-input-1-65022253bedf&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">----&gt; 1</span><span class="ansiyellow"> </span><span class="ansigreen">import</span> sympy<span class="ansiyellow"></span>
+<span class="ansigreen">      2</span> <span class="ansigreen">from</span> sympy <span class="ansigreen">import</span> <span class="ansiyellow">*</span><span class="ansiyellow"></span>
+<span class="ansigreen">      3</span> sympy<span class="ansiyellow">.</span>init_printing<span class="ansiyellow">(</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
+<span class="ansigreen">      4</span> <span class="ansiyellow"></span>
+<span class="ansigreen">      5</span> z<span class="ansiyellow">=</span>Symbol<span class="ansiyellow">(</span><span class="ansiblue">&apos;z&apos;</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
+
+<span class="ansired">ImportError</span>: No module named &apos;sympy&apos;</pre>
 </div>
 </div>
 
@@ -231,13 +238,20 @@ pre {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[2]:</div>
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansired">---------------------------------------------------------------------------</span>
+<span class="ansired">ImportError</span>                               Traceback (most recent call last)
+<span class="ansigreen">&lt;ipython-input-2-28e7409278cf&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">      1</span> <span class="ansired">#z,x=sympy.symbols(&apos;zx&apos;)</span><span class="ansiyellow"></span><span class="ansiyellow"></span>
+<span class="ansigreen">----&gt; 2</span><span class="ansiyellow"> </span><span class="ansigreen">from</span> sympy<span class="ansiyellow">.</span>abc <span class="ansigreen">import</span> n<span class="ansiyellow">,</span> x<span class="ansiyellow">,</span> a<span class="ansiyellow">,</span> z<span class="ansiyellow">,</span> s<span class="ansiyellow">,</span> f<span class="ansiyellow">,</span> t<span class="ansiyellow"></span>
+<span class="ansigreen">      3</span> <span class="ansigreen">from</span> sympy <span class="ansigreen">import</span> summation<span class="ansiyellow">,</span> oo<span class="ansiyellow">,</span> symbols<span class="ansiyellow">,</span> log<span class="ansiyellow">,</span> exp<span class="ansiyellow">,</span> cos<span class="ansiyellow"></span>
+<span class="ansigreen">      4</span> <span class="ansigreen">def</span> h<span class="ansiyellow">(</span>n<span class="ansiyellow">)</span><span class="ansiyellow">:</span> <span class="ansigreen">return</span> a<span class="ansiyellow">**</span>n<span class="ansiyellow"></span>
+<span class="ansigreen">      5</span> e<span class="ansiyellow">=</span>sympy<span class="ansiyellow">.</span>summation<span class="ansiyellow">(</span>h<span class="ansiyellow">(</span>n<span class="ansiyellow">)</span><span class="ansiyellow">*</span>z<span class="ansiyellow">**</span><span class="ansiyellow">(</span><span class="ansiyellow">-</span>n<span class="ansiyellow">)</span><span class="ansiyellow">,</span> <span class="ansiyellow">(</span>n<span class="ansiyellow">,</span> <span class="ansicyan">0</span><span class="ansiyellow">,</span> oo<span class="ansiyellow">)</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
 
-
-<div class="output_text output_subarea output_execute_result">
-<pre>Piecewise((1/(-a/z + 1), Abs(a/z) &lt; 1), (Sum(a**n*z**(-n), (n, 0, oo)), True))</pre>
+<span class="ansired">ImportError</span>: No module named &apos;sympy&apos;</pre>
 </div>
-
 </div>
 
 </div>
@@ -269,12 +283,12 @@ pre {
 <span class="ansired">---------------------------------------------------------------------------</span>
 <span class="ansired">NameError</span>                                 Traceback (most recent call last)
 <span class="ansigreen">&lt;ipython-input-3-c9d838493cce&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
-<span class="ansigreen">      1</span> <span class="ansiyellow">(</span>a<span class="ansiyellow">,</span>b<span class="ansiyellow">,</span>c<span class="ansiyellow">,</span>d<span class="ansiyellow">)</span><span class="ansiyellow">=</span>symbols<span class="ansiyellow">(</span><span class="ansiblue">&apos;a b c d&apos;</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">----&gt; 2</span><span class="ansiyellow"> </span>F1 <span class="ansiyellow">=</span> <span class="ansiyellow">(</span>y<span class="ansiyellow">)</span><span class="ansiyellow">/</span><span class="ansiyellow">(</span><span class="ansiyellow">(</span>a<span class="ansiyellow">*</span>x<span class="ansiyellow">-</span><span class="ansicyan">1</span><span class="ansiyellow">)</span><span class="ansiyellow">*</span><span class="ansiyellow">(</span>b<span class="ansiyellow">*</span>x<span class="ansiyellow">-</span><span class="ansicyan">1</span><span class="ansiyellow">)</span><span class="ansiyellow">*</span><span class="ansiyellow">(</span>c<span class="ansiyellow">*</span>x<span class="ansiyellow">-</span><span class="ansicyan">1</span><span class="ansiyellow">)</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
+<span class="ansigreen">----&gt; 1</span><span class="ansiyellow"> </span><span class="ansiyellow">(</span>a<span class="ansiyellow">,</span>b<span class="ansiyellow">,</span>c<span class="ansiyellow">,</span>d<span class="ansiyellow">)</span><span class="ansiyellow">=</span>symbols<span class="ansiyellow">(</span><span class="ansiblue">&apos;a b c d&apos;</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
+<span class="ansigreen">      2</span> F1 <span class="ansiyellow">=</span> <span class="ansiyellow">(</span>y<span class="ansiyellow">)</span><span class="ansiyellow">/</span><span class="ansiyellow">(</span><span class="ansiyellow">(</span>a<span class="ansiyellow">*</span>x<span class="ansiyellow">-</span><span class="ansicyan">1</span><span class="ansiyellow">)</span><span class="ansiyellow">*</span><span class="ansiyellow">(</span>b<span class="ansiyellow">*</span>x<span class="ansiyellow">-</span><span class="ansicyan">1</span><span class="ansiyellow">)</span><span class="ansiyellow">*</span><span class="ansiyellow">(</span>c<span class="ansiyellow">*</span>x<span class="ansiyellow">-</span><span class="ansicyan">1</span><span class="ansiyellow">)</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
 <span class="ansigreen">      3</span> out<span class="ansiyellow">=</span>apart<span class="ansiyellow">(</span>F1<span class="ansiyellow">,</span>x<span class="ansiyellow">,</span>full<span class="ansiyellow">=</span><span class="ansigreen">True</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
 <span class="ansigreen">      4</span> out<span class="ansiyellow"></span>
 
-<span class="ansired">NameError</span>: name &apos;y&apos; is not defined</pre>
+<span class="ansired">NameError</span>: name &apos;symbols&apos; is not defined</pre>
 </div>
 </div>
 
@@ -325,13 +339,17 @@ pre {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansired">---------------------------------------------------------------------------</span>
+<span class="ansired">NameError</span>                                 Traceback (most recent call last)
+<span class="ansigreen">&lt;ipython-input-4-18ba20990c63&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">----&gt; 1</span><span class="ansiyellow"> </span>A<span class="ansiyellow">,</span> B<span class="ansiyellow">=</span>symbols<span class="ansiyellow">(</span><span class="ansiblue">&apos;A B&apos;</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
+<span class="ansigreen">      2</span> solve<span class="ansiyellow">(</span><span class="ansiyellow">(</span><span class="ansicyan">6</span><span class="ansiyellow">*</span>z<span class="ansiyellow">**</span><span class="ansicyan">2</span><span class="ansiyellow">)</span><span class="ansiyellow">/</span><span class="ansiyellow">(</span><span class="ansiyellow">(</span><span class="ansicyan">4</span><span class="ansiyellow">*</span>z<span class="ansiyellow">+</span><span class="ansicyan">1</span><span class="ansiyellow">)</span><span class="ansiyellow">*</span><span class="ansiyellow">(</span><span class="ansicyan">2</span><span class="ansiyellow">*</span>z<span class="ansiyellow">+</span><span class="ansicyan">1</span><span class="ansiyellow">)</span><span class="ansiyellow">)</span><span class="ansiyellow">-</span> A<span class="ansiyellow">/</span><span class="ansiyellow">(</span><span class="ansicyan">4</span><span class="ansiyellow">*</span>z<span class="ansiyellow">+</span><span class="ansicyan">1</span><span class="ansiyellow">)</span> <span class="ansiyellow">+</span>B<span class="ansiyellow">/</span><span class="ansiyellow">(</span><span class="ansicyan">2</span><span class="ansiyellow">*</span>z<span class="ansiyellow">+</span><span class="ansicyan">1</span><span class="ansiyellow">)</span><span class="ansiyellow">,</span><span class="ansiyellow">(</span>B<span class="ansiyellow">)</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
 
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[(2*A*z + A - 6*z**2)/(4*z + 1)]</pre>
+<span class="ansired">NameError</span>: name &apos;symbols&apos; is not defined</pre>
 </div>
-
 </div>
 
 </div>
@@ -363,12 +381,12 @@ pre {
 <span class="ansired">---------------------------------------------------------------------------</span>
 <span class="ansired">NameError</span>                                 Traceback (most recent call last)
 <span class="ansigreen">&lt;ipython-input-5-6c3368cd5fdf&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
-<span class="ansigreen">      1</span> <span class="ansiyellow">(</span>a<span class="ansiyellow">,</span>b<span class="ansiyellow">)</span><span class="ansiyellow">=</span>symbols<span class="ansiyellow">(</span><span class="ansiblue">&apos;a b&apos;</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">----&gt; 2</span><span class="ansiyellow"> </span>F1 <span class="ansiyellow">=</span> <span class="ansiyellow">(</span>y<span class="ansiyellow">)</span><span class="ansiyellow">/</span><span class="ansiyellow">(</span><span class="ansiyellow">(</span>a<span class="ansiyellow">*</span>x<span class="ansiyellow">-</span><span class="ansicyan">1</span><span class="ansiyellow">)</span><span class="ansiyellow">*</span><span class="ansiyellow">(</span>b<span class="ansiyellow">*</span>x<span class="ansiyellow">-</span><span class="ansicyan">1</span><span class="ansiyellow">)</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
+<span class="ansigreen">----&gt; 1</span><span class="ansiyellow"> </span><span class="ansiyellow">(</span>a<span class="ansiyellow">,</span>b<span class="ansiyellow">)</span><span class="ansiyellow">=</span>symbols<span class="ansiyellow">(</span><span class="ansiblue">&apos;a b&apos;</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
+<span class="ansigreen">      2</span> F1 <span class="ansiyellow">=</span> <span class="ansiyellow">(</span>y<span class="ansiyellow">)</span><span class="ansiyellow">/</span><span class="ansiyellow">(</span><span class="ansiyellow">(</span>a<span class="ansiyellow">*</span>x<span class="ansiyellow">-</span><span class="ansicyan">1</span><span class="ansiyellow">)</span><span class="ansiyellow">*</span><span class="ansiyellow">(</span>b<span class="ansiyellow">*</span>x<span class="ansiyellow">-</span><span class="ansicyan">1</span><span class="ansiyellow">)</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
 <span class="ansigreen">      3</span> out<span class="ansiyellow">=</span>apart<span class="ansiyellow">(</span>F1<span class="ansiyellow">,</span>x<span class="ansiyellow">,</span>full<span class="ansiyellow">=</span><span class="ansigreen">True</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
 <span class="ansigreen">      4</span> out<span class="ansiyellow"></span>
 
-<span class="ansired">NameError</span>: name &apos;y&apos; is not defined</pre>
+<span class="ansired">NameError</span>: name &apos;symbols&apos; is not defined</pre>
 </div>
 </div>
 
@@ -401,12 +419,12 @@ pre {
 <span class="ansired">---------------------------------------------------------------------------</span>
 <span class="ansired">NameError</span>                                 Traceback (most recent call last)
 <span class="ansigreen">&lt;ipython-input-6-5f59c0cb096b&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
-<span class="ansigreen">      1</span> <span class="ansiyellow">(</span>a<span class="ansiyellow">,</span>b<span class="ansiyellow">)</span><span class="ansiyellow">=</span>symbols<span class="ansiyellow">(</span><span class="ansiblue">&apos;a b&apos;</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">----&gt; 2</span><span class="ansiyellow"> </span>F1 <span class="ansiyellow">=</span> <span class="ansiyellow">(</span>y<span class="ansiyellow">)</span><span class="ansiyellow">/</span><span class="ansiyellow">(</span><span class="ansiyellow">(</span><span class="ansicyan">7</span><span class="ansiyellow">*</span>x<span class="ansiyellow">-</span><span class="ansicyan">1</span><span class="ansiyellow">)</span><span class="ansiyellow">*</span><span class="ansiyellow">(</span><span class="ansicyan">4</span><span class="ansiyellow">*</span>x<span class="ansiyellow">-</span><span class="ansicyan">1</span><span class="ansiyellow">)</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
+<span class="ansigreen">----&gt; 1</span><span class="ansiyellow"> </span><span class="ansiyellow">(</span>a<span class="ansiyellow">,</span>b<span class="ansiyellow">)</span><span class="ansiyellow">=</span>symbols<span class="ansiyellow">(</span><span class="ansiblue">&apos;a b&apos;</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
+<span class="ansigreen">      2</span> F1 <span class="ansiyellow">=</span> <span class="ansiyellow">(</span>y<span class="ansiyellow">)</span><span class="ansiyellow">/</span><span class="ansiyellow">(</span><span class="ansiyellow">(</span><span class="ansicyan">7</span><span class="ansiyellow">*</span>x<span class="ansiyellow">-</span><span class="ansicyan">1</span><span class="ansiyellow">)</span><span class="ansiyellow">*</span><span class="ansiyellow">(</span><span class="ansicyan">4</span><span class="ansiyellow">*</span>x<span class="ansiyellow">-</span><span class="ansicyan">1</span><span class="ansiyellow">)</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
 <span class="ansigreen">      3</span> out<span class="ansiyellow">=</span>apart<span class="ansiyellow">(</span>F1<span class="ansiyellow">,</span>x<span class="ansiyellow">,</span>full<span class="ansiyellow">=</span><span class="ansigreen">True</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
 <span class="ansigreen">      4</span> out<span class="ansiyellow"></span>
 
-<span class="ansired">NameError</span>: name &apos;y&apos; is not defined</pre>
+<span class="ansired">NameError</span>: name &apos;symbols&apos; is not defined</pre>
 </div>
 </div>
 
@@ -431,13 +449,17 @@ pre {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansired">---------------------------------------------------------------------------</span>
+<span class="ansired">NameError</span>                                 Traceback (most recent call last)
+<span class="ansigreen">&lt;ipython-input-7-9c3ed2ea5310&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">----&gt; 1</span><span class="ansiyellow"> </span>x<span class="ansiyellow">,</span> y<span class="ansiyellow">=</span>symbols<span class="ansiyellow">(</span><span class="ansiblue">&apos;x y&apos;</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
+<span class="ansigreen">      2</span> apart<span class="ansiyellow">(</span>y<span class="ansiyellow">*</span>x<span class="ansiyellow">**</span><span class="ansicyan">1</span><span class="ansiyellow">/</span><span class="ansiyellow">(</span><span class="ansiyellow">(</span><span class="ansiyellow">-</span><span class="ansicyan">4</span><span class="ansiyellow">*</span>x <span class="ansiyellow">+</span> <span class="ansicyan">7</span><span class="ansiyellow">)</span><span class="ansiyellow">*</span><span class="ansiyellow">(</span><span class="ansicyan">3</span><span class="ansiyellow">*</span>x <span class="ansiyellow">-</span> <span class="ansicyan">1</span><span class="ansiyellow">)</span><span class="ansiyellow">)</span><span class="ansiyellow">,</span> x<span class="ansiyellow">)</span><span class="ansiyellow"></span>
 
-
-<div class="output_text output_subarea output_execute_result">
-<pre>-7*y/(17*(4*x - 7)) + y/(17*(3*x - 1))</pre>
+<span class="ansired">NameError</span>: name &apos;symbols&apos; is not defined</pre>
 </div>
-
 </div>
 
 </div>
@@ -468,7 +490,7 @@ pre {
 <span class="ansigreen">&lt;ipython-input-8-fb0c6691d0b5&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
 <span class="ansigreen">----&gt; 1</span><span class="ansiyellow"> </span>factor<span class="ansiyellow">(</span>out<span class="ansiyellow">)</span><span class="ansiyellow"></span>
 
-<span class="ansired">NameError</span>: name &apos;out&apos; is not defined</pre>
+<span class="ansired">NameError</span>: name &apos;factor&apos; is not defined</pre>
 </div>
 </div>
 
@@ -500,7 +522,7 @@ pre {
 <span class="ansigreen">&lt;ipython-input-9-20538ca35cb0&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
 <span class="ansigreen">----&gt; 1</span><span class="ansiyellow"> </span>together<span class="ansiyellow">(</span>aa<span class="ansiyellow">)</span><span class="ansiyellow"></span>
 
-<span class="ansired">NameError</span>: name &apos;aa&apos; is not defined</pre>
+<span class="ansired">NameError</span>: name &apos;together&apos; is not defined</pre>
 </div>
 </div>
 
