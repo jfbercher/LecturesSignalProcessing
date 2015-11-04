@@ -1,0 +1,25 @@
+\BOOKMARK [0][-]{chapter.1}{1\040A\040basic\040introduction\040to\040signals\040and\040systems}{}% 1
+\BOOKMARK [1][-]{section.1.1}{1.1\040Effects\040of\040delays\040and\040scaling\040on\040signals}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{1.2\040A\040basic\040introduction\040to\040filtering}{chapter.1}% 3
+\BOOKMARK [2][-]{subsection.1.2.1}{1.2.1\040Transformations\040of\040signals\040-\040Examples\040of\040difference\040equations\040}{section.1.2}% 4
+\BOOKMARK [2][-]{subsection.1.2.2}{1.2.2\040Filters\040}{section.1.2}% 5
+\BOOKMARK [0][-]{chapter.2}{2\040Introduction\040to\040the\040Fourier\040representation}{}% 6
+\BOOKMARK [1][-]{section.2.1}{2.1\040Simple\040examples\040}{chapter.2}% 7
+\BOOKMARK [2][-]{subsection.2.1.1}{2.1.1\040Decomposition\040on\040basis\040-\040scalar\040producs\040}{section.2.1}% 8
+\BOOKMARK [1][-]{section.2.2}{2.2 Decomposition of periodic functions – Fourier series }{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.3}{2.3\040Complex\040Fourier\040series}{chapter.2}% 10
+\BOOKMARK [2][-]{subsection.2.3.1}{2.3.1\040Introduction}{section.2.3}% 11
+\BOOKMARK [2][-]{subsection.2.3.2}{2.3.2\040Computer\040experiment\040}{section.2.3}% 12
+\BOOKMARK [0][-]{chapter.3}{3\040From\040Fourier\040Series\040to\040Fourier\040transforms\040}{}% 13
+\BOOKMARK [1][-]{section.3.1}{3.1\040Introduction\040and\040definitions}{chapter.3}% 14
+\BOOKMARK [1][-]{section.3.2}{3.2\040Examples}{chapter.3}% 15
+\BOOKMARK [2][-]{subsection.3.2.1}{3.2.1\040The\040Fourier\040transform\040of\040a\040rectangular\040window}{section.3.2}% 16
+\BOOKMARK [2][-]{subsection.3.2.2}{3.2.2\040Fourier\040transform\040of\040a\040sine\040wave}{section.3.2}% 17
+\BOOKMARK [1][-]{section.3.3}{3.3\040Symmetries\040of\040the\040Fourier\040transform.}{chapter.3}% 18
+\BOOKMARK [1][-]{section.3.4}{3.4\040Table\040of\040Fourier\040transform\040properties}{chapter.3}% 19
+\BOOKMARK [0][-]{chapter.4}{4\040Filters\040and\040convolution}{}% 20
+\BOOKMARK [1][-]{section.4.1}{4.1\040Representation\040formula}{chapter.4}% 21
+\BOOKMARK [1][-]{section.4.2}{4.2\040The\040convolution\040operation}{chapter.4}% 22
+\BOOKMARK [2][-]{subsection.4.2.1}{4.2.1\040Definition}{section.4.2}% 23
+\BOOKMARK [2][-]{subsection.4.2.2}{4.2.2\040Illustration}{section.4.2}% 24
+\BOOKMARK [2][-]{subsection.4.2.3}{4.2.3\040Exercises}{section.4.2}% 25

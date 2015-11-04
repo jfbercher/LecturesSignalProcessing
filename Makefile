@@ -1,9 +1,15 @@
-IPYNB= $(wildcard *.ipynb)
-#this is to get the list of basenames dependencies in a subdir  
-IPYNBsub= $(shell ls -1 ipynb/*.ipynb |xargs -n1 basename)
+SHELL := /bin/bash
 
+#--> original source file in main directory
+#IPYNB= $(wildcard *.ipynb)
+#this is to get the list of basenames dependencies in a subdir  
+IPYNB= $(notdir $(wildcard src/*.ipynb)) #$(shell ls -1 src/*.ipynb |xargs -n1 basename)
+
+#
 HTML= $(IPYNB:.ipynb=.html)
 SUBDIR_HTML = $(foreach I,$(HTML),html/$I)
+#alternatively:
+#SUBDIR_HTML = $(addprefix html/,$(HTML))
 TEX= $(IPYNB:.ipynb=.tex)
 SUBDIR_TEX = $(foreach I,$(TEX),tex/$I)
 SUBDIR_exec = $(foreach I,$(IPYNB),exec/$I)
@@ -30,7 +36,7 @@ html/%.html: exec/%.ipynb
 	./conversion/conv_ipynb_to_html $^	
 	mv exec/$*.html html/
 
-tex: $(SUBDIR_TEX)
+tex: exec $(SUBDIR_TEX)
 
 #to convert ipynb in current directory to html in sub html/
 #html/%.html: %.ipynb
@@ -39,12 +45,15 @@ tex: $(SUBDIR_TEX)
 #	./conversion/conv_ipynb_to_html $^
 #	mv $*.html html/
 
-# Convert notebooks in an executable version
-exec/%.ipynb: %.ipynb
-	echo "Executing jupyter nbconvert exec $^"
-	jupyter nbconvert --execute --allow-errors --to notebook $^ --output exec/$^
+altsrc:
+	rsync -a src/ exec/ --exclude=*.ipynb
 
-exec: $(SUBDIR_exec)
+# Convert notebooks in src into an executable version in subdir exec
+exec/%.ipynb: src/%.ipynb
+	echo "Executing jupyter nbconvert exec $^"
+	jupyter nbconvert --execute --allow-errors --to notebook $^ --output exec/$(notdir $^)
+
+exec: altsrc $(SUBDIR_exec)
 
 #to convert ipynb in ipynb directory to html in sub html/
 html/%.html: ipynb/%.ipynb
@@ -52,25 +61,36 @@ html/%.html: ipynb/%.ipynb
 	jupyter nbconvert --quiet --to html $^
 	mv $*.html html/
 
-tex/%.tex: %.ipynb
+tex/%.tex: exec/%.ipynb
 	echo "Executing jupyter nbconvert --to latex $^"
 	cp $^ tex/
 	cd tex/ && \
-	#jupyter nbconvert --quiet --to latex $^ && \
-	#mv $*.tex tex/ && \
-    	$(here)/conversion/ipynb_thms_to_latex $^ &&\
+	echo "Executing jupyter $(here)/conversion/ipynb_thms_to_latex $(notdir $^)" && \
+	$(here)/conversion/ipynb_thms_to_latex $(notdir $^)  #&&\
 	cd ..
-	rm tex/$^
+	rm tex/$(notdir $^)
 
 pdf: tex
 	cd tex && \
-	xelatex -interaction=nonstopmode Poly.tex &> /dev/null && \
-	xelatex -interaction=nonstopmode Poly.tex &> /dev/null 
+	xelatex -interaction=nonstopmode Poly.tex &> /dev/null | cat  && \
+	xelatex -interaction=nonstopmode Poly.tex &> /dev/null | cat
+
+zip: html 
+	rm -f LecturesSignalProcessing.zip
+	zip -9 -r LecturesSignalProcessing src/
+	zip -9 -r LecturesSignalProcessing html/
+	zip -9 -r LecturesSignalProcessing tex/*.pdf
+	rsync -av --chmod=755  -e "ssh -p 52222" $(here)/LecturesSignalProcessing.zip  bercherj@ssh.esiee.fr:public_html/
 
 all: tex html pdf
-	cp *.css html/
-	cp *.png html/
+	cp *.css html/ 2>/dev/null | cat && \
+	cp *.png html/ 2>/dev/null | cat 
 	
+git: all
+	git add .
+	git commit -m "update `date +'%y.%m.%d %H:%M:%S'`"
+	git push 
+
 sync: all
 	rsync -av --chmod=755  -e "ssh -p 52222" $(here)/html/*.css  bercherj@ssh.esiee.fr:public_html/IT3007
 	rsync -av --chmod=755  -e "ssh -p 52222" $(here)/html/*.html  bercherj@ssh.esiee.fr:public_html/IT3007
@@ -78,5 +98,8 @@ sync: all
 	rsync -av --chmod=755  -e "ssh -p 52222" $(here)/tex/*.pdf  bercherj@ssh.esiee.fr:public_html/IT3007
 	rsync -av --chmod=755  -e "ssh -p 52222" $(here)/*.png  bercherj@ssh.esiee.fr:public_html/IT3007
 	rsync -av --chmod=755  -e "ssh -p 52222" $(here)/*.zip  bercherj@ssh.esiee.fr:public_html/IT3007
+
+
+
     rsync -av --chmod=755  -e "ssh -p 52222" $(here)/install*  bercherj@ssh.esiee.fr:public_html/IT3007
 

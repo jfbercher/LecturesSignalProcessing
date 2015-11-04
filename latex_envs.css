@@ -41,7 +41,7 @@ LaTeX things
         margin-left: 0px;
 	margin-right: 10px;	
 	margin-top: 0px;
-        margin-bottom: 15px;
+        margin-bottom: 0px;
         background-color: #CCFFCC;
         display: block;
     }
@@ -82,7 +82,7 @@ LaTeX things
         margin-right: 10px;
 	margin-left: 0px;
 	margin-top: 0px;	
-        margin-bottom: 15px;
+        margin-bottom: 0px;
         font-style: italic;
         color:black;
         background-color: beige;
