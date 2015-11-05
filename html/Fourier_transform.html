@@ -434,7 +434,7 @@ $$<ul>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.text.Text at 0x7fd1932fabe0&gt;</pre>
+<pre>&lt;matplotlib.text.Text at 0x7f3fd0e29198&gt;</pre>
 </div>
 
 </div>
@@ -1158,7 +1158,7 @@ The Fourier transform of a discrete signal is periodic with period one.
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;matplotlib.lines.Line2D at 0x7fd19330bc18&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x7f3fd0e5bef0&gt;]</pre>
 </div>
 
 </div>
@@ -5712,7 +5712,7 @@ height=255
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">matplotlib</span> tk
+<div class=" highlight hl-ipython3"><pre><span class="o">%</span><span class="k">matplotlib</span> 
 <span class="kn">from</span> <span class="nn">matplotlib.widgets</span> <span class="k">import</span> <span class="n">Slider</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
@@ -5749,112 +5749,322 @@ height=255
 
 
 <div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansired">---------------------------------------------------------------------------</span>
-<span class="ansired">ImportError</span>                               Traceback (most recent call last)
-<span class="ansigreen">&lt;ipython-input-13-b770c60756a3&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
-<span class="ansigreen">----&gt; 1</span><span class="ansiyellow"> </span>get_ipython<span class="ansiyellow">(</span><span class="ansiyellow">)</span><span class="ansiyellow">.</span>magic<span class="ansiyellow">(</span><span class="ansiblue">&apos;matplotlib tk&apos;</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">      2</span> <span class="ansigreen">from</span> matplotlib<span class="ansiyellow">.</span>widgets <span class="ansigreen">import</span> Slider<span class="ansiyellow"></span>
-<span class="ansigreen">      3</span> <span class="ansiyellow"></span>
-<span class="ansigreen">      4</span> fig<span class="ansiyellow">,</span> ax <span class="ansiyellow">=</span> plt<span class="ansiyellow">.</span>subplots<span class="ansiyellow">(</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">      5</span> fig<span class="ansiyellow">.</span>subplots_adjust<span class="ansiyellow">(</span>bottom<span class="ansiyellow">=</span><span class="ansicyan">0.2</span><span class="ansiyellow">,</span> left<span class="ansiyellow">=</span><span class="ansicyan">0.1</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
-
-<span class="ansigreen">/usr/local/lib/python3.5/site-packages/IPython/core/interactiveshell.py</span> in <span class="ansicyan">magic</span><span class="ansiblue">(self, arg_s)</span>
-<span class="ansigreen">   2334</span>         magic_name<span class="ansiyellow">,</span> _<span class="ansiyellow">,</span> magic_arg_s <span class="ansiyellow">=</span> arg_s<span class="ansiyellow">.</span>partition<span class="ansiyellow">(</span><span class="ansiblue">&apos; &apos;</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">   2335</span>         magic_name <span class="ansiyellow">=</span> magic_name<span class="ansiyellow">.</span>lstrip<span class="ansiyellow">(</span>prefilter<span class="ansiyellow">.</span>ESC_MAGIC<span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">-&gt; 2336</span><span class="ansiyellow">         </span><span class="ansigreen">return</span> self<span class="ansiyellow">.</span>run_line_magic<span class="ansiyellow">(</span>magic_name<span class="ansiyellow">,</span> magic_arg_s<span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">   2337</span> <span class="ansiyellow"></span>
-<span class="ansigreen">   2338</span>     <span class="ansired">#-------------------------------------------------------------------------</span><span class="ansiyellow"></span><span class="ansiyellow"></span>
-
-<span class="ansigreen">/usr/local/lib/python3.5/site-packages/IPython/core/interactiveshell.py</span> in <span class="ansicyan">run_line_magic</span><span class="ansiblue">(self, magic_name, line)</span>
-<span class="ansigreen">   2255</span>                 kwargs<span class="ansiyellow">[</span><span class="ansiblue">&apos;local_ns&apos;</span><span class="ansiyellow">]</span> <span class="ansiyellow">=</span> sys<span class="ansiyellow">.</span>_getframe<span class="ansiyellow">(</span>stack_depth<span class="ansiyellow">)</span><span class="ansiyellow">.</span>f_locals<span class="ansiyellow"></span>
-<span class="ansigreen">   2256</span>             <span class="ansigreen">with</span> self<span class="ansiyellow">.</span>builtin_trap<span class="ansiyellow">:</span><span class="ansiyellow"></span>
-<span class="ansigreen">-&gt; 2257</span><span class="ansiyellow">                 </span>result <span class="ansiyellow">=</span> fn<span class="ansiyellow">(</span><span class="ansiyellow">*</span>args<span class="ansiyellow">,</span><span class="ansiyellow">**</span>kwargs<span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">   2258</span>             <span class="ansigreen">return</span> result<span class="ansiyellow"></span>
-<span class="ansigreen">   2259</span> <span class="ansiyellow"></span>
-
-<span class="ansigreen">/usr/local/lib/python3.5/site-packages/IPython/core/magics/pylab.py</span> in <span class="ansicyan">matplotlib</span><span class="ansiblue">(self, line)</span>
-
-<span class="ansigreen">/usr/local/lib/python3.5/site-packages/IPython/core/magic.py</span> in <span class="ansicyan">&lt;lambda&gt;</span><span class="ansiblue">(f, *a, **k)</span>
-<span class="ansigreen">    191</span>     <span class="ansired"># but it&apos;s overkill for just that one bit of state.</span><span class="ansiyellow"></span><span class="ansiyellow"></span>
-<span class="ansigreen">    192</span>     <span class="ansigreen">def</span> magic_deco<span class="ansiyellow">(</span>arg<span class="ansiyellow">)</span><span class="ansiyellow">:</span><span class="ansiyellow"></span>
-<span class="ansigreen">--&gt; 193</span><span class="ansiyellow">         </span>call <span class="ansiyellow">=</span> <span class="ansigreen">lambda</span> f<span class="ansiyellow">,</span> <span class="ansiyellow">*</span>a<span class="ansiyellow">,</span> <span class="ansiyellow">**</span>k<span class="ansiyellow">:</span> f<span class="ansiyellow">(</span><span class="ansiyellow">*</span>a<span class="ansiyellow">,</span> <span class="ansiyellow">**</span>k<span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">    194</span> <span class="ansiyellow"></span>
-<span class="ansigreen">    195</span>         <span class="ansigreen">if</span> callable<span class="ansiyellow">(</span>arg<span class="ansiyellow">)</span><span class="ansiyellow">:</span><span class="ansiyellow"></span>
-
-<span class="ansigreen">/usr/local/lib/python3.5/site-packages/IPython/core/magics/pylab.py</span> in <span class="ansicyan">matplotlib</span><span class="ansiblue">(self, line)</span>
-<span class="ansigreen">     98</span>             print<span class="ansiyellow">(</span><span class="ansiblue">&quot;Available matplotlib backends: %s&quot;</span> <span class="ansiyellow">%</span> backends_list<span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">     99</span>         <span class="ansigreen">else</span><span class="ansiyellow">:</span><span class="ansiyellow"></span>
-<span class="ansigreen">--&gt; 100</span><span class="ansiyellow">             </span>gui<span class="ansiyellow">,</span> backend <span class="ansiyellow">=</span> self<span class="ansiyellow">.</span>shell<span class="ansiyellow">.</span>enable_matplotlib<span class="ansiyellow">(</span>args<span class="ansiyellow">.</span>gui<span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">    101</span>             self<span class="ansiyellow">.</span>_show_matplotlib_backend<span class="ansiyellow">(</span>args<span class="ansiyellow">.</span>gui<span class="ansiyellow">,</span> backend<span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">    102</span> <span class="ansiyellow"></span>
-
-<span class="ansigreen">/usr/local/lib/python3.5/site-packages/IPython/core/interactiveshell.py</span> in <span class="ansicyan">enable_matplotlib</span><span class="ansiblue">(self, gui)</span>
-<span class="ansigreen">   3130</span>                 gui<span class="ansiyellow">,</span> backend <span class="ansiyellow">=</span> pt<span class="ansiyellow">.</span>find_gui_and_backend<span class="ansiyellow">(</span>self<span class="ansiyellow">.</span>pylab_gui_select<span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">   3131</span> <span class="ansiyellow"></span>
-<span class="ansigreen">-&gt; 3132</span><span class="ansiyellow">         </span>pt<span class="ansiyellow">.</span>activate_matplotlib<span class="ansiyellow">(</span>backend<span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">   3133</span>         pt<span class="ansiyellow">.</span>configure_inline_support<span class="ansiyellow">(</span>self<span class="ansiyellow">,</span> backend<span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">   3134</span> <span class="ansiyellow"></span>
-
-<span class="ansigreen">/usr/local/lib/python3.5/site-packages/IPython/core/pylabtools.py</span> in <span class="ansicyan">activate_matplotlib</span><span class="ansiblue">(backend)</span>
-<span class="ansigreen">    273</span> <span class="ansiyellow"></span>
-<span class="ansigreen">    274</span>     <span class="ansigreen">import</span> matplotlib<span class="ansiyellow">.</span>pyplot<span class="ansiyellow"></span>
-<span class="ansigreen">--&gt; 275</span><span class="ansiyellow">     </span>matplotlib<span class="ansiyellow">.</span>pyplot<span class="ansiyellow">.</span>switch_backend<span class="ansiyellow">(</span>backend<span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">    276</span> <span class="ansiyellow"></span>
-<span class="ansigreen">    277</span>     <span class="ansired"># This must be imported last in the matplotlib series, after</span><span class="ansiyellow"></span><span class="ansiyellow"></span>
-
-<span class="ansigreen">/usr/local/lib/python3.5/site-packages/matplotlib/pyplot.py</span> in <span class="ansicyan">switch_backend</span><span class="ansiblue">(newbackend)</span>
-<span class="ansigreen">    222</span>     matplotlib<span class="ansiyellow">.</span>use<span class="ansiyellow">(</span>newbackend<span class="ansiyellow">,</span> warn<span class="ansiyellow">=</span><span class="ansigreen">False</span><span class="ansiyellow">,</span> force<span class="ansiyellow">=</span><span class="ansigreen">True</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">    223</span>     <span class="ansigreen">from</span> matplotlib<span class="ansiyellow">.</span>backends <span class="ansigreen">import</span> pylab_setup<span class="ansiyellow"></span>
-<span class="ansigreen">--&gt; 224</span><span class="ansiyellow">     </span>_backend_mod<span class="ansiyellow">,</span> new_figure_manager<span class="ansiyellow">,</span> draw_if_interactive<span class="ansiyellow">,</span> _show <span class="ansiyellow">=</span> pylab_setup<span class="ansiyellow">(</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">    225</span> <span class="ansiyellow"></span>
-<span class="ansigreen">    226</span> <span class="ansiyellow"></span>
-
-<span class="ansigreen">/usr/local/lib/python3.5/site-packages/matplotlib/backends/__init__.py</span> in <span class="ansicyan">pylab_setup</span><span class="ansiblue">()</span>
-<span class="ansigreen">     30</span>     <span class="ansired"># imports. 0 means only perform absolute imports.</span><span class="ansiyellow"></span><span class="ansiyellow"></span>
-<span class="ansigreen">     31</span>     backend_mod = __import__(backend_name,
-<span class="ansigreen">---&gt; 32</span><span class="ansiyellow">                              globals(),locals(),[backend_name],0)
-</span><span class="ansigreen">     33</span> <span class="ansiyellow"></span>
-<span class="ansigreen">     34</span>     <span class="ansired"># Things we pull in from all backends</span><span class="ansiyellow"></span><span class="ansiyellow"></span>
-
-<span class="ansigreen">/usr/local/lib/python3.5/site-packages/matplotlib/backends/backend_tkagg.py</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
-<span class="ansigreen">      4</span> <span class="ansiyellow"></span>
-<span class="ansigreen">      5</span> <span class="ansigreen">from</span> matplotlib<span class="ansiyellow">.</span>externals <span class="ansigreen">import</span> six<span class="ansiyellow"></span>
-<span class="ansigreen">----&gt; 6</span><span class="ansiyellow"> </span><span class="ansigreen">from</span> matplotlib<span class="ansiyellow">.</span>externals<span class="ansiyellow">.</span>six<span class="ansiyellow">.</span>moves <span class="ansigreen">import</span> tkinter <span class="ansigreen">as</span> Tk<span class="ansiyellow"></span>
-<span class="ansigreen">      7</span> <span class="ansigreen">from</span> matplotlib<span class="ansiyellow">.</span>externals<span class="ansiyellow">.</span>six<span class="ansiyellow">.</span>moves <span class="ansigreen">import</span> tkinter_filedialog <span class="ansigreen">as</span> FileDialog<span class="ansiyellow"></span>
-<span class="ansigreen">      8</span> <span class="ansiyellow"></span>
-
-<span class="ansigreen">/usr/local/lib/python3.5/site-packages/matplotlib/externals/six.py</span> in <span class="ansicyan">__get__</span><span class="ansiblue">(self, obj, tp)</span>
-<span class="ansigreen">     88</span> <span class="ansiyellow"></span>
-<span class="ansigreen">     89</span>     <span class="ansigreen">def</span> __get__<span class="ansiyellow">(</span>self<span class="ansiyellow">,</span> obj<span class="ansiyellow">,</span> tp<span class="ansiyellow">)</span><span class="ansiyellow">:</span><span class="ansiyellow"></span>
-<span class="ansigreen">---&gt; 90</span><span class="ansiyellow">         </span>result <span class="ansiyellow">=</span> self<span class="ansiyellow">.</span>_resolve<span class="ansiyellow">(</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">     91</span>         setattr<span class="ansiyellow">(</span>obj<span class="ansiyellow">,</span> self<span class="ansiyellow">.</span>name<span class="ansiyellow">,</span> result<span class="ansiyellow">)</span> <span class="ansired"># Invokes __set__.</span><span class="ansiyellow"></span>
-<span class="ansigreen">     92</span>         <span class="ansigreen">try</span><span class="ansiyellow">:</span><span class="ansiyellow"></span>
-
-<span class="ansigreen">/usr/local/lib/python3.5/site-packages/matplotlib/externals/six.py</span> in <span class="ansicyan">_resolve</span><span class="ansiblue">(self)</span>
-<span class="ansigreen">    111</span> <span class="ansiyellow"></span>
-<span class="ansigreen">    112</span>     <span class="ansigreen">def</span> _resolve<span class="ansiyellow">(</span>self<span class="ansiyellow">)</span><span class="ansiyellow">:</span><span class="ansiyellow"></span>
-<span class="ansigreen">--&gt; 113</span><span class="ansiyellow">         </span><span class="ansigreen">return</span> _import_module<span class="ansiyellow">(</span>self<span class="ansiyellow">.</span>mod<span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">    114</span> <span class="ansiyellow"></span>
-<span class="ansigreen">    115</span>     <span class="ansigreen">def</span> __getattr__<span class="ansiyellow">(</span>self<span class="ansiyellow">,</span> attr<span class="ansiyellow">)</span><span class="ansiyellow">:</span><span class="ansiyellow"></span>
-
-<span class="ansigreen">/usr/local/lib/python3.5/site-packages/matplotlib/externals/six.py</span> in <span class="ansicyan">_import_module</span><span class="ansiblue">(name)</span>
-<span class="ansigreen">     78</span> <span class="ansigreen">def</span> _import_module<span class="ansiyellow">(</span>name<span class="ansiyellow">)</span><span class="ansiyellow">:</span><span class="ansiyellow"></span>
-<span class="ansigreen">     79</span>     <span class="ansiblue">&quot;&quot;&quot;Import module, returning the module after the last dot.&quot;&quot;&quot;</span><span class="ansiyellow"></span>
-<span class="ansigreen">---&gt; 80</span><span class="ansiyellow">     </span>__import__<span class="ansiyellow">(</span>name<span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">     81</span>     <span class="ansigreen">return</span> sys<span class="ansiyellow">.</span>modules<span class="ansiyellow">[</span>name<span class="ansiyellow">]</span><span class="ansiyellow"></span>
-<span class="ansigreen">     82</span> <span class="ansiyellow"></span>
-
-<span class="ansigreen">/usr/local/lib/python3.5/tkinter/__init__.py</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
-<span class="ansigreen">     33</span> <span class="ansigreen">import</span> sys<span class="ansiyellow"></span>
-<span class="ansigreen">     34</span> <span class="ansiyellow"></span>
-<span class="ansigreen">---&gt; 35</span><span class="ansiyellow"> </span><span class="ansigreen">import</span> _tkinter <span class="ansired"># If this fails your Python may not be configured for Tk</span><span class="ansiyellow"></span>
-<span class="ansigreen">     36</span> TclError <span class="ansiyellow">=</span> _tkinter<span class="ansiyellow">.</span>TclError<span class="ansiyellow"></span>
-<span class="ansigreen">     37</span> <span class="ansigreen">from</span> tkinter<span class="ansiyellow">.</span>constants <span class="ansigreen">import</span> <span class="ansiyellow">*</span><span class="ansiyellow"></span>
-
-<span class="ansired">ImportError</span>: No module named &apos;_tkinter&apos;</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Using matplotlib backend: agg
+</pre>
 </div>
+</div>
+
+<div class="output_area"><div class="prompt output_prompt">Out[13]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0</pre>
+</div>
+
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+qYz/Dz480tFiEWTOAAAAAElFTkSuQmCC
+"
+width=412
+height=251
+>
+</div>
+
 </div>
 
 </div>

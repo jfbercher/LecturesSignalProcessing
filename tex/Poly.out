@@ -23,3 +23,18 @@
 \BOOKMARK [2][-]{subsection.4.2.1}{4.2.1\040Definition}{section.4.2}% 23
 \BOOKMARK [2][-]{subsection.4.2.2}{4.2.2\040Illustration}{section.4.2}% 24
 \BOOKMARK [2][-]{subsection.4.2.3}{4.2.3\040Exercises}{section.4.2}% 25
+\BOOKMARK [0][-]{chapter.5}{5\040Transfer\040function}{}% 26
+\BOOKMARK [1][-]{section.5.1}{5.1\040The\040Plancherel\040relation}{chapter.5}% 27
+\BOOKMARK [1][-]{section.5.2}{5.2\040Consequences}{chapter.5}% 28
+\BOOKMARK [0][-]{chapter.6}{6\040Basic\040representations\040for\040digital\040signals\040and\040systems}{}% 29
+\BOOKMARK [1][-]{section.6.1}{6.1\040Study\040in\040the\040time\040domain}{chapter.6}% 30
+\BOOKMARK [1][-]{section.6.2}{6.2\040Study\040in\040the\040fequency\040domain}{chapter.6}% 31
+\BOOKMARK [0][-]{chapter.7}{7\040Filtering}{}% 32
+\BOOKMARK [0][-]{chapter.8}{8 Lab – Basic representations for digital signals and systems}{}% 33
+\BOOKMARK [1][-]{section.8.1}{8.1\040Study\040in\040the\040time\040domain}{chapter.8}% 34
+\BOOKMARK [2][-]{subsection.8.1.1}{8.1.1\040The\040function\040scipy.signal\040lfilter\(\)}{section.8.1}% 35
+\BOOKMARK [1][-]{section.8.2}{8.2\040Display\040of\040results}{chapter.8}% 36
+\BOOKMARK [1][-]{section.8.3}{8.3\040Study\040in\040the\040frequency\040domain}{chapter.8}% 37
+\BOOKMARK [1][-]{section.8.4}{8.4\040Filtering}{chapter.8}% 38
+\BOOKMARK [2][-]{subsection.8.4.1}{8.4.1\040Analysis\040in\040the\040time\040domain}{section.8.4}% 39
+\BOOKMARK [2][-]{subsection.8.4.2}{8.4.2\040Frequency\040representation}{section.8.4}% 40
