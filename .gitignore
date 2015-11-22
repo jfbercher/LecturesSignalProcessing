@@ -2,6 +2,7 @@
 *.log
 *.toc
 *tmp*
+*files/
 exec/
 conversion/
 __pycache__/
