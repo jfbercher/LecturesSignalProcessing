@@ -11,7 +11,7 @@ Notebooks are not fully executed, while the html version corresponds to the full
 - Clone the repo as usual
 - The notebooks use a bunch of nbextensions that you shall install. In particular, they need the latex_envs extension that enable to enter and display LaTeX environments. You can install these extensions from the [IPython-contrib/IPython-notebook-extensions](https://github.com/ipython-contrib/IPython-notebook-extensions) repo:
  or directly from here:
-<code>
+	<code>
 	# Install jupyter extensions
 	jupyter nbextension install https://rawgit.com/jfbercher/latex_envs/master/latex_envs.zip  --user
 	jupyter nbextension enable latex_envs/latex_envs  
@@ -25,11 +25,11 @@ Notebooks are not fully executed, while the html version corresponds to the full
 	jupyter nbextension enable usability/exercise2/main 
 	jupyter nbextension install https://rawgit.com/jfbercher/small_nbextensions/master/rubberband.zip  --user
 	jupyter nbextension enable usability/rubberband/main 
-</code>
+	</code>
 
 ## Table of Contents
  
-The full table of contents is [here]()](https://rawgit.com/jfbercher/LecturesSignalProcessing/master/html/DelaysAndScales.html). 
+The full table of contents is [here](https://rawgit.com/jfbercher/LecturesSignalProcessing/master/html/DelaysAndScales.html). 
 Below are the chapter heads. 
 
 [I - Effects of delays and scaling on signals](https://rawgit.com/jfbercher/LecturesSignalProcessing/master/html/DelaysAndScales.html)
