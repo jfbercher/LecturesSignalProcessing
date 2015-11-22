@@ -9,6 +9,11 @@ cd ~
 git clone https://github.com/jfbercher/LecturesSignalProcessing.git
 cd ~/LecturesSignalProcessing
 
+# Check if directories exist
+if [ ! -d "~/.jupyter/nbconfig" ]; then
+  mkdir -p ~/.jupyter/nbconfig
+fi
+
 # Install jupyter extensions
 jupyter nbextension install https://rawgit.com/jfbercher/latex_envs/master/latex_envs.zip  --user
 jupyter nbextension enable latex_envs/latex_envs  
@@ -27,3 +32,4 @@ jupyter nbextension enable usability/rubberband/main
 cd ~/LecturesSignalProcessing
 chmod 755 local_repo_update
  
+

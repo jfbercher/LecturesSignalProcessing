@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# set proxies
+export http_proxy=http://10.0.4.2:3128
+export https_proxy=http://10.0.4.2:3128
+
+# make sure required packages are present
+pip3 install jupyter --upgrade
+pip3 install pandas --upgrade #include numpy, dateutils, pytz
+pip3 install matplotlib --upgrade
+pip3 install pillow --upgrade
+pip3 install scipy --upgrade
+pip3 install seaborn --upgrade
+pip3 install mpld3 --upgrade
+pip3 install requests --upgrade

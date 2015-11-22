@@ -38,3 +38,77 @@
 \BOOKMARK [1][-]{section.8.4}{8.4\040Filtering}{chapter.8}% 38
 \BOOKMARK [2][-]{subsection.8.4.1}{8.4.1\040Analysis\040in\040the\040time\040domain}{section.8.4}% 39
 \BOOKMARK [2][-]{subsection.8.4.2}{8.4.2\040Frequency\040representation}{section.8.4}% 40
+\BOOKMARK [0][-]{chapter.9}{9\040The\040continuous\040time\040case}{}% 41
+\BOOKMARK [1][-]{section.9.1}{9.1\040The\040continuous\040time\040Fourier\040transform}{chapter.9}% 42
+\BOOKMARK [2][-]{subsection.9.1.1}{9.1.1\040Definition}{section.9.1}% 43
+\BOOKMARK [2][-]{subsection.9.1.2}{9.1.2\040Example\040-\040The\040Fourier\040transform\040of\040a\040rectangular\040pulse}{section.9.1}% 44
+\BOOKMARK [2][-]{subsection.9.1.3}{9.1.3\040Table\040of\040Fourier\040transform\040properties}{section.9.1}% 45
+\BOOKMARK [2][-]{subsection.9.1.4}{9.1.4\040Symmetries\040of\040the\040Fourier\040transform.}{section.9.1}% 46
+\BOOKMARK [1][-]{section.9.2}{9.2\040Dirac\040impulse,\040representation\040formula\040and\040convolution}{chapter.9}% 47
+\BOOKMARK [2][-]{subsection.9.2.1}{9.2.1\040Dirac\040impulse}{section.9.2}% 48
+\BOOKMARK [2][-]{subsection.9.2.2}{9.2.2\040Representation\040formula}{section.9.2}% 49
+\BOOKMARK [0][-]{chapter.10}{10\040Periodization,\040discretization\040and\040sampling}{}% 50
+\BOOKMARK [1][-]{section.10.1}{10.1\040Periodization-discretization\040duality}{chapter.10}% 51
+\BOOKMARK [2][-]{subsection.10.1.1}{10.1.1\040Relation\040between\040Fourier\040series\040and\040Fourier\040transform}{section.10.1}% 52
+\BOOKMARK [2][-]{subsection.10.1.2}{10.1.2\040Poisson\040summation\040formulas}{section.10.1}% 53
+\BOOKMARK [1][-]{section.10.2}{10.2\040The\040Discrete\040Fourier\040Transform}{chapter.10}% 54
+\BOOKMARK [2][-]{subsection.10.2.1}{10.2.1\040The\040Discrete\040Fourier\040Transform:\040Sampling\040the\040discrete-time\040Fourier\040transform}{section.10.2}% 55
+\BOOKMARK [2][-]{subsection.10.2.2}{10.2.2\040The\040DFT\040as\040a\040change\040of\040basis}{section.10.2}% 56
+\BOOKMARK [2][-]{subsection.10.2.3}{10.2.3\040Time-shift\040property}{section.10.2}% 57
+\BOOKMARK [2][-]{subsection.10.2.4}{10.2.4\040Circular\040convolution}{section.10.2}% 58
+\BOOKMARK [1][-]{section.10.3}{10.3\040\(Sub\)-Sampling\040of\040time\040signals}{chapter.10}% 59
+\BOOKMARK [1][-]{section.10.4}{10.4\040The\040sampling\040theorem}{chapter.10}% 60
+\BOOKMARK [2][-]{subsection.10.4.1}{10.4.1\040Derivation\040in\040the\040case\040of\040discrete-time\040signals}{section.10.4}% 61
+\BOOKMARK [2][-]{subsection.10.4.2}{10.4.2\040Case\040of\040continuous-time\040signals.}{section.10.4}% 62
+\BOOKMARK [2][-]{subsection.10.4.3}{10.4.3\040Illustrations}{section.10.4}% 63
+\BOOKMARK [2][-]{subsection.10.4.4}{10.4.4\040Sampling\040of\040band-pass\040signals}{section.10.4}% 64
+\BOOKMARK [1][-]{section.10.5}{10.5\040Lab\040on\040basics\040in\040image\040processing}{chapter.10}% 65
+\BOOKMARK [2][-]{subsection.10.5.1}{10.5.1\040Introduction}{section.10.5}% 66
+\BOOKMARK [2][-]{subsection.10.5.2}{10.5.2 Frequency representation – Filtering in the frequency domain}{section.10.5}% 67
+\BOOKMARK [2][-]{subsection.10.5.3}{10.5.3 Playing with Barbara – Filtering in the frequency domain}{section.10.5}% 68
+\BOOKMARK [2][-]{subsection.10.5.4}{10.5.4\040Filtering\040by\040convolution}{section.10.5}% 69
+\BOOKMARK [0][-]{chapter.11}{11\040Lab\040on\040basics\040in\040image\040processing}{}% 70
+\BOOKMARK [1][-]{section.11.1}{11.1\040Introduction}{chapter.11}% 71
+\BOOKMARK [1][-]{section.11.2}{11.2 Frequency representation – Filtering in the frequency domain}{chapter.11}% 72
+\BOOKMARK [2][-]{subsection.11.2.1}{11.2.1\040A\040pretty\040sine\040wave}{section.11.2}% 73
+\BOOKMARK [1][-]{section.11.3}{11.3 Playing with Barbara – Filtering in the frequency domain}{chapter.11}% 74
+\BOOKMARK [1][-]{section.11.4}{11.4\040Filtering\040by\040convolution}{chapter.11}% 75
+\BOOKMARK [0][-]{chapter.12}{12\040Digital\040filters}{}% 76
+\BOOKMARK [1][-]{subsection.12.0.1}{12.0.1\040Introduction}{chapter.12}% 77
+\BOOKMARK [2][-]{subsection.12.0.2}{12.0.2\040The\040z-transform}{subsection.12.0.1}% 78
+\BOOKMARK [1][-]{section.12.1}{12.1\040Pole-zero\040locations\040and\040transfer\040functions\040behavior}{chapter.12}% 79
+\BOOKMARK [2][-]{subsection.12.1.1}{12.1.1\040Analysis\040of\040no-pole\040transfer\040functions}{section.12.1}% 80
+\BOOKMARK [2][-]{subsection.12.1.2}{12.1.2\040Analysis\040of\040all-poles\040transfer\040functions}{section.12.1}% 81
+\BOOKMARK [2][-]{subsection.12.1.3}{12.1.3\040General\040transfer\040functions}{section.12.1}% 82
+\BOOKMARK [2][-]{subsection.12.1.4}{12.1.4 Appendix – listing of the class ZerosPolesPlay}{section.12.1}% 83
+\BOOKMARK [1][-]{section.12.2}{12.2\040Synthesis\040of\040FIR\040filters}{chapter.12}% 84
+\BOOKMARK [2][-]{subsection.12.2.1}{12.2.1\040Synthesis\040by\040sampling\040in\040the\040frequency\040domain}{section.12.2}% 85
+\BOOKMARK [2][-]{subsection.12.2.2}{12.2.2\040Synthesis\040by\040the\040window\040method}{section.12.2}% 86
+\BOOKMARK [1][-]{section.12.3}{12.3\040Synthesis\040of\040IIR\040filters\040by\040the\040bilinear\040transformation\040method}{chapter.12}% 87
+\BOOKMARK [2][-]{subsection.12.3.1}{12.3.1\040The\040bilinear\040transform}{section.12.3}% 88
+\BOOKMARK [2][-]{subsection.12.3.2}{12.3.2 Synthesis of low-pass filters – procedure}{section.12.3}% 89
+\BOOKMARK [2][-]{subsection.12.3.3}{12.3.3\040Synthesis\040of\040other\040type\040of\040filters}{section.12.3}% 90
+\BOOKMARK [2][-]{subsection.12.3.4}{12.3.4\040Numerical\040results}{section.12.3}% 91
+\BOOKMARK [1][-]{section.12.4}{12.4 Lab – Basic Filtering}{chapter.12}% 92
+\BOOKMARK [2][-]{subsection.12.4.1}{12.4.1\040Analysis\040of\040the\040data}{section.12.4}% 93
+\BOOKMARK [2][-]{subsection.12.4.2}{12.4.2\040Filtering}{section.12.4}% 94
+\BOOKMARK [2][-]{subsection.12.4.3}{12.4.3\040Design\040and\040implementation\040of\040the\040lowpass\040averaging\040filter}{section.12.4}% 95
+\BOOKMARK [2][-]{subsection.12.4.4}{12.4.4\040Second\040part:\040Boost\040of\040a\040frequency\040band}{section.12.4}% 96
+\BOOKMARK [1][-]{section.12.5}{12.5\040Theoretical\040Part}{chapter.12}% 97
+\BOOKMARK [2][-]{subsection.12.5.1}{12.5.1\040Lowpass\040[0-\040250\040Hz]\040filtering\040by\040the\040window\040method}{section.12.5}% 98
+\BOOKMARK [0][-]{chapter.13}{13 Lab – Basic Filtering}{}% 99
+\BOOKMARK [1][-]{section.13.1}{13.1\040Introduction}{chapter.13}% 100
+\BOOKMARK [1][-]{section.13.2}{13.2\040Analysis\040of\040the\040data}{chapter.13}% 101
+\BOOKMARK [2][-]{subsection.13.2.1}{13.2.1\040Filtering}{section.13.2}% 102
+\BOOKMARK [1][-]{section.13.3}{13.3\040Design\040and\040implementation\040of\040the\040lowpass\040averaging\040filter}{chapter.13}% 103
+\BOOKMARK [2][-]{subsection.13.3.1}{13.3.1\040Theoretical\040part:}{section.13.3}% 104
+\BOOKMARK [2][-]{subsection.13.3.2}{13.3.2\040Practical\040part}{section.13.3}% 105
+\BOOKMARK [1][-]{section.13.4}{13.4\040Computation\040of\040the\040subtracting\040filter}{chapter.13}% 106
+\BOOKMARK [1][-]{section.13.5}{13.5\040Second\040part:\040Boost\040of\040a\040frequency\040band}{chapter.13}% 107
+\BOOKMARK [1][-]{section.13.6}{13.6\040Theoretical\040Part}{chapter.13}% 108
+\BOOKMARK [2][-]{subsection.13.6.1}{13.6.1\040Pratical\040part}{section.13.6}% 109
+\BOOKMARK [1][-]{section.13.7}{13.7\040Lowpass\040[0-\040250\040Hz]\040filtering\040by\040the\040window\040method}{chapter.13}% 110
+\BOOKMARK [2][-]{subsection.13.7.1}{13.7.1\040Theoretical\040Part}{section.13.7}% 111
+\BOOKMARK [2][-]{subsection.13.7.2}{13.7.2\040Practical\040part}{section.13.7}% 112
+\BOOKMARK [2][-]{subsection.13.7.3}{13.7.3\040Output\040of\040the\040lowpass\040filter}{section.13.7}% 113
+\BOOKMARK [2][-]{subsection.13.7.4}{13.7.4\040Group\040Delay}{section.13.7}% 114

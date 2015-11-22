@@ -114,4 +114,30 @@ from interactive_sols import process_solution, unhide_next_cell, unhide_all_cell
 show_solution=process_solution
 #%run interactive_sols.ipy
 
+## ---------------------------------------------------
+print("... Redefining interactive from ipywidgets")
+
+# Redefine interactive, because in the new version, return of functions 
+# is automatically displayed. That is the way it is, see https://github.com/ipython/ipywidgets/issues/162
+# Thus what we do is to catch the call, redefine the function to hide its return.
+# Then it is always possible to call directly the original function and get its return value.
+# Also, it is possible to call it with the parameters selected from the interactive function
+# by func(**ww.kwargs) where ww is the object returned by intercative or interact. 
+
+def interactive(f,*args,**kwargs):
+    import ipywidgets
+    def fn(*args,**kwargs):
+        f(*args,**kwargs)
+    w=ipywidgets.interactive(fn,*args,**kwargs)
+    return w
+
+example=False
+if example:
+    #func(**ww.kwargs)
+    def func(x,y,col="red"):
+        print(x,y)
+        return x+y
+
+    ww=interactive(func,x=[1,10],y=[3,7],col=("red","blue"))
+    ww
 
