@@ -1,3 +1,29 @@
+YOYO
+M1--> equation
+YOYO
+M1--> equation
+YOYO
+M1--> equation
+YOYO
+M1--> equation
+YOYO
+M1--> equation
+YOYO
+M1--> equation
+YOYO
+M1--> equation
+YOYO
+M1--> equation
+YOYO
+YOYO
+M1--> align
+YOYO
+YOYO
+M1--> align
+YOYO
+YOYO
+YOYO
+YOYO
 <!DOCTYPE html>
 <html>
 <head>
@@ -306,6 +332,7 @@ border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;border-radius
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>... Loading customized Javascript for interactive solutions (show/hide)
+... Redefining interactive from ipywidgets
 </pre>
 </div>
 </div>
@@ -351,7 +378,7 @@ border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;border-radius
 Let $x(n)$ be a periodic function with period $L_0$. Then
 \begin{equation}
 \eqboxb{\displaystyle{
-x(n) = \sum<em>{m=-\infty}^{+\infty} x</em>{L<em>0} (n-mL_0)},
+x(n) = \sum_{m=-\infty}^{+\infty} x_{L_0} (n-mL_0)},
 }
 \end{equation}
 where $x_{L_0} (n)$ is the basic pattern with length $L_0$.
@@ -365,14 +392,14 @@ c_k = \frac{1}{L_0} \sum_{[L_0]} x_{L_0} (n) e^{-j2\pi kf_0 n}.
 $$
 From this relation, we immediately have
 \begin{equation}
-c_k = \frac{1}{L_0} X</em>{L<em>0} (kf_0),
+c_k = \frac{1}{L_0} X_{L_0} (kf_0),
 \end{equation}
 where $X_{L_0} (f)$ is the Fourier transform of the pattern $x_{L_0} (n)$.
 Hence
 \begin{equation}
 \eqboxb{
-\displaystyle{x(n) = \sum</em>{m=-\infty}^{+\infty} x<em>{L_0} (n-mL_0) = \frac{1}{L_0}\sum</em>{k=0}^{L<em>0-1} 
- X</em>{L<em>0} (kf_0) e^{j2\pi kf_0 n}}.
+\displaystyle{x(n) = \sum_{m=-\infty}^{+\infty} x_{L_0} (n-mL_0) = \frac{1}{L_0}\sum_{k=0}^{L_0-1} 
+ X_{L_0} (kf_0) e^{j2\pi kf_0 n}}.
 }
 \end{equation}
 From that, we deduce that the Fourier transform of $x(n)$ writes
@@ -383,8 +410,8 @@ $$
 that is
 \begin{equation}
 \eqboxc{
-\displaystyle{X(f) = \tf{x(n)} = \frac{1}{L_0}\sum</em>{k=0}^{L<em>0-1} 
- X</em>{L_0} (kf_0) \delta(f-kf_0)}
+\displaystyle{X(f) = \tf{x(n)} = \frac{1}{L_0}\sum_{k=0}^{L_0-1} 
+ X_{L_0} (kf_0) \delta(f-kf_0)}
 }.
 \end{equation}</p>
 
@@ -411,26 +438,26 @@ that is
 </div><p>Taking $x_{L_0}(n) = \delta(n)$, we obtain the first <em>Poisson's formula</em>:
 \begin{equation}
 \eqboxc{\displaystyle{
-\sum<em>{m=-\infty}^{+\infty} \delta (n-mL_0) = 
-\frac{1}{L_0}\sum</em>{k=0}^{L_0-1} e^{j2\pi kf_0 n}}}. \label{eq:Poisson1}
+\sum_{m=-\infty}^{+\infty} \delta (n-mL_0) = 
+\frac{1}{L_0}\sum_{k=0}^{L_0-1} e^{j2\pi kf_0 n}}}. \label{eq:Poisson1}
 \end{equation}</p>
 <p>The series of delayed Dirac impulses is called a <em>Dirac comb</em>. It is often denoted 
 \begin{equation}
-\sha<em>{L_0}(n)=\sum</em>{m=-\infty}^{+\infty} \delta (n-mL<em>0). \label{eq:DiracComb}
+\sha_{L_0}(n)=\sum_{m=-\infty}^{+\infty} \delta (n-mL_0). \label{eq:DiracComb}
 \end{equation}
 Taking the Fourier transforms of the two sides of (\ref{eq:Poisson1}), we obtain
 \begin{equation}
 \eqboxc{
 \displaystyle{
-\sum</em>{m=-\infty}^{+\infty} e^{j2\pi fmL<em>0 n} = 
-\frac{1}{L_0}\sum</em>{k=0}^{L<em>0-1} \delta(f -kf_0)}};
+\sum_{m=-\infty}^{+\infty} e^{j2\pi fmL_0 n} = 
+\frac{1}{L_0}\sum_{k=0}^{L_0-1} \delta(f -kf_0)}};
 \end{equation}
 that is the second <em>Poisson's formula</em>:
 \begin{equation}
 \eqboxd{
 \displaystyle{
-\sum</em>{m=-\infty}^{+\infty} \delta (n-mL<em>0) \flecheTF
-\frac{1}{L_0}\sum</em>{k=0}^{L_0-1} \delta(f -kf_0)}}. \label{eq:Poisson2}
+\sum_{m=-\infty}^{+\infty} \delta (n-mL_0) \flecheTF
+\frac{1}{L_0}\sum_{k=0}^{L_0-1} \delta(f -kf_0)}}. \label{eq:Poisson2}
 \end{equation}
 This last relation shows that the Fourier transform of a Dirac comb is also a Dirac comb, these two combs having an inverse spacing.</p>
 
@@ -495,7 +522,7 @@ Let us check this numerically. This is very easy: define a Dirac comb, take its 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.text.Text at 0x7f734ac35710&gt;</pre>
+<pre>&lt;matplotlib.text.Text at 0x7f39fc315be0&gt;</pre>
 </div>
 
 </div>
@@ -931,27 +958,20 @@ height=265
 <p>We may now go back to the exploration of the links between Fourier series and transform, using the second Poisson formula (\ref{eq:Poisson2}).</p>
 <p><b>Convolution with a delayed Dirac impulse</b> - Let us first look at the result of the convolution of any function with a delayed Dirac impulse: let us denote $\delta_{n_0}(n)=\delta(n-n_0)$. The convolution $[x*\delta_{n_0}](n)$ is eq given by
 \begin{align}
-<a href="n">x*\delta_{n_0}</a> &amp; =  \sum<em>m x(m) \delta</em>{n_0}(n-m)  \
- &amp; =  \sum_m x(m) \delta(n-m-n_0) \
-  &amp; =    x(n-n_0) \
- \end{align}
-where the last relation follows by the representation formula. Hence</p>
-<div class=mybox>
-<em>Convolution with a delayed Dirac delays the signal.</em>
+[x*\delta_{n_0}] (n) &amp; =  \sum_m x(m) \delta_{n_0}(n-m) \\ &amp; =  \sum_m x(m) \delta(n-m-n_0)\\  &amp; =    x(n-n_0)\\ \end{align}
+where the last relation follows by the representation formula. Hence 
+<span class="latex_title"> </span> <div class="latex_textboxa">
+Convolution with a delayed Dirac delays the signal.
 </div>
-This has a simple and direct filtering interpretation. Indeed, if a filters has for impulse response a delayed Dirac impulse, then this means that it is a pure delaying filter. Then to an input $x(n)$ corresponds an output $x(n-n_0)$. <br><br>
-
-
-<b>Convolution with a Dirac comb</b> - By linearity, the convolution of any signal $x_L(n)$ of length $L$ with a Dirac comb results in the sum of the delayed responses:
+This has a simple and direct filtering interpretation. Indeed, if a filters has for impulse response a delayed Dirac impulse, then this means that it is a pure delaying filter. Then to an input $x(n)$ corresponds an output $x(n-n_0)$. <br><br></p>
+<p><b>Convolution with a Dirac comb</b> - By linearity, the convolution of any signal $x_L(n)$ of length $L$ with a Dirac comb results in the sum of the delayed responses:
 \begin{align}
-x(n) = \left[x_L*\sha_{L_0}\right](n)  & = \left[x_L*\sum_k \delta_{k L_0}\right](n) \\
-& =  \sum_k [x_L*\delta_{k L_0}](n)  \\
-  & =   \sum_k x_L(n-k L_0). \\
- \end{align}
+x(n) = \left[x_L*\sha_{L_0}\right] (n)  &amp; = \left[x_L*\sum_k \delta_{k L_0}\right] (n)\\&amp; =  \sum_k [x_L*\delta_{k L_0}] (n) \\  &amp; =   \sum_k x_L(n-k L_0).\\ \end{align}
 This is nothing but the expression of a periodic signal. If $L_0$ is larger than the support $L$  of $x_L(n)$, then $x(n)$ is simply the repetition, with a period $L_0$, of the pattern $x_L(n)$. 
-<div class=mybox>
-<em>Convolution with a Dirac comb periodizes the signal.</em>
-</div>
+<span class="latex_title"> </span> <div class="latex_textboxa">
+Convolution with a Dirac comb periodizes the signal.
+</div></p>
+
 </div>
 </div>
 </div>
@@ -1011,7 +1031,7 @@ Let us check this with some simple Python commands: create a Dirac comb, a test 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.text.Text at 0x7f734a8b6400&gt;</pre>
+<pre>&lt;matplotlib.text.Text at 0x7f39fc00d898&gt;</pre>
 </div>
 
 </div>
@@ -1314,11 +1334,11 @@ height=280
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><b>Effect in the frequency domain</b> - In the frequency domain, we know, by the Plancherel theorem, that the product of signals results in the convolution of their Fourier transforms (and <em>vice versa</em>). As a consequence, 
 $$
-x(n) = \left[x_L*\sha_{L_0}\right](n) \flecheTF X_L(f). \tf{\sha_{L_0}(n)}.
+x(n) = \left[x_L*\sha_{L_0}\right] (n) \flecheTF X_L(f). \tf{\sha_{L_0}(n)}.
 $$
 Since the Fourier transform of a Dirac comb is also a Dirac comb, we obtain that
 $$
-x(n) = \left[x_L*\sha_{L_0}\right](n) \flecheTF X_L(f). \frac{1}{L_0}\sha_\frac{1}{L_0}(f),
+x(n) = \left[x_L*\sha_{L_0}\right] (n) \flecheTF X_L(f). \frac{1}{L_0}\sha_\frac{1}{L_0}(f),
 $$
 or
 $$
