@@ -64,3 +64,4 @@ Below are the chapter heads.
 
 ----
 # Comments, issues, PR are most welcome. 
+If you are happy with these documents, you may drop me a note or make an issue to say it. 
