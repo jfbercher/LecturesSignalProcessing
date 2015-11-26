@@ -62,5 +62,4 @@ Below are the chapter heads.
 
 
 ----
-<div style="color:red"> Comments, issues, contributions (PR) are most welcome. 
-If you are happy with these documents, you may drop me a note or make an issue to say it. </div>
+<div style="background-color: #f2dede;border-color: #eed3d7;color: #CC0099;"> Comments, issues, contributions (PR) are most welcome. If you are happy with these documents, you may drop me a note or make an issue to say it. </div>
