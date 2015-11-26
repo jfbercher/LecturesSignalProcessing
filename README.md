@@ -29,7 +29,7 @@ Below are the chapter heads.
 
 [VIII - Periodization, discretization and sampling](https://rawgit.com/jfbercher/LecturesSignalProcessing/master/html/Periodization_discretization.html)
 
-[IX - Lab on basics in image processing (text)](https://rawgit.com/jfbercher/LecturesSignalProcessing/master/html/LabImages_text.html#Lab-on-basic-image-processing)
+[IX - Lab on basics in image processing](https://rawgit.com/jfbercher/LecturesSignalProcessing/master/html/LabImages_text.html#Lab-on-basic-image-processing)
 
 [X - Digital filters](https://rawgit.com/jfbercher/LecturesSignalProcessing/master/html/DigitalFilters.html)
 
@@ -62,4 +62,8 @@ Below are the chapter heads.
 
 
 ----
-<mark> Comments, issues, contributions (PR) are most welcome. If you are happy with these documents, you may drop me a note or make an issue to say it. </mark>
+### Development - Contributing - Contact
+
+This is an ongoing work and the maturity of the different chapters varies. Actually the first chapters are much less finalized that the later ones. Feel free to make corrections, add contents, examples, information. Your contribution will be most welcome (and acknowledged). You may do so by changing the files and submitting a pull request via the github interface. 
+
+Contact the main author, Jean-François Bercher, at jf "dot" bercher "at" gmail "dot" com
