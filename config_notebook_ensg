@@ -19,8 +19,8 @@ jupyter nbextension install https://rawgit.com/jfbercher/latex_envs/master/latex
 jupyter nbextension enable latex_envs/latex_envs  
 jupyter nbextension install https://rawgit.com/jfbercher/small_nbextensions/master/highlighter.zip  --user
 jupyter nbextension enable usability/highlighter/highlighter 
-jupyter nbextension install https://rawgit.com/jfbercher/small_nbextensions/master/interactive_sols.zip  --user
-jupyter nbextension enable usability/interactive_sols/interactive_sols 
+#jupyter nbextension install https://rawgit.com/jfbercher/small_nbextensions/master/interactive_sols.zip  --user
+#jupyter nbextension enable usability/interactive_sols/interactive_sols 
 jupyter nbextension install https://rawgit.com/jfbercher/small_nbextensions/master/exercise.zip  --user
 jupyter nbextension enable usability/exercise/main 
 jupyter nbextension install https://rawgit.com/jfbercher/small_nbextensions/master/exercise2.zip  --user
@@ -30,6 +30,6 @@ jupyter nbextension enable usability/rubberband/main
 
 #chmod executable files
 cd ~/LecturesSignalProcessing
-chmod 755 local_repo_update
+chmod 755 local_repo_update_ensg
  
 

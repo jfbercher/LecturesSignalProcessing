@@ -112,3 +112,46 @@
 \BOOKMARK [2][-]{subsection.13.7.2}{13.7.2\040Practical\040part}{section.13.7}% 112
 \BOOKMARK [2][-]{subsection.13.7.3}{13.7.3\040Output\040of\040the\040lowpass\040filter}{section.13.7}% 113
 \BOOKMARK [2][-]{subsection.13.7.4}{13.7.4\040Group\040Delay}{section.13.7}% 114
+\BOOKMARK [0][-]{chapter.14}{14\040Random\040Signals}{}% 115
+\BOOKMARK [1][-]{section.14.1}{14.1\040Introduction\040to\040Random\040Signals}{chapter.14}% 116
+\BOOKMARK [1][-]{section.14.2}{14.2\040Fundamental\040properties}{chapter.14}% 117
+\BOOKMARK [2][-]{subsection.14.2.1}{14.2.1\040Stationnarity}{section.14.2}% 118
+\BOOKMARK [2][-]{subsection.14.2.2}{14.2.2\040Ergodism}{section.14.2}% 119
+\BOOKMARK [2][-]{subsection.14.2.3}{14.2.3\040Examples\040of\040random\040signals}{section.14.2}% 120
+\BOOKMARK [2][-]{subsection.14.2.4}{14.2.4\040White\040noise}{section.14.2}% 121
+\BOOKMARK [1][-]{section.14.3}{14.3\040Second\040order\040analysis}{chapter.14}% 122
+\BOOKMARK [2][-]{subsection.14.3.1}{14.3.1\040Correlation\040functions}{section.14.3}% 123
+\BOOKMARK [1][-]{section.14.4}{14.4\040Filtering}{chapter.14}% 124
+\BOOKMARK [2][-]{subsection.14.4.1}{14.4.1\040General\040relations\040for\040cross-correlations}{section.14.4}% 125
+\BOOKMARK [2][-]{subsection.14.4.2}{14.4.2\040By-products}{section.14.4}% 126
+\BOOKMARK [2][-]{subsection.14.4.3}{14.4.3\040Examples}{section.14.4}% 127
+\BOOKMARK [2][-]{subsection.14.4.4}{14.4.4\040Correlation\040matrix}{section.14.4}% 128
+\BOOKMARK [2][-]{subsection.14.4.5}{14.4.5\040Identification\040of\040a\040filter\040by\040cross-correlation}{section.14.4}% 129
+\BOOKMARK [1][-]{section.14.5}{14.5 Analyse dans le domaine fréquentiel}{chapter.14}% 130
+\BOOKMARK [2][-]{subsection.14.5.1}{14.5.1 Notion de densité spectrale de Puissance}{section.14.5}% 131
+\BOOKMARK [2][-]{subsection.14.5.2}{14.5.2\040Power\040spectrum\040estimation}{section.14.5}% 132
+\BOOKMARK [1][-]{section.14.6}{14.6\040Applications}{chapter.14}% 133
+\BOOKMARK [2][-]{subsection.14.6.1}{14.6.1\040Matched\040filter}{section.14.6}% 134
+\BOOKMARK [2][-]{subsection.14.6.2}{14.6.2\040Wiener\040filtering}{section.14.6}% 135
+\BOOKMARK [0][-]{chapter.15}{15\040Adaptive\040Filters}{}% 136
+\BOOKMARK [1][-]{section.15.1}{15.1\040A\040general\040filtering\040problem}{chapter.15}% 137
+\BOOKMARK [2][-]{subsection.15.1.1}{15.1.1\040Introduction}{section.15.1}% 138
+\BOOKMARK [2][-]{subsection.15.1.2}{15.1.2\040The\040Linear\040Minimum\040Mean\040Square\040Error\040Estimator}{section.15.1}% 139
+\BOOKMARK [2][-]{subsection.15.1.3}{15.1.3\040The\040Least\040Square\040Error\040Estimator}{section.15.1}% 140
+\BOOKMARK [2][-]{subsection.15.1.4}{15.1.4\040Application\040to\040filter\040identification}{section.15.1}% 141
+\BOOKMARK [1][-]{section.15.2}{15.2\040The\040steepest\040descent\040algorithm}{chapter.15}% 142
+\BOOKMARK [1][-]{section.15.3}{15.3\040Application\040to\040the\040iterative\040resolution\040of\040the\040normal\040equations}{chapter.15}% 143
+\BOOKMARK [2][-]{subsection.15.3.1}{15.3.1\040Convergence\040analysis}{section.15.3}% 144
+\BOOKMARK [2][-]{subsection.15.3.2}{15.3.2\040An\040alternative\040view\040of\040the\040Steepest\040Descent\040Algorithm}{section.15.3}% 145
+\BOOKMARK [1][-]{section.15.4}{15.4\040Adaptive\040versions}{chapter.15}% 146
+\BOOKMARK [2][-]{subsection.15.4.1}{15.4.1\040The\040Least\040Mean\040Square\040\(LMS\)\040Algorithm}{section.15.4}% 147
+\BOOKMARK [2][-]{subsection.15.4.2}{15.4.2\040Illustation\040of\040the\040LMS\040in\040an\040identification\040problem}{section.15.4}% 148
+\BOOKMARK [2][-]{subsection.15.4.3}{15.4.3\040Convergence\040properties\040of\040the\040LMS}{section.15.4}% 149
+\BOOKMARK [2][-]{subsection.15.4.4}{15.4.4\040The\040normalized\040LMS}{section.15.4}% 150
+\BOOKMARK [2][-]{subsection.15.4.5}{15.4.5\040Other\040variants\040of\040the\040LMS}{section.15.4}% 151
+\BOOKMARK [2][-]{subsection.15.4.6}{15.4.6\040Recursive\040Least\040Squares}{section.15.4}% 152
+\BOOKMARK [1][-]{section.15.5}{15.5 Experimentation – Noise cancellation}{chapter.15}% 153
+\BOOKMARK [2][-]{subsection.15.5.1}{15.5.1\040Implementation\040of\040the\040noise\040canceller}{section.15.5}% 154
+\BOOKMARK [2][-]{subsection.15.5.2}{15.5.2\040First\040experiment}{section.15.5}% 155
+\BOOKMARK [2][-]{subsection.15.5.3}{15.5.3\040Second\040experiment}{section.15.5}% 156
+\BOOKMARK [2][-]{subsection.15.5.4}{15.5.4\040Corrupted\040speech}{section.15.5}% 157

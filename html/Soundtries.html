@@ -197,41 +197,6 @@ pre {
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="o">%%</span><span class="nx">javascript</span>
-<span class="nx">IPython</span><span class="p">.</span><span class="nx">load_extensions</span><span class="p">(</span><span class="s1">&#39;calico-spell-check&#39;</span><span class="p">,</span> <span class="s1">&#39;calico-document-tools&#39;</span><span class="p">,</span> <span class="s1">&#39;calico-cell-tools&#39;</span><span class="p">);</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-
-
-
-<div id="2b17b801-b29a-4750-b09f-bd5974a46480"></div>
-<div class="output_subarea output_javascript ">
-<script type="text/javascript">
-var element = $('#2b17b801-b29a-4750-b09f-bd5974a46480');
-IPython.load_extensions('calico-spell-check', 'calico-document-tools', 'calico-cell-tools');
-</script>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">wavPlayer</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">rate</span><span class="p">):</span>
 
     <span class="kn">from</span> <span class="nn">scipy.io</span> <span class="k">import</span> <span class="n">wavfile</span>
@@ -270,7 +235,7 @@ IPython.load_extensions('calico-spell-check', 'calico-document-tools', 'calico-c
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">save_wav</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span><span class="n">rate</span><span class="p">):</span>
@@ -311,7 +276,7 @@ IPython.load_extensions('calico-spell-check', 'calico-document-tools', 'calico-c
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">fs</span><span class="p">,</span> <span class="n">sound</span> <span class="o">=</span> <span class="n">wavfile</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s">&#39;test_sound.wav&#39;</span><span class="p">)</span>
@@ -329,24 +294,10 @@ IPython.load_extensions('calico-spell-check', 'calico-document-tools', 'calico-c
 
 
 <div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansired">---------------------------------------------------------------------------</span>
-<span class="ansired">FileNotFoundError</span>                         Traceback (most recent call last)
-<span class="ansigreen">&lt;ipython-input-5-d1061d5e13ca&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
-<span class="ansigreen">----&gt; 1</span><span class="ansiyellow"> </span>fs<span class="ansiyellow">,</span> sound <span class="ansiyellow">=</span> wavfile<span class="ansiyellow">.</span>read<span class="ansiyellow">(</span><span class="ansiblue">&apos;test_sound.wav&apos;</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">      2</span> print<span class="ansiyellow">(</span><span class="ansiblue">&quot;sampling rate = {} Hz, length = {} samples&quot;</span><span class="ansiyellow">.</span>format<span class="ansiyellow">(</span>fs<span class="ansiyellow">,</span> <span class="ansiyellow">*</span>sound<span class="ansiyellow">.</span>shape<span class="ansiyellow">)</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">      3</span> print<span class="ansiyellow">(</span>sound<span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">      4</span> <span class="ansired">#plt.plot(sig);</span><span class="ansiyellow"></span><span class="ansiyellow"></span>
-
-<span class="ansigreen">/usr/local/lib/python3.5/site-packages/scipy/io/wavfile.py</span> in <span class="ansicyan">read</span><span class="ansiblue">(filename, mmap)</span>
-<span class="ansigreen">    153</span>         mmap <span class="ansiyellow">=</span> <span class="ansigreen">False</span><span class="ansiyellow"></span>
-<span class="ansigreen">    154</span>     <span class="ansigreen">else</span><span class="ansiyellow">:</span><span class="ansiyellow"></span>
-<span class="ansigreen">--&gt; 155</span><span class="ansiyellow">         </span>fid <span class="ansiyellow">=</span> open<span class="ansiyellow">(</span>filename<span class="ansiyellow">,</span> <span class="ansiblue">&apos;rb&apos;</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">    156</span> <span class="ansiyellow"></span>
-<span class="ansigreen">    157</span>     <span class="ansigreen">try</span><span class="ansiyellow">:</span><span class="ansiyellow"></span>
-
-<span class="ansired">FileNotFoundError</span>: [Errno 2] No such file or directory: &apos;test_sound.wav&apos;</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>sampling rate = 44100 Hz, length = 340928 samples
+[  245    54   168 ..., -3380 -4673 -3998]
+</pre>
 </div>
 </div>
 
@@ -356,7 +307,7 @@ IPython.load_extensions('calico-spell-check', 'calico-document-tools', 'calico-c
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">wavPlayer</span><span class="p">(</span><span class="n">sound</span><span class="p">,</span><span class="n">fs</span><span class="p">)</span>
@@ -371,15 +322,16 @@ IPython.load_extensions('calico-spell-check', 'calico-document-tools', 'calico-c
 
 
 <div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansired">---------------------------------------------------------------------------</span>
-<span class="ansired">NameError</span>                                 Traceback (most recent call last)
-<span class="ansigreen">&lt;ipython-input-6-b8afce515ae9&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
-<span class="ansigreen">----&gt; 1</span><span class="ansiyellow"> </span>wavPlayer<span class="ansiyellow">(</span>sound<span class="ansiyellow">,</span>fs<span class="ansiyellow">)</span><span class="ansiyellow"></span>
 
-<span class="ansired">NameError</span>: name &apos;sound&apos; is not defined</pre>
+<div class="output_html rendered_html output_subarea ">
+
+    <audio controls="controls" style="width:600px" >
+      <source src="./tmp/tmp2d6uzg7i.wav" type="audio/wav">
+    Your browser does not support the audio element.
+    </audio>
+    
 </div>
+
 </div>
 
 </div>
@@ -398,7 +350,69 @@ IPython.load_extensions('calico-spell-check', 'calico-document-tools', 'calico-c
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">sound</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([   245,     54,    168,    882,    510,   2281,   3086,  16964,
+       -13921,  -4171], dtype=int16)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">decimated_sig</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansired">---------------------------------------------------------------------------</span>
+<span class="ansired">NameError</span>                                 Traceback (most recent call last)
+<span class="ansigreen">&lt;ipython-input-7-83183a7b2d80&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">----&gt; 1</span><span class="ansiyellow"> </span>decimated_sig<span class="ansiyellow">[</span><span class="ansiyellow">:</span><span class="ansicyan">10</span><span class="ansiyellow">]</span><span class="ansiyellow"></span>
+
+<span class="ansired">NameError</span>: name &apos;decimated_sig&apos; is not defined</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">decimated_sig</span><span class="o">=</span><span class="n">sound</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>
@@ -416,18 +430,24 @@ IPython.load_extensions('calico-spell-check', 'calico-document-tools', 'calico-c
 
 
 <div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansired">---------------------------------------------------------------------------</span>
-<span class="ansired">NameError</span>                                 Traceback (most recent call last)
-<span class="ansigreen">&lt;ipython-input-7-0b6a7c91e77c&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
-<span class="ansigreen">----&gt; 1</span><span class="ansiyellow"> </span>decimated_sig<span class="ansiyellow">=</span>sound<span class="ansiyellow">[</span><span class="ansiyellow">:</span><span class="ansiyellow">:</span><span class="ansicyan">2</span><span class="ansiyellow">]</span><span class="ansiyellow"></span>
-<span class="ansigreen">      2</span> print<span class="ansiyellow">(</span><span class="ansiblue">&quot;Length of decimated signal:&quot;</span><span class="ansiyellow">,</span> np<span class="ansiyellow">.</span>size<span class="ansiyellow">(</span>decimated_sig<span class="ansiyellow">)</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">      3</span> print<span class="ansiyellow">(</span>decimated_sig<span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">      4</span> wavPlayer<span class="ansiyellow">(</span>decimated_sig<span class="ansiyellow">,</span> int<span class="ansiyellow">(</span>fs<span class="ansiyellow">/</span><span class="ansicyan">2</span><span class="ansiyellow">)</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
-
-<span class="ansired">NameError</span>: name &apos;sound&apos; is not defined</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Length of decimated signal: 170464
+[  245   168   510 ..., -2638 -3856 -4673]
+</pre>
 </div>
+</div>
+
+<div class="output_area"><div class="prompt"></div>
+
+<div class="output_html rendered_html output_subarea ">
+
+    <audio controls="controls" style="width:600px" >
+      <source src="./tmp/tmps1e5k7y6.wav" type="audio/wav">
+    Your browser does not support the audio element.
+    </audio>
+    
+</div>
+
 </div>
 
 </div>
@@ -466,7 +486,7 @@ IPython.load_extensions('calico-spell-check', 'calico-document-tools', 'calico-c
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
@@ -484,27 +504,149 @@ IPython.load_extensions('calico-spell-check', 'calico-document-tools', 'calico-c
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansired">---------------------------------------------------------------------------</span>
-<span class="ansired">NameError</span>                                 Traceback (most recent call last)
-<span class="ansigreen">&lt;ipython-input-8-c84a5fa12f3e&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
-<span class="ansigreen">      1</span> plt<span class="ansiyellow">.</span>figure<span class="ansiyellow">(</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">----&gt; 2</span><span class="ansiyellow"> </span>f<span class="ansiyellow">=</span>np<span class="ansiyellow">.</span>linspace<span class="ansiyellow">(</span><span class="ansiyellow">-</span><span class="ansicyan">0.5</span><span class="ansiyellow">,</span><span class="ansicyan">0.5</span><span class="ansiyellow">,</span>np<span class="ansiyellow">.</span>size<span class="ansiyellow">(</span>sound<span class="ansiyellow">)</span><span class="ansiyellow">)</span><span class="ansiyellow">*</span>fs<span class="ansiyellow"></span>
-<span class="ansigreen">      3</span> plt<span class="ansiyellow">.</span>plot<span class="ansiyellow">(</span>f<span class="ansiyellow">,</span>np<span class="ansiyellow">.</span>abs<span class="ansiyellow">(</span>fftshift<span class="ansiyellow">(</span>fft<span class="ansiyellow">(</span>sound<span class="ansiyellow">)</span><span class="ansiyellow">)</span><span class="ansiyellow">)</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">      4</span> plt<span class="ansiyellow">.</span>xlabel<span class="ansiyellow">(</span><span class="ansiblue">&quot;Frequency&quot;</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">      5</span> plt<span class="ansiyellow">.</span>xlim<span class="ansiyellow">(</span><span class="ansiyellow">[</span><span class="ansiyellow">-</span>fs<span class="ansiyellow">/</span><span class="ansicyan">2</span><span class="ansiyellow">,</span>fs<span class="ansiyellow">/</span><span class="ansicyan">2</span><span class="ansiyellow">]</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
+<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
 
-<span class="ansired">NameError</span>: name &apos;sound&apos; is not defined</pre>
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(-22050.0, 22050.0)</pre>
 </div>
+
 </div>
 
 <div class="output_area"><div class="prompt"></div>
 
 
-<div class="output_text output_subarea ">
-<pre>&lt;matplotlib.figure.Figure at 0x7fa7a2fe04e0&gt;</pre>
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
 </div>
 
 </div>
@@ -536,7 +678,7 @@ IPython.load_extensions('calico-spell-check', 'calico-document-tools', 'calico-c
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
@@ -554,27 +696,142 @@ IPython.load_extensions('calico-spell-check', 'calico-document-tools', 'calico-c
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansired">---------------------------------------------------------------------------</span>
-<span class="ansired">NameError</span>                                 Traceback (most recent call last)
-<span class="ansigreen">&lt;ipython-input-9-aa1877d2d561&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
-<span class="ansigreen">      1</span> plt<span class="ansiyellow">.</span>figure<span class="ansiyellow">(</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">----&gt; 2</span><span class="ansiyellow"> </span>f<span class="ansiyellow">=</span>np<span class="ansiyellow">.</span>linspace<span class="ansiyellow">(</span><span class="ansiyellow">-</span><span class="ansicyan">0.5</span><span class="ansiyellow">,</span><span class="ansicyan">0.5</span><span class="ansiyellow">,</span>np<span class="ansiyellow">.</span>size<span class="ansiyellow">(</span>decimated_sig<span class="ansiyellow">)</span><span class="ansiyellow">)</span><span class="ansiyellow">*</span>fs<span class="ansiyellow">/</span><span class="ansicyan">2</span><span class="ansiyellow"></span>
-<span class="ansigreen">      3</span> plt<span class="ansiyellow">.</span>plot<span class="ansiyellow">(</span>f<span class="ansiyellow">,</span>np<span class="ansiyellow">.</span>abs<span class="ansiyellow">(</span>fftshift<span class="ansiyellow">(</span>fft<span class="ansiyellow">(</span>decimated_sig<span class="ansiyellow">)</span><span class="ansiyellow">)</span><span class="ansiyellow">)</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">      4</span> plt<span class="ansiyellow">.</span>xlabel<span class="ansiyellow">(</span><span class="ansiblue">&quot;Frequency&quot;</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">      5</span> plt<span class="ansiyellow">.</span>xlim<span class="ansiyellow">(</span><span class="ansiyellow">[</span><span class="ansiyellow">-</span>fs<span class="ansiyellow">/</span><span class="ansicyan">4</span><span class="ansiyellow">,</span>fs<span class="ansiyellow">/</span><span class="ansicyan">4</span><span class="ansiyellow">]</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
+<div class="output_area"><div class="prompt output_prompt">Out[10]:</div>
 
-<span class="ansired">NameError</span>: name &apos;decimated_sig&apos; is not defined</pre>
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(-11025.0, 11025.0)</pre>
 </div>
+
 </div>
 
 <div class="output_area"><div class="prompt"></div>
 
 
-<div class="output_text output_subarea ">
-<pre>&lt;matplotlib.figure.Figure at 0x7fa7a30694e0&gt;</pre>
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
 </div>
 
 </div>
@@ -604,7 +861,7 @@ IPython.load_extensions('calico-spell-check', 'calico-document-tools', 'calico-c
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">fs</span><span class="p">,</span> <span class="n">bo</span> <span class="o">=</span> <span class="n">wavfile</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s">&#39;Bo.wav&#39;</span><span class="p">)</span>
@@ -626,7 +883,7 @@ IPython.load_extensions('calico-spell-check', 'calico-document-tools', 'calico-c
 <pre>
 <span class="ansired">---------------------------------------------------------------------------</span>
 <span class="ansired">FileNotFoundError</span>                         Traceback (most recent call last)
-<span class="ansigreen">&lt;ipython-input-10-74ce61bdff20&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">&lt;ipython-input-11-74ce61bdff20&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
 <span class="ansigreen">----&gt; 1</span><span class="ansiyellow"> </span>fs<span class="ansiyellow">,</span> bo <span class="ansiyellow">=</span> wavfile<span class="ansiyellow">.</span>read<span class="ansiyellow">(</span><span class="ansiblue">&apos;Bo.wav&apos;</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
 <span class="ansigreen">      2</span> print<span class="ansiyellow">(</span><span class="ansiblue">&quot;sampling rate = {} Hz, length = {} samples, channels = {}&quot;</span><span class="ansiyellow">.</span>format<span class="ansiyellow">(</span>fs<span class="ansiyellow">,</span> <span class="ansiyellow">*</span>bo<span class="ansiyellow">.</span>shape<span class="ansiyellow">)</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
 <span class="ansigreen">      3</span> print<span class="ansiyellow">(</span>bo<span class="ansiyellow">)</span><span class="ansiyellow"></span>
@@ -649,7 +906,7 @@ IPython.load_extensions('calico-spell-check', 'calico-document-tools', 'calico-c
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">fs</span><span class="p">,</span> <span class="n">voix</span> <span class="o">=</span> <span class="n">wavfile</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s">&#39;voix_outretombe.wav&#39;</span><span class="p">)</span>
@@ -694,7 +951,7 @@ IPython.load_extensions('calico-spell-check', 'calico-document-tools', 'calico-c
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">L</span><span class="o">=</span><span class="mi">2000000</span>
@@ -715,7 +972,7 @@ IPython.load_extensions('calico-spell-check', 'calico-document-tools', 'calico-c
 <pre>
 <span class="ansired">---------------------------------------------------------------------------</span>
 <span class="ansired">NameError</span>                                 Traceback (most recent call last)
-<span class="ansigreen">&lt;ipython-input-12-d75af2b834cc&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">&lt;ipython-input-13-d75af2b834cc&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
 <span class="ansigreen">      1</span> L<span class="ansiyellow">=</span><span class="ansicyan">2000000</span><span class="ansiyellow"></span>
 <span class="ansigreen">----&gt; 2</span><span class="ansiyellow"> </span>ssig<span class="ansiyellow">=</span>bo<span class="ansiyellow">[</span>L<span class="ansiyellow">:</span><span class="ansicyan">340928</span><span class="ansiyellow">+</span>L<span class="ansiyellow">]</span><span class="ansiyellow"></span>
 <span class="ansigreen">      3</span> <span class="ansigreen">del</span> bo<span class="ansiyellow"></span>
@@ -730,7 +987,7 @@ IPython.load_extensions('calico-spell-check', 'calico-document-tools', 'calico-c
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ssig</span><span class="p">);</span>
@@ -753,7 +1010,7 @@ IPython.load_extensions('calico-spell-check', 'calico-document-tools', 'calico-c
 <pre>
 <span class="ansired">---------------------------------------------------------------------------</span>
 <span class="ansired">NameError</span>                                 Traceback (most recent call last)
-<span class="ansigreen">&lt;ipython-input-13-208eb95dec26&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">&lt;ipython-input-14-208eb95dec26&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
 <span class="ansigreen">----&gt; 1</span><span class="ansiyellow"> </span>plt<span class="ansiyellow">.</span>plot<span class="ansiyellow">(</span>ssig<span class="ansiyellow">)</span><span class="ansiyellow">;</span><span class="ansiyellow"></span>
 <span class="ansigreen">      2</span> plt<span class="ansiyellow">.</span>title<span class="ansiyellow">(</span><span class="ansiblue">&quot;Bolero&quot;</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
 <span class="ansigreen">      3</span> plt<span class="ansiyellow">.</span>figure<span class="ansiyellow">(</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
@@ -770,7 +1027,7 @@ IPython.load_extensions('calico-spell-check', 'calico-document-tools', 'calico-c
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">wavPlayer</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">voix</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
@@ -785,36 +1042,16 @@ IPython.load_extensions('calico-spell-check', 'calico-document-tools', 'calico-c
 
 
 <div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansired">---------------------------------------------------------------------------</span>
-<span class="ansired">FileNotFoundError</span>                         Traceback (most recent call last)
-<span class="ansigreen">&lt;ipython-input-14-02c87c18c147&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
-<span class="ansigreen">----&gt; 1</span><span class="ansiyellow"> </span>wavPlayer<span class="ansiyellow">(</span><span class="ansicyan">2</span><span class="ansiyellow">*</span>voix<span class="ansiyellow">,</span> fs<span class="ansiyellow">)</span><span class="ansiyellow"></span>
 
-<span class="ansigreen">&lt;ipython-input-3-916fec39843f&gt;</span> in <span class="ansicyan">wavPlayer</span><span class="ansiblue">(data, rate)</span>
-<span class="ansigreen">      8</span> <span class="ansiyellow"></span>
-<span class="ansigreen">      9</span>     <span class="ansired">#tmpwav=&quot;tmpwav.wav&quot;       #=tempfile.TemporaryFile(delete=False) #</span><span class="ansiyellow"></span><span class="ansiyellow"></span>
-<span class="ansigreen">---&gt; 10</span><span class="ansiyellow">     </span>tmpwav<span class="ansiyellow">=</span>tempfile<span class="ansiyellow">.</span>NamedTemporaryFile<span class="ansiyellow">(</span>dir<span class="ansiyellow">=</span><span class="ansiblue">&apos;./tmp&apos;</span><span class="ansiyellow">,</span>prefix<span class="ansiyellow">=</span><span class="ansiblue">&apos;tmp&apos;</span><span class="ansiyellow">,</span>suffix<span class="ansiyellow">=</span><span class="ansiblue">&apos;.wav&apos;</span><span class="ansiyellow">,</span>delete<span class="ansiyellow">=</span><span class="ansigreen">True</span><span class="ansiyellow">)</span><span class="ansiyellow">.</span>name<span class="ansiyellow"></span>
-<span class="ansigreen">     11</span>     <span class="ansigreen">if</span> <span class="ansigreen">not</span> os<span class="ansiyellow">.</span>path<span class="ansiyellow">.</span>isdir<span class="ansiyellow">(</span><span class="ansiblue">&apos;./tmp&apos;</span><span class="ansiyellow">)</span><span class="ansiyellow">:</span> os<span class="ansiyellow">.</span>path<span class="ansiyellow">.</span>mkdir<span class="ansiyellow">(</span><span class="ansiblue">&apos;./tmp&apos;</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">     12</span>     <span class="ansigreen">try</span><span class="ansiyellow">:</span><span class="ansiyellow"></span>
+<div class="output_html rendered_html output_subarea ">
 
-<span class="ansigreen">/usr/local/lib/python3.5/tempfile.py</span> in <span class="ansicyan">NamedTemporaryFile</span><span class="ansiblue">(mode, buffering, encoding, newline, suffix, prefix, dir, delete)</span>
-<span class="ansigreen">    546</span>         flags <span class="ansiyellow">|=</span> _os<span class="ansiyellow">.</span>O_TEMPORARY<span class="ansiyellow"></span>
-<span class="ansigreen">    547</span> <span class="ansiyellow"></span>
-<span class="ansigreen">--&gt; 548</span><span class="ansiyellow">     </span><span class="ansiyellow">(</span>fd<span class="ansiyellow">,</span> name<span class="ansiyellow">)</span> <span class="ansiyellow">=</span> _mkstemp_inner<span class="ansiyellow">(</span>dir<span class="ansiyellow">,</span> prefix<span class="ansiyellow">,</span> suffix<span class="ansiyellow">,</span> flags<span class="ansiyellow">,</span> output_type<span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">    549</span>     <span class="ansigreen">try</span><span class="ansiyellow">:</span><span class="ansiyellow"></span>
-<span class="ansigreen">    550</span>         file = _io.open(fd, mode, buffering=buffering,
-
-<span class="ansigreen">/usr/local/lib/python3.5/tempfile.py</span> in <span class="ansicyan">_mkstemp_inner</span><span class="ansiblue">(dir, pre, suf, flags, output_type)</span>
-<span class="ansigreen">    258</span>         file <span class="ansiyellow">=</span> _os<span class="ansiyellow">.</span>path<span class="ansiyellow">.</span>join<span class="ansiyellow">(</span>dir<span class="ansiyellow">,</span> pre <span class="ansiyellow">+</span> name <span class="ansiyellow">+</span> suf<span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">    259</span>         <span class="ansigreen">try</span><span class="ansiyellow">:</span><span class="ansiyellow"></span>
-<span class="ansigreen">--&gt; 260</span><span class="ansiyellow">             </span>fd <span class="ansiyellow">=</span> _os<span class="ansiyellow">.</span>open<span class="ansiyellow">(</span>file<span class="ansiyellow">,</span> flags<span class="ansiyellow">,</span> <span class="ansicyan">0o600</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">    261</span>         <span class="ansigreen">except</span> FileExistsError<span class="ansiyellow">:</span><span class="ansiyellow"></span>
-<span class="ansigreen">    262</span>             <span class="ansigreen">continue</span>    <span class="ansired"># try again</span><span class="ansiyellow"></span>
-
-<span class="ansired">FileNotFoundError</span>: [Errno 2] No such file or directory: &apos;./tmp/tmpijzx3yy9.wav&apos;</pre>
+    <audio controls="controls" style="width:600px" >
+      <source src="./tmp/tmp4ne7v_a0.wav" type="audio/wav">
+    Your browser does not support the audio element.
+    </audio>
+    
 </div>
+
 </div>
 
 </div>
@@ -823,7 +1060,7 @@ IPython.load_extensions('calico-spell-check', 'calico-document-tools', 'calico-c
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">f</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">voix</span><span class="p">))</span><span class="o">*</span><span class="mi">44</span>
@@ -840,11 +1077,11 @@ IPython.load_extensions('calico-spell-check', 'calico-document-tools', 'calico-c
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[15]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[16]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.text.Text at 0x7fa7cc3f77b8&gt;</pre>
+<pre>&lt;matplotlib.text.Text at 0x7f1892bb6c18&gt;</pre>
 </div>
 
 </div>
@@ -999,7 +1236,7 @@ k7uZWYac3M3MMuTkbmaWof8Cc0Lm6kJnNuAAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="kn">import</span> <span class="nn">scipy.signal</span> <span class="k">as</span> <span class="nn">sig</span>
@@ -1021,7 +1258,7 @@ k7uZWYac3M3MMuTkbmaWof8Cc0Lm6kJnNuAAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">h</span><span class="o">=</span><span class="n">sig</span><span class="o">.</span><span class="n">firwin</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
@@ -1037,11 +1274,11 @@ k7uZWYac3M3MMuTkbmaWof8Cc0Lm6kJnNuAAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[17]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[18]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;matplotlib.lines.Line2D at 0x7fa79d8bbe80&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x7f188da46cc0&gt;]</pre>
 </div>
 
 </div>
@@ -1166,7 +1403,7 @@ CKEPAH2E0AeAPkLoA0AfIfQBoI8Q+gDQR/4fpRqOVaf2G1wAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">bo_filtered</span><span class="o">=</span><span class="n">sig</span><span class="o">.</span><span class="n">lfilter</span><span class="p">(</span><span class="n">h</span><span class="p">,[</span><span class="mi">1</span><span class="p">],</span><span class="n">ssig</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
@@ -1188,7 +1425,7 @@ CKEPAH2E0AeAPkLoA0AfIfQBoI8Q+gDQR/4fpRqOVaf2G1wAAAAASUVORK5CYII=
 <pre>
 <span class="ansired">---------------------------------------------------------------------------</span>
 <span class="ansired">NameError</span>                                 Traceback (most recent call last)
-<span class="ansigreen">&lt;ipython-input-18-26fc94228826&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">&lt;ipython-input-19-26fc94228826&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
 <span class="ansigreen">----&gt; 1</span><span class="ansiyellow"> </span>bo_filtered<span class="ansiyellow">=</span>sig<span class="ansiyellow">.</span>lfilter<span class="ansiyellow">(</span>h<span class="ansiyellow">,</span><span class="ansiyellow">[</span><span class="ansicyan">1</span><span class="ansiyellow">]</span><span class="ansiyellow">,</span>ssig<span class="ansiyellow">[</span><span class="ansiyellow">:</span><span class="ansiyellow">,</span><span class="ansicyan">1</span><span class="ansiyellow">]</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
 <span class="ansigreen">      2</span> plt<span class="ansiyellow">.</span>plot<span class="ansiyellow">(</span>np<span class="ansiyellow">.</span>abs<span class="ansiyellow">(</span>np<span class="ansiyellow">.</span>fft<span class="ansiyellow">.</span>fft<span class="ansiyellow">(</span>bo_filtered<span class="ansiyellow">[</span><span class="ansicyan">2000</span><span class="ansiyellow">:</span><span class="ansicyan">4000</span><span class="ansiyellow">]</span><span class="ansiyellow">)</span><span class="ansiyellow">)</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
 <span class="ansigreen">      3</span> plt<span class="ansiyellow">.</span>figure<span class="ansiyellow">(</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
@@ -1204,7 +1441,7 @@ CKEPAH2E0AeAPkLoA0AfIfQBoI8Q+gDQR/4fpRqOVaf2G1wAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">wavPlayer</span><span class="p">(</span><span class="mi">30</span><span class="o">*</span><span class="n">ssig</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">fs</span><span class="p">)</span>
@@ -1223,7 +1460,7 @@ CKEPAH2E0AeAPkLoA0AfIfQBoI8Q+gDQR/4fpRqOVaf2G1wAAAAASUVORK5CYII=
 <pre>
 <span class="ansired">---------------------------------------------------------------------------</span>
 <span class="ansired">NameError</span>                                 Traceback (most recent call last)
-<span class="ansigreen">&lt;ipython-input-19-c48e36c3a231&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">&lt;ipython-input-20-c48e36c3a231&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
 <span class="ansigreen">----&gt; 1</span><span class="ansiyellow"> </span>wavPlayer<span class="ansiyellow">(</span><span class="ansicyan">30</span><span class="ansiyellow">*</span>ssig<span class="ansiyellow">[</span><span class="ansiyellow">:</span><span class="ansiyellow">,</span><span class="ansicyan">1</span><span class="ansiyellow">]</span><span class="ansiyellow">,</span> fs<span class="ansiyellow">)</span><span class="ansiyellow"></span>
 
 <span class="ansired">NameError</span>: name &apos;ssig&apos; is not defined</pre>
@@ -1236,7 +1473,7 @@ CKEPAH2E0AeAPkLoA0AfIfQBoI8Q+gDQR/4fpRqOVaf2G1wAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">wavPlayer</span><span class="p">(</span><span class="mi">30</span><span class="o">*</span><span class="n">bo_filtered</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
@@ -1255,7 +1492,7 @@ CKEPAH2E0AeAPkLoA0AfIfQBoI8Q+gDQR/4fpRqOVaf2G1wAAAAASUVORK5CYII=
 <pre>
 <span class="ansired">---------------------------------------------------------------------------</span>
 <span class="ansired">NameError</span>                                 Traceback (most recent call last)
-<span class="ansigreen">&lt;ipython-input-20-5125fc54c1e0&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">&lt;ipython-input-21-5125fc54c1e0&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
 <span class="ansigreen">----&gt; 1</span><span class="ansiyellow"> </span>wavPlayer<span class="ansiyellow">(</span><span class="ansicyan">30</span><span class="ansiyellow">*</span>bo_filtered<span class="ansiyellow">,</span> fs<span class="ansiyellow">)</span><span class="ansiyellow"></span>
 
 <span class="ansired">NameError</span>: name &apos;bo_filtered&apos; is not defined</pre>
@@ -1277,7 +1514,7 @@ CKEPAH2E0AeAPkLoA0AfIfQBoI8Q+gDQR/4fpRqOVaf2G1wAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">t</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">voix</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]))</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="n">fs</span>
@@ -1302,11 +1539,11 @@ CKEPAH2E0AeAPkLoA0AfIfQBoI8Q+gDQR/4fpRqOVaf2G1wAAAAASUVORK5CYII=
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[21]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[22]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.text.Text at 0x7fa79d7efc88&gt;</pre>
+<pre>&lt;matplotlib.text.Text at 0x7f188d97acf8&gt;</pre>
 </div>
 
 </div>
@@ -1632,7 +1869,7 @@ mJOAmVmJOQmYmZXY/weTzu7Wog8psQAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">wavPlayer</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">voix_mod</span><span class="p">,</span> <span class="n">fs</span><span class="p">)</span>
@@ -1647,36 +1884,16 @@ mJOAmVmJOQmYmZXY/weTzu7Wog8psQAAAABJRU5ErkJggg==
 
 
 <div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansired">---------------------------------------------------------------------------</span>
-<span class="ansired">FileNotFoundError</span>                         Traceback (most recent call last)
-<span class="ansigreen">&lt;ipython-input-22-cda99fa30c0b&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
-<span class="ansigreen">----&gt; 1</span><span class="ansiyellow"> </span>wavPlayer<span class="ansiyellow">(</span><span class="ansicyan">4</span><span class="ansiyellow">*</span>voix_mod<span class="ansiyellow">,</span> fs<span class="ansiyellow">)</span><span class="ansiyellow"></span>
 
-<span class="ansigreen">&lt;ipython-input-3-916fec39843f&gt;</span> in <span class="ansicyan">wavPlayer</span><span class="ansiblue">(data, rate)</span>
-<span class="ansigreen">      8</span> <span class="ansiyellow"></span>
-<span class="ansigreen">      9</span>     <span class="ansired">#tmpwav=&quot;tmpwav.wav&quot;       #=tempfile.TemporaryFile(delete=False) #</span><span class="ansiyellow"></span><span class="ansiyellow"></span>
-<span class="ansigreen">---&gt; 10</span><span class="ansiyellow">     </span>tmpwav<span class="ansiyellow">=</span>tempfile<span class="ansiyellow">.</span>NamedTemporaryFile<span class="ansiyellow">(</span>dir<span class="ansiyellow">=</span><span class="ansiblue">&apos;./tmp&apos;</span><span class="ansiyellow">,</span>prefix<span class="ansiyellow">=</span><span class="ansiblue">&apos;tmp&apos;</span><span class="ansiyellow">,</span>suffix<span class="ansiyellow">=</span><span class="ansiblue">&apos;.wav&apos;</span><span class="ansiyellow">,</span>delete<span class="ansiyellow">=</span><span class="ansigreen">True</span><span class="ansiyellow">)</span><span class="ansiyellow">.</span>name<span class="ansiyellow"></span>
-<span class="ansigreen">     11</span>     <span class="ansigreen">if</span> <span class="ansigreen">not</span> os<span class="ansiyellow">.</span>path<span class="ansiyellow">.</span>isdir<span class="ansiyellow">(</span><span class="ansiblue">&apos;./tmp&apos;</span><span class="ansiyellow">)</span><span class="ansiyellow">:</span> os<span class="ansiyellow">.</span>path<span class="ansiyellow">.</span>mkdir<span class="ansiyellow">(</span><span class="ansiblue">&apos;./tmp&apos;</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">     12</span>     <span class="ansigreen">try</span><span class="ansiyellow">:</span><span class="ansiyellow"></span>
+<div class="output_html rendered_html output_subarea ">
 
-<span class="ansigreen">/usr/local/lib/python3.5/tempfile.py</span> in <span class="ansicyan">NamedTemporaryFile</span><span class="ansiblue">(mode, buffering, encoding, newline, suffix, prefix, dir, delete)</span>
-<span class="ansigreen">    546</span>         flags <span class="ansiyellow">|=</span> _os<span class="ansiyellow">.</span>O_TEMPORARY<span class="ansiyellow"></span>
-<span class="ansigreen">    547</span> <span class="ansiyellow"></span>
-<span class="ansigreen">--&gt; 548</span><span class="ansiyellow">     </span><span class="ansiyellow">(</span>fd<span class="ansiyellow">,</span> name<span class="ansiyellow">)</span> <span class="ansiyellow">=</span> _mkstemp_inner<span class="ansiyellow">(</span>dir<span class="ansiyellow">,</span> prefix<span class="ansiyellow">,</span> suffix<span class="ansiyellow">,</span> flags<span class="ansiyellow">,</span> output_type<span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">    549</span>     <span class="ansigreen">try</span><span class="ansiyellow">:</span><span class="ansiyellow"></span>
-<span class="ansigreen">    550</span>         file = _io.open(fd, mode, buffering=buffering,
-
-<span class="ansigreen">/usr/local/lib/python3.5/tempfile.py</span> in <span class="ansicyan">_mkstemp_inner</span><span class="ansiblue">(dir, pre, suf, flags, output_type)</span>
-<span class="ansigreen">    258</span>         file <span class="ansiyellow">=</span> _os<span class="ansiyellow">.</span>path<span class="ansiyellow">.</span>join<span class="ansiyellow">(</span>dir<span class="ansiyellow">,</span> pre <span class="ansiyellow">+</span> name <span class="ansiyellow">+</span> suf<span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">    259</span>         <span class="ansigreen">try</span><span class="ansiyellow">:</span><span class="ansiyellow"></span>
-<span class="ansigreen">--&gt; 260</span><span class="ansiyellow">             </span>fd <span class="ansiyellow">=</span> _os<span class="ansiyellow">.</span>open<span class="ansiyellow">(</span>file<span class="ansiyellow">,</span> flags<span class="ansiyellow">,</span> <span class="ansicyan">0o600</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
-<span class="ansigreen">    261</span>         <span class="ansigreen">except</span> FileExistsError<span class="ansiyellow">:</span><span class="ansiyellow"></span>
-<span class="ansigreen">    262</span>             <span class="ansigreen">continue</span>    <span class="ansired"># try again</span><span class="ansiyellow"></span>
-
-<span class="ansired">FileNotFoundError</span>: [Errno 2] No such file or directory: &apos;./tmp/tmpxgylxau6.wav&apos;</pre>
+    <audio controls="controls" style="width:600px" >
+      <source src="./tmp/tmpky0x79q3.wav" type="audio/wav">
+    Your browser does not support the audio element.
+    </audio>
+    
 </div>
+
 </div>
 
 </div>
@@ -1685,7 +1902,7 @@ mJOAmVmJOQmYmZXY/weTzu7Wog8psQAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">composite_signal</span><span class="o">=</span><span class="mi">30</span><span class="o">*</span><span class="n">bo_filtered</span><span class="o">+</span><span class="mi">6</span><span class="o">*</span><span class="n">voix_mod</span>
@@ -1705,7 +1922,7 @@ mJOAmVmJOQmYmZXY/weTzu7Wog8psQAAAABJRU5ErkJggg==
 <pre>
 <span class="ansired">---------------------------------------------------------------------------</span>
 <span class="ansired">NameError</span>                                 Traceback (most recent call last)
-<span class="ansigreen">&lt;ipython-input-23-2553eb8f5ffa&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">&lt;ipython-input-24-2553eb8f5ffa&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
 <span class="ansigreen">----&gt; 1</span><span class="ansiyellow"> </span>composite_signal<span class="ansiyellow">=</span><span class="ansicyan">30</span><span class="ansiyellow">*</span>bo_filtered<span class="ansiyellow">+</span><span class="ansicyan">6</span><span class="ansiyellow">*</span>voix_mod<span class="ansiyellow"></span>
 <span class="ansigreen">      2</span> wavPlayer<span class="ansiyellow">(</span>composite_signal<span class="ansiyellow">,</span> fs<span class="ansiyellow">)</span><span class="ansiyellow"></span>
 
@@ -1719,7 +1936,7 @@ mJOAmVmJOQmYmZXY/weTzu7Wog8psQAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
@@ -1739,7 +1956,7 @@ mJOAmVmJOQmYmZXY/weTzu7Wog8psQAAAABJRU5ErkJggg==
 <pre>
 <span class="ansired">---------------------------------------------------------------------------</span>
 <span class="ansired">NameError</span>                                 Traceback (most recent call last)
-<span class="ansigreen">&lt;ipython-input-24-0cae1283a933&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">&lt;ipython-input-25-0cae1283a933&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
 <span class="ansigreen">      1</span> plt<span class="ansiyellow">.</span>figure<span class="ansiyellow">(</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
 <span class="ansigreen">----&gt; 2</span><span class="ansiyellow"> </span>plt<span class="ansiyellow">.</span>plot<span class="ansiyellow">(</span>np<span class="ansiyellow">.</span>abs<span class="ansiyellow">(</span>np<span class="ansiyellow">.</span>fft<span class="ansiyellow">.</span>fft<span class="ansiyellow">(</span>composite_signal<span class="ansiyellow">)</span><span class="ansiyellow">)</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
 
@@ -1751,7 +1968,7 @@ mJOAmVmJOQmYmZXY/weTzu7Wog8psQAAAABJRU5ErkJggg==
 
 
 <div class="output_text output_subarea ">
-<pre>&lt;matplotlib.figure.Figure at 0x7fa79d7a6cf8&gt;</pre>
+<pre>&lt;matplotlib.figure.Figure at 0x7f188d941160&gt;</pre>
 </div>
 
 </div>
@@ -1762,7 +1979,7 @@ mJOAmVmJOQmYmZXY/weTzu7Wog8psQAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="c"># saving the composite signal</span>
@@ -1776,7 +1993,7 @@ mJOAmVmJOQmYmZXY/weTzu7Wog8psQAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="n">subsampled_sig</span><span class="o">=</span><span class="n">composite_signal</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>
@@ -1796,7 +2013,7 @@ mJOAmVmJOQmYmZXY/weTzu7Wog8psQAAAABJRU5ErkJggg==
 <pre>
 <span class="ansired">---------------------------------------------------------------------------</span>
 <span class="ansired">NameError</span>                                 Traceback (most recent call last)
-<span class="ansigreen">&lt;ipython-input-26-1f9f415273a8&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">&lt;ipython-input-27-1f9f415273a8&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
 <span class="ansigreen">----&gt; 1</span><span class="ansiyellow"> </span>subsampled_sig<span class="ansiyellow">=</span>composite_signal<span class="ansiyellow">[</span><span class="ansiyellow">:</span><span class="ansiyellow">:</span><span class="ansicyan">2</span><span class="ansiyellow">]</span><span class="ansiyellow"></span>
 <span class="ansigreen">      2</span> wavPlayer<span class="ansiyellow">(</span>subsampled_sig<span class="ansiyellow">,</span> int<span class="ansiyellow">(</span>fs<span class="ansiyellow">/</span><span class="ansicyan">2</span><span class="ansiyellow">)</span><span class="ansiyellow">)</span><span class="ansiyellow"></span>
 
