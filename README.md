@@ -7,6 +7,7 @@ by: J.-F. Bercher
 We provide here the complete collection of Jupyter's notebooks, together with their html version and a [pdf ebook](https://rawgit.com/jfbercher/LecturesSignalProcessing/master/tex/Poly.pdf).
 Notebooks are located in the subdirectory `src` and not fully executed, while the html version in `html` corresponds to the full output. Beware that the notebooks make a heavy use of some Jupyter javascript extensions (e.g. latex_envs, exercise, ...) and unfortunately do not render correctly in nbviewer or in the github viewer ; that is the reason why we provide the static version in `./html`. See the install section below.
 
+Unfortunately, conversion to html is not always perfect (certainly less than it used to), because of the issue reported [here](https://github.com/jupyter/nbconvert/issues/160). I will try to add a small workaround shortly. For the moment, please forgive bad renderings and refer to the notebook/pdf versions --> [pdf](https://rawgit.com/jfbercher/LecturesSignalProcessing/master/tex/Poly.pdf).
 
 ## Table of Contents
  
