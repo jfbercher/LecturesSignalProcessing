@@ -1,5 +1,7 @@
 # A Journey in Signal processing with IPython
 
+[![Join the chat at https://gitter.im/jfbercher/LecturesSignalProcessing](https://badges.gitter.im/jfbercher/LecturesSignalProcessing.svg)](https://gitter.im/jfbercher/LecturesSignalProcessing?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 A Series of lectures given at [ESIEE-Paris](http://www.esiee.fr), [ISBS-Paris](http://www.isbs.fr/), [ENSG](http://www.ensg.eu/)
 
 by: J.-F. Bercher
