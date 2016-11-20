@@ -1,29 +1,3 @@
-YOYO
-M1--> equation
-YOYO
-M1--> equation
-YOYO
-M1--> equation
-YOYO
-M1--> equation
-YOYO
-M1--> equation
-YOYO
-M1--> equation
-YOYO
-M1--> equation
-YOYO
-M1--> equation
-YOYO
-YOYO
-M1--> align
-YOYO
-YOYO
-M1--> align
-YOYO
-YOYO
-YOYO
-YOYO
 <!DOCTYPE html>
 <html>
 <head>
@@ -522,7 +496,7 @@ Let us check this numerically. This is very easy: define a Dirac comb, take its 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.text.Text at 0x7f39fc315be0&gt;</pre>
+<pre>&lt;matplotlib.text.Text at 0x7f507c5584a8&gt;</pre>
 </div>
 
 </div>
@@ -958,20 +932,24 @@ height=265
 <p>We may now go back to the exploration of the links between Fourier series and transform, using the second Poisson formula (\ref{eq:Poisson2}).</p>
 <p><b>Convolution with a delayed Dirac impulse</b> - Let us first look at the result of the convolution of any function with a delayed Dirac impulse: let us denote $\delta_{n_0}(n)=\delta(n-n_0)$. The convolution $[x*\delta_{n_0}](n)$ is eq given by
 \begin{align}
-[x*\delta_{n_0}] (n) &amp; =  \sum_m x(m) \delta_{n_0}(n-m) \\ &amp; =  \sum_m x(m) \delta(n-m-n_0)\\  &amp; =    x(n-n_0)\\ \end{align}
-where the last relation follows by the representation formula. Hence 
-<span class="latex_title"> </span> <div class="latex_textboxa">
-Convolution with a delayed Dirac delays the signal.
+<a href="n">x*\delta_{n_0}</a> &amp; =  \sum_m x(m) \delta_{n_0}(n-m) \\ &amp; =  \sum_m x(m) \delta(n-m-n_0)\\  &amp; =    x(n-n_0)\\ \end{align}
+where the last relation follows by the representation formula. Hence</p>
+<div class=mybox>
+<em>Convolution with a delayed Dirac delays the signal.</em>
 </div>
-This has a simple and direct filtering interpretation. Indeed, if a filters has for impulse response a delayed Dirac impulse, then this means that it is a pure delaying filter. Then to an input $x(n)$ corresponds an output $x(n-n_0)$. <br><br></p>
-<p><b>Convolution with a Dirac comb</b> - By linearity, the convolution of any signal $x_L(n)$ of length $L$ with a Dirac comb results in the sum of the delayed responses:
-\begin{align}
-x(n) = \left[x_L*\sha_{L_0}\right] (n)  &amp; = \left[x_L*\sum_k \delta_{k L_0}\right] (n)\\&amp; =  \sum_k [x_L*\delta_{k L_0}] (n) \\  &amp; =   \sum_k x_L(n-k L_0).\\ \end{align}
-This is nothing but the expression of a periodic signal. If $L_0$ is larger than the support $L$  of $x_L(n)$, then $x(n)$ is simply the repetition, with a period $L_0$, of the pattern $x_L(n)$. 
-<span class="latex_title"> </span> <div class="latex_textboxa">
-Convolution with a Dirac comb periodizes the signal.
-</div></p>
+This has a simple and direct filtering interpretation. Indeed, if a filters has for impulse response a delayed Dirac impulse, then this means that it is a pure delaying filter. Then to an input $x(n)$ corresponds an output $x(n-n_0)$. <br><br>
 
+
+<b>Convolution with a Dirac comb</b> - By linearity, the convolution of any signal $x_L(n)$ of length $L$ with a Dirac comb results in the sum of the delayed responses:
+\begin{align}
+x(n) = \left[x_L*\sha_{L_0}\right](n)  & = \left[x_L*\sum_k \delta_{k L_0}\right](n) \\
+& =  \sum_k [x_L*\delta_{k L_0}](n)  \\
+  & =   \sum_k x_L(n-k L_0). \\
+ \end{align}
+This is nothing but the expression of a periodic signal. If $L_0$ is larger than the support $L$  of $x_L(n)$, then $x(n)$ is simply the repetition, with a period $L_0$, of the pattern $x_L(n)$. 
+<div class=mybox>
+<em>Convolution with a Dirac comb periodizes the signal.</em>
+</div>
 </div>
 </div>
 </div>
@@ -1031,7 +1009,7 @@ Let us check this with some simple Python commands: create a Dirac comb, a test 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.text.Text at 0x7f39fc00d898&gt;</pre>
+<pre>&lt;matplotlib.text.Text at 0x7f507c1d2d30&gt;</pre>
 </div>
 
 </div>
@@ -1334,11 +1312,11 @@ height=280
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><b>Effect in the frequency domain</b> - In the frequency domain, we know, by the Plancherel theorem, that the product of signals results in the convolution of their Fourier transforms (and <em>vice versa</em>). As a consequence, 
 $$
-x(n) = \left[x_L*\sha_{L_0}\right] (n) \flecheTF X_L(f). \tf{\sha_{L_0}(n)}.
+x(n) = \left[x_L*\sha_{L_0}\right](n) \flecheTF X_L(f). \tf{\sha_{L_0}(n)}.
 $$
 Since the Fourier transform of a Dirac comb is also a Dirac comb, we obtain that
 $$
-x(n) = \left[x_L*\sha_{L_0}\right] (n) \flecheTF X_L(f). \frac{1}{L_0}\sha_\frac{1}{L_0}(f),
+x(n) = \left[x_L*\sha_{L_0}\right](n) \flecheTF X_L(f). \frac{1}{L_0}\sha_\frac{1}{L_0}(f),
 $$
 or
 $$

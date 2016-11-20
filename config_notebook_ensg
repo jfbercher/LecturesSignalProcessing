@@ -3,6 +3,8 @@
 # set proxies
 export http_proxy=http://10.0.4.2:3128
 export https_proxy=http://10.0.4.2:3128
+export all_proxy=http://10.0.4.2:3128
+
 
 # clone the git repository
 cd ~
@@ -15,18 +17,33 @@ if [ ! -d "~/.jupyter/nbconfig" ]; then
 fi
 
 # Install jupyter extensions
-jupyter nbextension install https://rawgit.com/jfbercher/latex_envs/master/latex_envs.zip  --user
-jupyter nbextension enable latex_envs/latex_envs  
+# latex_envs
+pip3 install jupyter_latex_envs --user --upgrade
+jupyter nbextension install --py latex_envs --user
+jupyter nbextension enable latex_envs --user --py
+# ipywidgets
+pip3 install ipywidgets --upgrade --user
+jupyter nbextension enable --py widgetsnbextension
+# tiny extensions
 jupyter nbextension install https://rawgit.com/jfbercher/small_nbextensions/master/highlighter.zip  --user
-jupyter nbextension enable usability/highlighter/highlighter 
-#jupyter nbextension install https://rawgit.com/jfbercher/small_nbextensions/master/interactive_sols.zip  --user
-#jupyter nbextension enable usability/interactive_sols/interactive_sols 
+jupyter nbextension enable highlighter/highlighter 
+jupyter nbextension install https://rawgit.com/jfbercher/small_nbextensions/master/interactive_sols.zip  --user
+jupyter nbextension enable usability/interactive_sols/interactive_sols 
 jupyter nbextension install https://rawgit.com/jfbercher/small_nbextensions/master/exercise.zip  --user
-jupyter nbextension enable usability/exercise/main 
+jupyter nbextension enable exercise/main 
 jupyter nbextension install https://rawgit.com/jfbercher/small_nbextensions/master/exercise2.zip  --user
-jupyter nbextension enable usability/exercise2/main 
+jupyter nbextension enable exercise2/main 
 jupyter nbextension install https://rawgit.com/jfbercher/small_nbextensions/master/rubberband.zip  --user
-jupyter nbextension enable usability/rubberband/main 
+jupyter nbextension enable rubberband/main 
+jupyter nbextension install https://rawgit.com/jfbercher/small_nbextensions/master/toc2.zip  --user
+jupyter nbextension enable toc2/main 
+jupyter nbextension install https://rawgit.com/jfbercher/small_nbextensions/master/code_prettify.zip  --user
+jupyter nbextension enable code_prettify/code_prettify
+
+# Update rpy2
+pip3 install rpy2 --update --user 
+
+
 
 #chmod executable files
 cd ~/LecturesSignalProcessing

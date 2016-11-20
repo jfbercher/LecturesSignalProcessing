@@ -287,6 +287,7 @@ border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;border-radius
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>... Loading customized Javascript for interactive solutions (show/hide)
+... Redefining interactive from ipywidgets
 </pre>
 </div>
 </div>
@@ -354,9 +355,9 @@ x_s(n) = x(n).\sha_{N_0}(n).
 $$
 By Plancherel's theorem, we have
 \begin{align}
-X<em>s(f) &amp; = \left[X*\tf{\sha</em>{N<em>0}(n)}\right](f)\
-&amp; =\left[X*\frac{1}{N_0}{\sha</em>\frac{1}{N<em>0}}\right](f)\
-&amp; = \frac{1}{N_0} \sum_k \left[X*\delta</em>\frac{k}{N_0}\right](f)
+X_s(f) &amp; = \left[X*\tf{\sha_{N_0}(n)}\right](f)\
+&amp; =\left[X*\frac{1}{N_0}{\sha_\frac{1}{N_0}}\right](f)\
+&amp; = \frac{1}{N_0} \sum_k \left[X*\delta_\frac{k}{N_0}\right](f)
 \end{align}
 As in the discrete case, the continuous convolution with a Dirac comb results in the periodization of the initial pattern, that is
 $$
@@ -3090,7 +3091,7 @@ height=350
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Using matplotlib backend: agg
+<pre>Using matplotlib backend: TkAgg
 </pre>
 </div>
 </div>
@@ -3308,7 +3309,7 @@ height=255
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Using matplotlib backend: agg
+<pre>Using matplotlib backend: TkAgg
 </pre>
 </div>
 </div>
@@ -5202,9 +5203,8 @@ x(n) = T_s [x_s*h](n),
 $$
 with $T_s=1/f_s$. A simple computation gives us the expression of the impulse response $h$ as the inverse Fourier transform of a rectangular pulse of width $f_s$:
 \begin{align}
-h(n) &amp; =\int<em>{[1]} \text{rect}</em>{f<em>s}(f) e^{j2 \pi f n} \text{d}f \ 
-&amp; = \int</em>{-\frac{f<em>s}{2}}^{\frac{f_s}{2}}  e^{j2 \pi f n} \text{d}f \
-&amp; = f_s \frac{\sin(\pi f_s n)}{\pi f_s n}
+h(n) &amp; =\int_{[1]} \text{rect}_{f_s}(f) e^{j2 \pi f n} \text{d}f\\
+&amp; = \int_{-\frac{f_s}{2}}^{\frac{f_s}{2}}  e^{j2 \pi f n} \text{d}f\\&amp; = f_s \frac{\sin(\pi f_s n)}{\pi f_s n}
 \end{align}
 In developed form, the convolution then expresses as
 $$
