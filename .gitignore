@@ -11,3 +11,6 @@ plustard/
 __pycache__/
 .ipynb_checkpoints/
 LecturesSignalProcessing.zip
+!header.tex
+!Poly.tex
+!.gitignore

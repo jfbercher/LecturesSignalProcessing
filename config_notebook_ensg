@@ -7,9 +7,9 @@ export all_proxy=http://10.0.4.2:3128
 
 
 # clone the git repository
-cd ~
-git clone https://github.com/jfbercher/LecturesSignalProcessing.git
-cd ~/LecturesSignalProcessing
+#cd ~
+#git clone https://github.com/jfbercher/LecturesSignalProcessing.git
+#cd ~/LecturesSignalProcessing
 
 # Check if directories exist
 if [ ! -d "~/.jupyter/nbconfig" ]; then
