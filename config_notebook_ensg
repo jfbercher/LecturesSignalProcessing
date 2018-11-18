@@ -5,6 +5,12 @@ export http_proxy=http://10.0.4.2:3128
 export https_proxy=http://10.0.4.2:3128
 export all_proxy=http://10.0.4.2:3128
 
+# Run as user!
+
+if [ "$EUID" -eq 0 ]
+  then echo "Lancer ce script en tant qu'utilisateur"
+  exit
+fi
 
 # clone the git repository
 #cd ~
@@ -16,13 +22,18 @@ if [ ! -d "~/.jupyter/nbconfig" ]; then
   mkdir -p ~/.jupyter/nbconfig
 fi
 
+# Change rights
+sudo chown -R $USER:$USER ~/.local/share/jupyter 
+sudo chown -R $USER:$USER ~/.jupyter/nbconfig 
+
+
 # Install jupyter extensions
 # latex_envs
 pip3 install jupyter_latex_envs --user --upgrade
 jupyter nbextension install --py latex_envs --user
 jupyter nbextension enable latex_envs --user --py
 # ipywidgets
-pip3 install ipywidgets --upgrade --user
+pip3 install ipywidgets==6.0 --user # version 6 because the update causes problems
 jupyter nbextension enable --py widgetsnbextension
 # tiny extensions
 jupyter nbextension install https://rawgit.com/jfbercher/small_nbextensions/master/highlighter.zip  --user
@@ -41,12 +52,12 @@ jupyter nbextension install https://rawgit.com/jfbercher/small_nbextensions/mast
 jupyter nbextension enable code_prettify/code_prettify
 
 # Update rpy2
-pip3 install rpy2 --update --user 
+# pip3 install rpy2 --update --user 
 
 
 
-#chmod executable files
-cd ~/LecturesSignalProcessing
-chmod 755 local_repo_update_ensg
+##chmod executable files
+#cd ~/LecturesSignalProcessing
+#chmod 755 local_repo_update_ensg
  
 

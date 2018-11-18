@@ -5,9 +5,15 @@ export http_proxy=http://10.0.4.2:3128
 export https_proxy=http://10.0.4.2:3128
 export all_proxy=http://10.0.4.2:3128
 
+# Run as root
+if [ "$EUID" -ne 0 ]
+  then echo "Lancer ce script en tant que root (faire un 'sudo su')"
+  exit
+fi
+
 # make sure required packages are present
 pip3 install jupyter --upgrade
-pip3 install notebook --upgrade
+pip3 install notebook --upgrade 
 pip3 install nbconvert --upgrade
 pip3 install pandas --upgrade #include numpy, dateutils, pytz
 pip3 install matplotlib --upgrade
