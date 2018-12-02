@@ -7,6 +7,7 @@ IPYNB= $(notdir $(wildcard src/*.ipynb)) #$(shell ls -1 src/*.ipynb |xargs -n1 b
 
 #
 MAIN_TeX="Poly.tex"
+MAIN_pdf="Poly.pdf"
 zip_dest="public_html/PPMD/"
 web_dest="public_html/Lectures_SignalProcessing"
 ssh_user="bercherj@ssh.esiee.fr"
@@ -54,12 +55,14 @@ tex/%.tex: exec/%.ipynb
 	cd .. &&\
 	rm tex/$(notdir $^)
 
-pdf: tex
+tex/$(MAIN_pdf): $(SUBDIR_TEX)
 	echo Compiling $(MAIN_TeX) to pdf in tex directory
 	rsync -a src/*.png tex/ && \
 	cd tex && \
 	xelatex -interaction=nonstopmode $(MAIN_TeX) &> /dev/null | cat  && \
 	xelatex -interaction=nonstopmode $(MAIN_TeX) &> /dev/null | cat
+
+pdf: tex/$(MAIN_pdf) $(SUBDIR_TEX)
 
 zip: html 
 	rm -f $(dirName).zip
