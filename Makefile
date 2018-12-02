@@ -19,7 +19,6 @@ TEX= $(IPYNB:.ipynb=.tex)
 SUBDIR_TEX = $(foreach I,$(TEX),tex/$I)
 SUBDIR_exec = $(foreach I,$(IPYNB),exec/$I)
 
-
 here=$(CURDIR)
 dirName=$(notdir $(CURDIR))
 
