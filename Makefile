@@ -7,7 +7,7 @@ IPYNB= $(notdir $(wildcard src/*.ipynb)) #$(shell ls -1 src/*.ipynb |xargs -n1 b
 
 #
 MAIN_TeX="Poly.tex"
-MAIN_pdf="Poly.pdf"
+MAIN_pdf=Poly.pdf
 zip_dest="public_html/PPMD/"
 web_dest="public_html/Lectures_SignalProcessing"
 ssh_user="bercherj@ssh.esiee.fr"
@@ -55,14 +55,15 @@ tex/%.tex: exec/%.ipynb
 	cd .. &&\
 	rm tex/$(notdir $^)
 
-tex/$(MAIN_pdf): $(SUBDIR_TEX)
+
+pdf: tex/${MAIN_pdf}
+
+tex/${MAIN_pdf}: $(SUBDIR_TEX)
 	echo Compiling $(MAIN_TeX) to pdf in tex directory
 	rsync -a src/*.png tex/ && \
 	cd tex && \
 	xelatex -interaction=nonstopmode $(MAIN_TeX) &> /dev/null | cat  && \
 	xelatex -interaction=nonstopmode $(MAIN_TeX) &> /dev/null | cat
-
-pdf: tex/$(MAIN_pdf) $(SUBDIR_TEX)
 
 zip: html 
 	rm -f $(dirName).zip
@@ -80,7 +81,7 @@ git: all
 	git commit -m "update `date +'%y.%m.%d %H:%M:%S'`"
 	git push 
 
-sync: 
+sync: $(SUBDIR_HTML) $(SUBDIR_EXEC)
 	perl -pi -e s/.ipynb/.html/g $(here)/html/*.html
 	rsync -av --chmod=755  -e "ssh -p 52222" $(here)/html/*.* --exclude='*.ipynb' $(ssh_user):$(web_dest)
 	rsync -av --chmod=755  -e "ssh -p 52222" $(here)/exec/*.ipynb  $(ssh_user):$(web_dest)
