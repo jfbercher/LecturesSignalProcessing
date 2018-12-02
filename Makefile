@@ -28,6 +28,7 @@ html: $(SUBDIR_HTML) $(SUBDIR_exec)
 #to convert ipynb in current directory to html in sub html/
 html/%.html: exec/%.ipynb
 	echo "Executing jupyter nbconvert --to html_with_toclenvs $^"
+	jupyter nbconvert --inplace --config filter_config.py $^
 	jupyter nbconvert --to html_with_toclenvs $^
 	./update_html $^
 	#perl -pi -e s/_fr}/-fr}/g $^
