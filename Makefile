@@ -82,7 +82,6 @@ git: all
 	git push 
 
 sync: $(SUBDIR_HTML) $(SUBDIR_EXEC)
-	perl -pi -e s/.ipynb/.html/g $(here)/html/*.html
 	rsync -av --chmod=755  -e "ssh -p 52222" $(here)/html/*.* --exclude='*.ipynb' $(ssh_user):$(web_dest)
 	rsync -av --chmod=755  -e "ssh -p 52222" $(here)/exec/*.ipynb  $(ssh_user):$(web_dest)
 	rsync -av --chmod=755  -e "ssh -p 52222" $(here)/exec/*.ipy  $(ssh_user):$(web_dest)
