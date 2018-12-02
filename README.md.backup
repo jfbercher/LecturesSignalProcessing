@@ -1,4 +1,4 @@
-# A Journey in Signal processing with IPython
+# A Journey in Signal processing with Jupyter
 
 [![Join the chat at https://gitter.im/jfbercher/LecturesSignalProcessing](https://badges.gitter.im/jfbercher/LecturesSignalProcessing.svg)](https://gitter.im/jfbercher/LecturesSignalProcessing?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
