@@ -86,6 +86,8 @@ $$
 display(HTML(LaTeXdefs))
 
 ### ----------------------------------
+%matplotlib inline
+
 print("... Defining figures captions ")
 
 display(HTML(
