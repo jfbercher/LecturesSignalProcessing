@@ -6,6 +6,11 @@ SHELL := /bin/bash
 IPYNB= $(notdir $(wildcard src/*.ipynb)) #$(shell ls -1 src/*.ipynb |xargs -n1 basename)
 
 #
+MAIN_TeX="Poly.tex"
+zip_dest="public_html/PPMD/"
+web_dest="public_html/Lectures_SignalProcessing"
+ssh_user="bercherj@ssh.esiee.fr"
+#
 HTML= $(IPYNB:.ipynb=.html)
 SUBDIR_HTML = $(foreach I,$(HTML),html/$I)
 #alternatively:
@@ -14,42 +19,25 @@ TEX= $(IPYNB:.ipynb=.tex)
 SUBDIR_TEX = $(foreach I,$(TEX),tex/$I)
 SUBDIR_exec = $(foreach I,$(IPYNB),exec/$I)
 
+
 here=$(CURDIR)
-#/home/bercherj/JFB/tstmake
+dirName=$(notdir $(CURDIR))
 
-
-a:
-	echo $(IPYNB)
-
-rien: $(IPYNB)
-	echo $(IPYNB2)
-	echo $(CURDIR)  
-
-html: $(SUBDIR_exec) $(SUBDIR_HTML)
-	#jupyter nbconvert --to html $(IPYNB)
-	#echo "$(SUBDIR_HTML)"
+html: $(SUBDIR_HTML) $(SUBDIR_exec)
 
 #to convert ipynb in current directory to html in sub html/
 html/%.html: exec/%.ipynb
-	echo "Executing jupyter nbconvert --to html $^"
-	#jupyter nbconvert --to html exec/$(basename $(notdir $^)).ipynb --output html/$(basename $(notdir $^)).html
-	#./conversion/conv_ipynb_to_html $^	
+	echo "Executing jupyter nbconvert --to html_with_toclenvs $^"
 	jupyter nbconvert --to html_with_toclenvs $^
-	perl -pi -e s/_fr}/-fr}/g $^
+	./update_html $^
+	#perl -pi -e s/_fr}/-fr}/g $^
 	mv exec/$*.html html/
-	rsync -a src/ html/ --exclude=*.ipynb,*.html,*.*py
+	rsync -a src/ html/ --exclude='*.ipynb' --exclude='*.html' --exclude='*.*py'
 
 tex: exec $(SUBDIR_TEX)
 
-#to convert ipynb in current directory to html in sub html/
-#html/%.html: %.ipynb
-#	echo "Executing jupyter nbconvert --to html $^"
-#	#jupyter nbconvert --quiet --to html $^
-#	./conversion/conv_ipynb_to_html $^
-#	mv $*.html html/
-
 altsrc:
-	rsync -a src/ exec/ --exclude=*.ipynb
+	rsync -a src/ exec/ --exclude='*.ipynb'
 
 # Convert notebooks in src into an executable version in subdir exec
 exec/%.ipynb: src/%.ipynb
@@ -60,26 +48,26 @@ exec: altsrc $(SUBDIR_exec)
 
 
 tex/%.tex: exec/%.ipynb
-	echo "Executing jupyter nbconvert --to latex $^"
+	echo "Executing jupyter nbconvert --to latex_with_lenvs $^"
 	cp $^ tex/
 	cd tex/ && \
-	echo "Executing jupyter $(here)/conversion/ipynb_thms_to_latex $(notdir $^)" && \
-    jupyter nbconvert --to latex_with_lenvs --LenvsLatexExporter.removeHeaders=True $(notdir $^)  &&\
+    jupyter nbconvert --to latex_with_lenvs --LenvsLatexExporter.removeHeaders=True --template thmsInNb_book $(notdir $^)  &&\
 	cd .. &&\
 	rm tex/$(notdir $^)
 
 pdf: tex
+	echo Compiling $(MAIN_TeX) to pdf in tex directory
 	rsync -a src/*.png tex/ && \
 	cd tex && \
-	xelatex -interaction=nonstopmode Poly.tex &> /dev/null | cat  && \
-	xelatex -interaction=nonstopmode Poly.tex &> /dev/null | cat
+	xelatex -interaction=nonstopmode $(MAIN_TeX) &> /dev/null | cat  && \
+	xelatex -interaction=nonstopmode $(MAIN_TeX) &> /dev/null | cat
 
 zip: html 
-	rm -f LecturesSignalProcessing.zip
-	zip -9 -r LecturesSignalProcessing src/
-	zip -9 -r LecturesSignalProcessing html/
-	zip -9 -r LecturesSignalProcessing tex/*.pdf
-	rsync -av --chmod=755  -e "ssh -p 52222" $(here)/LecturesSignalProcessing.zip  bercherj@ssh.esiee.fr:public_html/PPMD/
+	rm -f $(dirName).zip
+	zip -9 -r $(dirName) src/
+	zip -9 -r $(dirName) html/
+	zip -9 -r $(dirName) tex/*.pdf
+	rsync -av --chmod=755  -e "ssh -p 52222" $(here)/$(dirName).zip  $(ssh_user):$(zip_dest)
 
 all: tex html pdf
 	cp *.css html/ 2>/dev/null | cat && \
@@ -92,12 +80,13 @@ git: all
 
 sync: 
 	perl -pi -e s/.ipynb/.html/g $(here)/html/*.html
-	rsync -av --chmod=755  -e "ssh -p 52222" $(here)/html/*.* --exclude='*.ipynb' bercherj@ssh.esiee.fr:public_html/FiltrageAdaptatif
-	rsync -av --chmod=755  -e "ssh -p 52222" $(here)/exec/*.ipynb  bercherj@ssh.esiee.fr:public_html/FiltrageAdaptatif
-	rsync -av --chmod=755  -e "ssh -p 52222" $(here)/exec/*.ipy  bercherj@ssh.esiee.fr:public_html/FiltrageAdaptatif
-	rsync -av --chmod=755  -e "ssh -p 52222" $(here)/exec/*.py  bercherj@ssh.esiee.fr:public_html/FiltrageAdaptatif
-	rsync -av --chmod=755  -e "ssh -p 52222" $(here)/tex/*.pdf  bercherj@ssh.esiee.fr:public_html/FiltrageAdaptatif
+	rsync -av --chmod=755  -e "ssh -p 52222" $(here)/html/*.* --exclude='*.ipynb' $(ssh_user):$(web_dest)
+	rsync -av --chmod=755  -e "ssh -p 52222" $(here)/exec/*.ipynb  $(ssh_user):$(web_dest)
+	rsync -av --chmod=755  -e "ssh -p 52222" $(here)/exec/*.ipy  $(ssh_user):$(web_dest)
+	rsync -av --chmod=755  -e "ssh -p 52222" $(here)/exec/*.py  $(ssh_user):$(web_dest)
+	rsync -av --chmod=755  -e "ssh -p 52222" $(here)/tex/*.pdf  $(ssh_user):$(web_dest)
 
+$(V).SILENT:
 
 
 

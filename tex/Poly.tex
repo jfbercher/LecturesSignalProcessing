@@ -40,7 +40,7 @@
 \textcolor{red}{ % Red font color
 {\Huge A Journey in Signal Processing}\\[0.5\baselineskip] % Title line 1
 %{\Large de}\\[0.75\baselineskip] % Title line 2
-{\Huge    with IPython}
+{\Huge    with Jupyter}
 } % Title line 3
 
 \vspace{0.25\drop} % Whitespace between the title and short horizontal line
@@ -179,29 +179,40 @@ urlcolor=webbrown,pagebackref,pdfpagemode=None,pdfstartview=Fit}
 \tableofcontents
 \newpage
 
+%\chapter{Delays and Scales for signals}
 \input{DelaysAndScales.tex}
+%\chapter{Introduction to filtering}
 \input{Intro_Filtering.tex}
+%\chapter{Fourier representation}
 \input{Intro_Fourier.tex}
 \input{Fourier_transform.tex} %
 \input{Discrete_Time_Fourier_properties.tex} %
+%\chapter{Convolution}
 \input{Convolution.tex}
+%\chapter{Transfer functions}
 \input{TransferFunctions.tex}
+%\chapter{Lab: Basic system representation}
 \input{Exercises_BasicSystemsRepr.tex} %
 \input{BasicSystemsRepr.tex} %
+%\chapter{The continuous time case}
 \input{Continuous_time_case.tex} %
+%\chapter{Periodization and discretization of signals}
 \input{Periodization_discretization.tex} 
 \input{DFT.tex} 
+%\chapter{Sampling}
 \input{Sampling.tex} %
 
+%\chapter{Lab: image analysis}
 \input{LabImages_text.tex}
 %\input{LabImages_correction.tex}
 
+%\chapter{Analysis and Synthesis of Digital filters}
 \input{DigitalFilters.tex}
 \input{ZerosPoles.tex}
 \input{FIR_synthesis.tex}
 \input{Bilinear_synthesis.tex}
 
-
+%\chapter{Lab: Basic filtering}
 \input{BasicFiltering_text.tex}
 %\input{BasicFiltering_correction.tex}
 
@@ -213,7 +224,8 @@ urlcolor=webbrown,pagebackref,pdfpagemode=None,pdfstartview=Fit}
 \input{Lecture3_RandomSignals}
 
 %%Adaptive Filtering
-\input{Optimum_filtering}
+%\chapter{Adaptive filters}
+\input{Optimum_filtering_en}
 \input{Grad_algo}
 \input{Adaptive_versions}
 %\input{noisecancellationlab.tex}

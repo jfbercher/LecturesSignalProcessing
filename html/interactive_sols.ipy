@@ -1,0 +1,153 @@
+
+### ------------ interactive solutions: showing and hiding cells
+
+override_runrange="""
+    /* Override original execute-range function */
+    console.log("Overriding run-range javascript function");
+    IPython.Notebook.prototype.execute_cell_range = function (start, end) {
+        this.command_mode();
+        for (var i=start; i<end; i++) {
+            this.select(i);
+            var c = this.get_selected_cell();
+            if (c.metadata.manualexec==true){
+                console.log("Cell not executed: ",i);
+            console.log(c.metadata.widget);}
+            else {
+                //console.log("execute",i);
+                this.execute_cell();}
+        }
+    };
+"""
+print("Overriding run-range javascript function")
+display(Javascript(override_runrange))
+
+hide_itself="""
+var cell = IPython.notebook.get_selected_cell();
+cell.element.find("div.input").hide();
+"""
+
+hide_input="""
+    var hide_input = function (nb_max) {
+        var n;
+        // Find the selected cell
+        var index = IPython.notebook.get_selected_index();
+        //console.log("Hiding input, cell ", index)
+        var cell = IPython.notebook.get_selected_cell();
+        for (n = 1; n <= nb_max; n++) 
+        { 
+        var i = IPython.notebook.get_selected_index(); 
+        var cell = IPython.notebook.get_cell(i+n);
+        cell.metadata.hidden = true;
+        // Toggle visibility of the input div
+        if (cell instanceof IPython.CodeCell) {
+             cell.element.find("div.input").hide()
+             cell.element.find("div.output").hide()
+                                             }
+        if (cell instanceof IPython.TextCell) {
+             cell.element.find("div.text_cell_render").hide()
+                                              }
+                        };    
+                };
+
+   hide_input(%s);
+"""
+
+show_input="""
+    var show_input = function (nb_max) {
+        var n;
+        // Find the selected cell
+        var index = IPython.notebook.get_selected_index();
+        //console.log("Showing input, cell ", index)
+        var cell = IPython.notebook.get_selected_cell();
+        for (n = 1; n <= nb_max; n++) 
+        { 
+        var i = IPython.notebook.get_selected_index(); 
+        var cell = IPython.notebook.get_cell(i+n);
+        cell.metadata.hidden = false;
+        // Toggle visibility of the input div
+        if (cell instanceof IPython.CodeCell) {
+             cell.element.find("div.input").show()
+             cell.element.find("div.output").show()
+                                             }
+        if (cell instanceof IPython.TextCell) {
+             cell.element.find("div.text_cell_render").show()
+                                              }
+                        };    
+                };
+
+   show_input(%s);
+"""
+
+
+# Dedicated function to pop up two buttons and toggle cells
+
+def process_solution(nb_cells_to_process=1):
+    print("nb_cells to process",nb_cells_to_process);
+    buttons = widgets.ToggleButtonsWidget(# width=100, font_size='14pt', fore_color='red',                 
+        description='Solution:',
+        values=['Hide it','Show it'])
+    buttons.value='Hide it'
+    display(buttons)
+    display(Javascript("""
+        var index = IPython.notebook.get_selected_index();
+        console.log("Process solution, cell ", index)
+     var cell = IPython.notebook.get_selected_cell();
+     cell.metadata.manualexec = true; 
+     cell.metadata.widget = true;""" ))
+    display(Javascript(hide_input % nb_cells_to_process))
+    clear_output()
+    def on_buttonschange(val,button_pressed):
+      #  print(val,button_pressed)
+        if button_pressed=='Show it':
+            display(Javascript(show_input % nb_cells_to_process))
+        if button_pressed=='Hide it':
+            display(Javascript(hide_input % nb_cells_to_process))   
+        clear_output()
+    display(Javascript(hide_itself))      
+    clear_output()  
+    
+    buttons.on_trait_change(on_buttonschange,'value')   
+
+show_solution=process_solution
+
+## This is to initialize all process_solution "widgets" cells
+
+interactive_init_cells="""      var interactive_init_cells = function () {   
+     
+          var start = 0 //IPython.notebook.get_selected_index();
+          var end = IPython.notebook.ncells()
+          console.log("reloading cells from... ",start);
+          for (var i=start; i<end; i++) { 
+              IPython.notebook.select(i);
+              var cell = IPython.notebook.get_selected_cell();
+              if ((cell instanceof IPython.CodeCell)) { 
+                  if (cell.metadata.widget == true){
+                                 //console.log("Widget cell... ",i);
+                                 //IPython.notebook.execute_cell();
+//IPython.notebook.kernel.execute("buttons = widgets.ToggleButtonsWidget(description='Solution:',values=['Hide it','Show it'])");
+//IPython.notebook.kernel.execute("buttons.value='Hide it'; display(buttons)");
+// this does not work because "Could not determine where the display message was from.  Widget will not be displayed "
+                                                   }
+              }
+              if (cell.metadata.hidden == true) {
+                    //console.log("Hidden cell... ",i);
+                    // Toggle visibility of the input div
+                    if (cell instanceof IPython.CodeCell) {
+                         //console.log("Hiding Code cell... ",i);
+                         cell.element.find("div.input").hide()
+                         cell.element.find("div.output").hide()
+                                                         }
+                    if (cell instanceof IPython.TextCell) {
+                         //console.log("hiding text cell... ",i);
+                         cell.element.find("div.text_cell_render").hide()
+                                                          }
+                                               }
+          }
+      };
+      
+      interactive_init_cells();
+"""
+display(Javascript(interactive_init_cells))
+### ------------ End of: Interactive solutions: showing and hiding cells
+
+

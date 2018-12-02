@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+
+#This is to update html (i) updating links (ii) include header and footer 
+
+listOfFiles=$*
+for f in $listOfFiles
+do
+    filename=$(basename -- "$f")
+    dir=$(dirname "$f")
+    extension="${filename##*.}"
+    #filename="${filename%.*}"
+
+    #echo Updating $filename
+
+    if [ "$extension" == "html" ]
+    then
+        htmlFile=$dir/$filename
+        ipynbFile=$dir/${filename%.html}.ipynb
+    else
+        ipynbFile=$dir/$filename
+        htmlFile=$dir/${filename%.ipynb}.html
+    fi
+    htmlFilename=$(basename -- "$htmlFile")
+    ipynbFilename=$(basename -- "$ipynbFile")
+
+
+    echo [Updating links]
+    perl -pi -e s/.ipynb/.html/g $htmlFile
+
+
+    rep="<div class=\"container\" id=\"notebook-container\">
+
+    <div class=\"cell border-box-sizing text_cell rendered\">
+    <div class=\"inner_cell\">
+    <div class=\"text_cell_render border-box-sizing rendered_html\">
+    <div align=right> 
+    <a style=\"color: blue; font-size: 100%; font-family: sans-serif; font-weight: bold\" href=\"$ipynbFilename\"> [Jupyter notebook]</a> 
+    </div>
+    </div>
+    </div>
+    </div>"
+    rep2="<div class=\"cell border-box-sizing text_cell rendered\">
+    <div class=\"inner_cell\">
+    <div class=\"text_cell_render border-box-sizing rendered_html\">
+    <div align=left> 
+    <a style=\"color: blue; font-size: 100%; font-family: sans-serif; font-weight: bold\" href=\"$ipynbFilename\"> [Jupyter notebook]</a> 
+    </div>
+    </div>
+    </div>
+    </div></body>"
+      origin="<div class=\"container\" id=\"notebook-container\">"
+      origin2="</body>"
+      echo [Linking to original notebook]
+
+      perl -pi -e "s#$origin#$rep#g" $htmlFile
+      perl -pi -e "s#$origin2#$rep2#g" $htmlFile
+      perl -pi -e s#"\[Index\]\(([\S]*)\)"#"\<a href=\"\\1\"\>Index\<\/a\>"#g $htmlFile
+      perl -pi -e s#"\[Back\]\(([\S]*)\)"#"\<a href=\"\\1\"\>Back\<\/a\>"#g $htmlFile
+      perl -pi -e s#"\[Next\]\(([\S]*)\)"#"\<a href=\"\\1\"\>Next\<\/a\>"#g $htmlFile
+
+done

@@ -5,12 +5,14 @@
 *files/
 exec/
 conversion/
+exec (copie)/
 __pycache__/
 /.project
 plustard/
 __pycache__/
 .ipynb_checkpoints/
 LecturesSignalProcessing.zip
+AuxiliaryWork.zip
 !header.tex
 !Poly.tex
 !.gitignore
