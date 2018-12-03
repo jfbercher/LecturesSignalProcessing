@@ -13444,18 +13444,19 @@ $$<ul>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># compute the coeffs ck</span>
-<span class="k">def</span> <span class="nf">coeffck</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">k</span><span class="p">):</span>
-    <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">==</span><span class="n">L</span><span class="p">,</span> <span class="s2">&quot;input must be of length L&quot;</span>     
-    <span class="n">karray</span><span class="o">=</span><span class="p">[]</span>
-    <span class="n">res</span><span class="o">=</span><span class="p">[]</span>
-    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="nb">int</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">coeffck</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="n">L</span><span class="p">,</span> <span class="s2">&quot;input must be of length L&quot;</span>
+    <span class="n">karray</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
         <span class="n">karray</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">karray</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
-   
+        <span class="n">karray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+
     <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">karray</span><span class="p">:</span>
-        <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">vdot</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">/</span><span class="n">L</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">L</span><span class="p">)),</span><span class="n">x</span><span class="p">))</span>
-    <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="n">L</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+        <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">vdot</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">/</span> <span class="n">L</span> <span class="o">*</span> <span class="n">k</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">L</span><span class="p">)),</span> <span class="n">x</span><span class="p">))</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">L</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
 
 <span class="c1">#test: coeffck(x[0:L],L,[-12,1,7])</span>
 <span class="c1"># --&gt; array([  1.51702135e-02 +4.60742555e-17j,</span>
@@ -13472,21 +13473,21 @@ $$<ul>
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Lpad</span><span class="o">=</span><span class="mi">20</span> <span class="c1"># then 200, then 2000</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Lpad</span> <span class="o">=</span> <span class="mi">20</span>  <span class="c1"># then 200, then 2000</span>
 <span class="c1"># define a rectangular pulse</span>
-<span class="n">rect</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">20</span><span class="p">)))</span>
+<span class="n">rect</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">20</span><span class="p">)))</span>
 <span class="c1"># Add zeros after:</span>
-<span class="n">rect_zeropadded</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">rect</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">Lpad</span><span class="p">)))</span>
-<span class="n">sig</span><span class="o">=</span><span class="n">rect_zeropadded</span>
+<span class="n">rect_zeropadded</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">rect</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">Lpad</span><span class="p">)))</span>
+<span class="n">sig</span> <span class="o">=</span> <span class="n">rect_zeropadded</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sig</span><span class="p">)</span>
 <span class="c1"># compute the Fourier series for |k/Lsig|&lt;1/4</span>
-<span class="n">Lsig</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">sig</span><span class="p">)</span>
-<span class="n">fmax</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">Lsig</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">kk</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="n">fmax</span><span class="p">,</span><span class="n">fmax</span><span class="p">)</span>
-<span class="n">c</span><span class="o">=</span><span class="n">coeffck</span><span class="p">(</span><span class="n">sig</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">Lsig</span><span class="p">],</span><span class="n">Lsig</span><span class="p">,</span><span class="n">kk</span><span class="p">)</span>
+<span class="n">Lsig</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">sig</span><span class="p">)</span>
+<span class="n">fmax</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">Lsig</span> <span class="o">/</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">kk</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="n">fmax</span><span class="p">,</span> <span class="n">fmax</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">coeffck</span><span class="p">(</span><span class="n">sig</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">Lsig</span><span class="p">],</span> <span class="n">Lsig</span><span class="p">,</span> <span class="n">kk</span><span class="p">)</span>
 <span class="c1"># plot it</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">kk</span><span class="o">/</span><span class="n">Lsig</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">kk</span> <span class="o">/</span> <span class="n">Lsig</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Fourier series coefficients (modulus)&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Normalized frequency -- k/Lsig&quot;</span><span class="p">)</span>
 </pre></div>
@@ -14273,12 +14274,12 @@ it is important to stress that</p>
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Define a rectangular window, of length L</span>
 <span class="c1">#on N points, zeropad to NN=1000</span>
 <span class="c1"># take eg L=100, N=500</span>
-<span class="n">NN</span><span class="o">=</span><span class="mi">1000</span>
-<span class="n">L</span><span class="o">=</span><span class="mi">10</span> <span class="c1"># 10, then 6, then 20, then 50, then 100...</span>
-<span class="n">r</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
-<span class="n">Rf</span><span class="o">=</span><span class="n">fft</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">NN</span><span class="p">)</span>
-<span class="n">f</span><span class="o">=</span><span class="n">fftfreq</span><span class="p">(</span><span class="n">NN</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Rf</span><span class="p">))</span>
+<span class="n">NN</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">L</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># 10, then 6, then 20, then 50, then 100...</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+<span class="n">Rf</span> <span class="o">=</span> <span class="n">fft</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">NN</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">fftfreq</span><span class="p">(</span><span class="n">NN</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Rf</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -14297,7 +14298,7 @@ it is important to stress that</p>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;matplotlib.lines.Line2D at 0x7f65fbed9cf8&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x7f5d27641d68&gt;]</pre>
 </div>
 
 </div>
@@ -14846,12 +14847,12 @@ height=250
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">dsinc</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">L</span><span class="p">):</span>
-    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,(</span><span class="nb">int</span><span class="p">,</span><span class="nb">float</span><span class="p">)):</span> <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="n">x</span><span class="p">]</span>
-    <span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="n">out</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-    <span class="n">I</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">x</span><span class="o">!=</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">out</span><span class="p">[</span><span class="n">I</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">I</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="n">L</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">I</span><span class="p">]</span><span class="o">/</span><span class="n">L</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">dsinc</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">L</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">x</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">out</span><span class="p">[</span><span class="n">I</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">I</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">L</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">I</span><span class="p">]</span> <span class="o">/</span> <span class="n">L</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">out</span>
 </pre></div>
 
@@ -14865,11 +14866,11 @@ height=250
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">N</span><span class="o">=</span><span class="mi">1000</span>
-<span class="n">L</span><span class="o">=</span><span class="mi">40</span>
-<span class="n">f</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">400</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">dsinc</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">L</span><span class="o">*</span><span class="n">f</span><span class="p">,</span><span class="n">L</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="s1">&#39;on&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">L</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">dsinc</span><span class="p">(</span><span class="n">pi</span> <span class="o">*</span> <span class="n">L</span> <span class="o">*</span> <span class="n">f</span><span class="p">,</span> <span class="n">L</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14879,19 +14880,6 @@ height=250
 <div class="output_wrapper">
 <div class="output">
 
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/usr/local/lib/python3.5/site-packages/matplotlib/cbook/__init__.py:424: MatplotlibDeprecationWarning: 
-Passing one of &#39;on&#39;, &#39;true&#39;, &#39;off&#39;, &#39;false&#39; as a boolean is deprecated; use an actual boolean (True/False) instead.
-  warn_deprecated(&#34;2.2&#34;, &#34;Passing one of &#39;on&#39;, &#39;true&#39;, &#39;off&#39;, &#39;false&#39; as a &#34;
-</pre>
-</div>
-</div>
 
 <div class="output_area">
 
@@ -15498,17 +15486,17 @@ height=250
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">NN</span><span class="o">=</span><span class="mi">1000</span>
-<span class="n">L</span><span class="o">=</span><span class="mi">10</span> <span class="c1"># 10, then 6, then 20, then 50, then 100...</span>
-<span class="n">r</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
-<span class="n">Rf</span><span class="o">=</span><span class="n">fft</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">NN</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">NN</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">L</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># 10, then 6, then 20, then 50, then 100...</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+<span class="n">Rf</span> <span class="o">=</span> <span class="n">fft</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">NN</span><span class="p">)</span>
 
-<span class="n">N</span><span class="o">=</span><span class="mi">1000</span>
-<span class="n">f</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">400</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">L</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">dsinc</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">L</span><span class="o">*</span><span class="n">f</span><span class="p">,</span><span class="n">L</span><span class="p">)))</span>
-<span class="n">f</span><span class="o">=</span><span class="n">fftfreq</span><span class="p">(</span><span class="n">NN</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Rf</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="s1">&#39;on&#39;</span><span class="p">)</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">L</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">dsinc</span><span class="p">(</span><span class="n">pi</span> <span class="o">*</span> <span class="n">L</span> <span class="o">*</span> <span class="n">f</span><span class="p">,</span> <span class="n">L</span><span class="p">)))</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">fftfreq</span><span class="p">(</span><span class="n">NN</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Rf</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -15518,19 +15506,6 @@ height=250
 <div class="output_wrapper">
 <div class="output">
 
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/usr/local/lib/python3.5/site-packages/matplotlib/cbook/__init__.py:424: MatplotlibDeprecationWarning: 
-Passing one of &#39;on&#39;, &#39;true&#39;, &#39;off&#39;, &#39;false&#39; as a boolean is deprecated; use an actual boolean (True/False) instead.
-  warn_deprecated(&#34;2.2&#34;, &#34;Passing one of &#39;on&#39;, &#39;true&#39;, &#39;off&#39;, &#39;false&#39; as a &#34;
-</pre>
-</div>
-</div>
 
 <div class="output_area">
 
@@ -16162,23 +16137,24 @@ height=250
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># using %matplotlib use a backend that allows external figures</span>
 <span class="c1"># using %matplotlib inline plots the results in the notebook</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="n">slider</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span><span class="nb">max</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span><span class="n">value</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">slider</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">FloatSlider</span><span class="p">(</span><span class="nb">min</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">slider</span><span class="p">)</span>
 
 
 <span class="c1">#----- Callbacks des widgets -------------</span>
 <span class="k">def</span> <span class="nf">pltsinc</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
-        <span class="n">L</span><span class="o">=</span><span class="n">change</span><span class="p">[</span><span class="s1">&#39;new&#39;</span><span class="p">]</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
-        <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-        <span class="c1">#val.value=str(f)</span>
-        <span class="n">f</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">400</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">dsinc</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">L</span><span class="o">*</span><span class="n">f</span><span class="p">,</span><span class="n">L</span><span class="p">))</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">])</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="s1">&#39;on&#39;</span><span class="p">)</span>
-        
+    <span class="n">L</span> <span class="o">=</span> <span class="n">change</span><span class="p">[</span><span class="s1">&#39;new&#39;</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
+    <span class="n">clear_output</span><span class="p">(</span><span class="n">wait</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1">#val.value=str(f)</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">dsinc</span><span class="p">(</span><span class="n">pi</span> <span class="o">*</span> <span class="n">L</span> <span class="o">*</span> <span class="n">f</span><span class="p">,</span> <span class="n">L</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+
 <span class="n">pltsinc</span><span class="p">({</span><span class="s1">&#39;new&#39;</span><span class="p">:</span> <span class="mi">8</span><span class="p">})</span>
-<span class="n">slider</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">pltsinc</span><span class="p">,</span><span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">])</span>
+<span class="n">slider</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">pltsinc</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -16188,19 +16164,6 @@ height=250
 <div class="output_wrapper">
 <div class="output">
 
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/usr/local/lib/python3.5/site-packages/matplotlib/cbook/__init__.py:424: MatplotlibDeprecationWarning: 
-Passing one of &#39;on&#39;, &#39;true&#39;, &#39;off&#39;, &#39;false&#39; as a boolean is deprecated; use an actual boolean (True/False) instead.
-  warn_deprecated(&#34;2.2&#34;, &#34;Passing one of &#39;on&#39;, &#39;true&#39;, &#39;off&#39;, &#39;false&#39; as a &#34;
-</pre>
-</div>
-</div>
 
 <div class="output_area">
 
@@ -16748,7 +16711,7 @@ height=252
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is an example with matplotlib widgets interactivity, (instead of html widgets). The docs can be found at <a href="http://nbviewer.ipython.org/github/jakevdp/matplotlib_pydata2013/blob/master/notebooks/03_Widgets.html">http://nbviewer.ipython.org/github/jakevdp/matplotlib_pydata2013/blob/master/notebooks/03_Widgets.html</a></p>
+<p>This is an example with matplotlib widgets interactivity, (instead of html widgets). The docs can be found <a href="http://nbviewer.ipython.org/github/jakevdp/matplotlib\_pydata2013/blob/master/notebooks/03\_Widgets.html">here</a></p>
 
 </div>
 </div>
@@ -16766,18 +16729,20 @@ height=252
 
 <span class="n">slider_ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">])</span>
 <span class="n">slider</span> <span class="o">=</span> <span class="n">Slider</span><span class="p">(</span><span class="n">slider_ax</span><span class="p">,</span> <span class="s2">&quot;Offset&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="n">valinit</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#AAAAAA&#39;</span><span class="p">)</span>
-<span class="n">L</span><span class="o">=</span><span class="mi">10</span>
-<span class="n">f</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">400</span><span class="p">)</span>
+<span class="n">L</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
 
-<span class="n">line</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">dsinc</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">L</span><span class="o">*</span><span class="n">f</span><span class="p">,</span><span class="n">L</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">line</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">dsinc</span><span class="p">(</span><span class="n">pi</span> <span class="o">*</span> <span class="n">L</span> <span class="o">*</span> <span class="n">f</span><span class="p">,</span> <span class="n">L</span><span class="p">),</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="c1">#line2, = ax.plot(f,sinc(pi*L*f), lw=2)</span>
 <span class="c1">#line2 is in order to compare with the &quot;true&quot; sinc</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="s1">&#39;on&#39;</span><span class="p">)</span>    
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
 
 <span class="k">def</span> <span class="nf">on_change</span><span class="p">(</span><span class="n">L</span><span class="p">):</span>
-    <span class="n">line</span><span class="o">.</span><span class="n">set_ydata</span><span class="p">(</span><span class="n">dsinc</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">L</span><span class="o">*</span><span class="n">f</span><span class="p">,</span><span class="n">L</span><span class="p">))</span>
+    <span class="n">line</span><span class="o">.</span><span class="n">set_ydata</span><span class="p">(</span><span class="n">dsinc</span><span class="p">(</span><span class="n">pi</span> <span class="o">*</span> <span class="n">L</span> <span class="o">*</span> <span class="n">f</span><span class="p">,</span> <span class="n">L</span><span class="p">))</span>
+
+
 <span class="c1">#    line2.set_ydata(sinc(pi*L*f))</span>
-        
 
 <span class="n">slider</span><span class="o">.</span><span class="n">on_changed</span><span class="p">(</span><span class="n">on_change</span><span class="p">)</span>
 </pre></div>
@@ -16797,19 +16762,6 @@ height=252
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Using matplotlib backend: TkAgg
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/usr/local/lib/python3.5/site-packages/matplotlib/cbook/__init__.py:424: MatplotlibDeprecationWarning: 
-Passing one of &#39;on&#39;, &#39;true&#39;, &#39;off&#39;, &#39;false&#39; as a boolean is deprecated; use an actual boolean (True/False) instead.
-  warn_deprecated(&#34;2.2&#34;, &#34;Passing one of &#39;on&#39;, &#39;true&#39;, &#39;off&#39;, &#39;false&#39; as a &#34;
 </pre>
 </div>
 </div>
@@ -17440,16 +17392,22 @@ height=242
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="kn">from</span> <span class="nn">numpy.fft</span> <span class="k">import</span> <span class="n">fft</span><span class="p">,</span> <span class="n">ifft</span>
-<span class="n">N</span><span class="o">=</span><span class="mi">250</span><span class="p">;</span> <span class="n">f0</span><span class="o">=</span><span class="mf">0.1</span><span class="p">;</span> <span class="n">NN</span><span class="o">=</span><span class="mi">1000</span>
-<span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">plot_sin_and_transform</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">f0</span><span class="p">,</span><span class="n">ax</span><span class="p">):</span>
-    <span class="n">t</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
-    <span class="n">s</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">f0</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
-    <span class="n">Sf</span><span class="o">=</span><span class="n">fft</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">NN</span><span class="p">)</span>
-    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">s</span><span class="p">)</span>
-    <span class="n">f</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="n">NN</span><span class="p">)</span>
-    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Sf</span><span class="p">))</span>
-<span class="n">plot_sin_and_transform</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">f0</span><span class="p">,</span><span class="n">ax</span><span class="p">)</span>    
+<span class="n">N</span> <span class="o">=</span> <span class="mi">250</span>
+<span class="n">f0</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">NN</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">plot_sin_and_transform</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">f0</span><span class="p">,</span> <span class="n">ax</span><span class="p">):</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">f0</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+    <span class="n">Sf</span> <span class="o">=</span> <span class="n">fft</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">NN</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="n">NN</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Sf</span><span class="p">))</span>
+
+
+<span class="n">plot_sin_and_transform</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">f0</span><span class="p">,</span> <span class="n">ax</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -18338,7 +18296,7 @@ height=250
         <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">c2</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>    
+    <span class="k">if</span> <span class="n">c2</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
         <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Sf</span><span class="p">))</span>
@@ -18350,7 +18308,7 @@ height=250
 <span class="n">sliderf0</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">pltsin</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">)</span>
 <span class="n">c1</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">pltsin</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">)</span>
 <span class="n">c2</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">pltsin</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">sliderN</span><span class="p">,</span> <span class="n">sliderf0</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span>  <span class="n">out</span><span class="p">]))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">widgets</span><span class="o">.</span><span class="n">VBox</span><span class="p">([</span><span class="n">sliderN</span><span class="p">,</span> <span class="n">sliderf0</span><span class="p">,</span> <span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">out</span><span class="p">]))</span>
 </pre></div>
 
     </div>
@@ -19709,13 +19667,13 @@ height=250
 
  
  
-<div id="b42a8af3-4dea-4edd-8c86-96e684fb21bc"></div>
+<div id="263663ee-c6cf-4b6c-a31f-80dd2811e1a8"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#b42a8af3-4dea-4edd-8c86-96e684fb21bc');
+var element = $('#263663ee-c6cf-4b6c-a31f-80dd2811e1a8');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "78d41a6887c44900b0baa17785bf4eb8"}
+{"model_id": "0abf28f84ffc49edb8db3979d232a73a"}
 </script>
 </div>
 
@@ -19738,22 +19696,25 @@ var element = $('#b42a8af3-4dea-4edd-8c86-96e684fb21bc');
 
 <span class="n">slider_ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">])</span>
 <span class="n">slider</span> <span class="o">=</span> <span class="n">Slider</span><span class="p">(</span><span class="n">slider_ax</span><span class="p">,</span> <span class="s2">&quot;f0&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">valinit</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#AAAAAA&#39;</span><span class="p">)</span>
-<span class="n">f</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">400</span><span class="p">)</span>
-<span class="n">N</span><span class="o">=</span><span class="mi">1000</span>
-<span class="n">t</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
-<span class="n">s</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">f0</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
-<span class="n">Sf</span><span class="o">=</span><span class="n">fft</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">NN</span><span class="p">)</span>
-<span class="n">f</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="n">NN</span><span class="p">)</span>
-<span class="n">line</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Sf</span><span class="p">))</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">f0</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+<span class="n">Sf</span> <span class="o">=</span> <span class="n">fft</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">NN</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="n">NN</span><span class="p">)</span>
+<span class="n">line</span><span class="p">,</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Sf</span><span class="p">))</span>
 
-<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="s1">&#39;on&#39;</span><span class="p">)</span>    
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">b</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
 
 <span class="k">def</span> <span class="nf">on_change</span><span class="p">(</span><span class="n">f0</span><span class="p">):</span>
-    <span class="n">s</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">f0</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
-    <span class="n">Sf</span><span class="o">=</span><span class="n">fft</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="n">NN</span><span class="p">)</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">f0</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+    <span class="n">Sf</span> <span class="o">=</span> <span class="n">fft</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">NN</span><span class="p">)</span>
     <span class="n">line</span><span class="o">.</span><span class="n">set_ydata</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">Sf</span><span class="p">))</span>
+
+
 <span class="c1">#    line2.set_ydata(sinc(pi*L*f))</span>
-        
+
 <span class="n">slider</span><span class="o">.</span><span class="n">on_changed</span><span class="p">(</span><span class="n">on_change</span><span class="p">)</span>
 </pre></div>
 
@@ -19764,19 +19725,6 @@ var element = $('#b42a8af3-4dea-4edd-8c86-96e684fb21bc');
 <div class="output_wrapper">
 <div class="output">
 
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/usr/local/lib/python3.5/site-packages/matplotlib/cbook/__init__.py:424: MatplotlibDeprecationWarning: 
-Passing one of &#39;on&#39;, &#39;true&#39;, &#39;off&#39;, &#39;false&#39; as a boolean is deprecated; use an actual boolean (True/False) instead.
-  warn_deprecated(&#34;2.2&#34;, &#34;Passing one of &#39;on&#39;, &#39;true&#39;, &#39;off&#39;, &#39;false&#39; as a &#34;
-</pre>
-</div>
-</div>
 
 <div class="output_area">
 
