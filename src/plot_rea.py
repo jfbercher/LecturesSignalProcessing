@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Feb 17 13:51:59 2014
-
-@author: JF
+@author: JF Bercher
 """
 
 
