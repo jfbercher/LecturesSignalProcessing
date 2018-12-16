@@ -2,6 +2,7 @@
 
 #This is to update html (i) updating links (ii) include header and footer 
 
+title="A Journey in Signal Processing with Jupyter"
 listOfFiles=$*
 for f in $listOfFiles
 do
@@ -23,6 +24,7 @@ do
     htmlFilename=$(basename -- "$htmlFile")
     ipynbFilename=$(basename -- "$ipynbFile")
 
+    before_after=$(python3 before_after.py $ipynbFile) 
 
     echo [Updating links]
     perl -pi -e s/.ipynb/.html/g $htmlFile
@@ -33,12 +35,22 @@ do
     <div class=\"cell border-box-sizing text_cell rendered\">
     <div class=\"inner_cell\">
     <div class=\"text_cell_render border-box-sizing rendered_html\">
-    <div align=right> 
-    <a style=\"color: blue; font-size: 100%; font-family: sans-serif; font-weight: bold\" href=\"$ipynbFilename\"> [Jupyter notebook]</a> 
-    </div>
+<p> <em> 
+<a style=\" font-size: 100%; font-family: sans-serif; font-weight: bold\"
+data-toggle=\"tooltip\" data-placement=\"top\" 
+title=\"Download notebook\" 
+href=\"$ipynbFilename\"> $ipynbFilename </a> 
+ <span style=\"float:right\"> $title </span> </em> </p>
+ <a class=\"btn\" id=\"toc_button\" data-toggle=\"tooltip\" data-placement=\"top\" 
+title=\"Toggle table of Contents\" href=\"\#\"> 
+<i class=\"fa fa-list\"></i> </a> 
+    <span style=\"float:right\"> 
+    $before_after 
+    </span>
     </div>
     </div>
     </div>"
+
     rep2="<div class=\"cell border-box-sizing text_cell rendered\">
     <div class=\"inner_cell\">
     <div class=\"text_cell_render border-box-sizing rendered_html\">
@@ -50,10 +62,12 @@ do
     </div></body>"
       origin="<div class=\"container\" id=\"notebook-container\">"
       origin2="</body>"
+
       echo [Linking to original notebook]
 
       perl -pi -e "s#$origin#$rep#g" $htmlFile
       perl -pi -e "s#$origin2#$rep2#g" $htmlFile
+      perl -pi -e s#"TeX-AMS_HTML\""#"TeX-AMS_HTML&delayStartupUntil=onload\""#g $htmlFile
       perl -pi -e s#"\[Index\]\(([\S]*)\)"#"\<a href=\"\\1\"\>Index\<\/a\>"#g $htmlFile
       perl -pi -e s#"\[Back\]\(([\S]*)\)"#"\<a href=\"\\1\"\>Back\<\/a\>"#g $htmlFile
       perl -pi -e s#"\[Next\]\(([\S]*)\)"#"\<a href=\"\\1\"\>Next\<\/a\>"#g $htmlFile

@@ -13110,7 +13110,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML&delayStartupUntil=onload"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -13192,10 +13192,49 @@ $( document ).ready(function(){
   
         // toc2
         var cfg = {"base_numbering": "1", "nav_menu": {"height": "129px", "width": "251px"}, "number_sections": true, "sideBar": true, "skip_h1_title": false, "title_cell": "Table of Contents", "title_sidebar": "Contents", "toc_cell": true, "toc_position": {}, "toc_section_display": "block", "toc_window_display": false};
+        cfg.navigate_menu=false;
         // fire the main function with these parameters
         require(['nbextensions/toc2/toc2'], function (toc2) {
             toc2.table_of_contents(cfg);
         });
+
+       // interactivity with toc & margins
+       
+        $('#toc_button').on('click', toggleTocDisplay);
+        $('#margins_button').on('click', function() {
+            cfg.widenNotebook = !cfg.widenNotebook;
+            updateMargins();
+        });
+
+        function toggleTocDisplay() {
+            $('#toc-wrapper').toggle();
+            updateMargins();
+         }
+
+        function updateMargins() {
+            var margin = 20;
+            var nb_inner = $('#notebook-container');
+            var nb_wrap_w = $('#notebook').width();
+            var sidebar = $('#toc-wrapper');
+            var visible_sidebar = sidebar.is(':visible');
+            var sidebar_w = visible_sidebar ? sidebar.outerWidth() : 0;
+            var available_space = nb_wrap_w - 2 * margin - sidebar_w;
+            var inner_css = {marginLeft: '', width: ''};
+            if (cfg.widenNotebook) {
+                inner_css.width = available_space;
+            }
+            if (visible_sidebar) {
+                var nb_inner_w = nb_inner.outerWidth();
+                if (available_space <= nb_inner_w + sidebar_w) {
+                    inner_css.marginLeft = sidebar_w + margin; // shift notebook rightward to fit the sidebar in
+                    if (available_space <= nb_inner_w) {
+                        inner_css.width = available_space; // also slim notebook to fit sidebar
+                    }
+                }
+            }
+            nb_inner.css(inner_css);
+        }
+
     });
 
 </script></head>
@@ -13210,9 +13249,18 @@ $( document ).ready(function(){
     <div class="cell border-box-sizing text_cell rendered">
     <div class="inner_cell">
     <div class="text_cell_render border-box-sizing rendered_html">
-    <div align=right> 
-    <a style="color: blue; font-size: 100%; font-family: sans-serif; font-weight: bold" href="Optimum_filtering.ipynb"> [Jupyter notebook]</a> 
-    </div>
+<p> <em> 
+<a style=" font-size: 100%; font-family: sans-serif; font-weight: bold"
+data-toggle="tooltip" data-placement="top" 
+title="Download notebook" 
+href="Optimum_filtering.ipynb"> Optimum_filtering.ipynb </a> 
+ <span style="float:right"> A Journey in Signal Processing with Jupyter </span> </em> </p>
+ <a class="btn" id="toc_button" data-toggle="tooltip" data-placement="top" 
+title="Toggle table of Contents" href="#"> 
+<i class="fa fa-list"></i> </a> 
+    <span style="float:right"> 
+    &lt; <a href="Lecture3_RandomSignals.html" title="Lecture3_RandomSignals.html"> previous </a> | <a href="toc.html" title="toc.html"> index </a> | <a href="Grad_algo.html" title="Grad_algo.html"> next </a> &gt; 
+    </span>
     </div>
     </div>
     </div>
